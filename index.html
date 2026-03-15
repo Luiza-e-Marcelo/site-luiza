@@ -11,27 +11,46 @@
 
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Luiza Lima Zehnle",
-  "url": "https://www.luizazehnle.com",
-  "image": "https://www.luizazehnle.com/LUIZA.jpg",
-  "jobTitle": "Psicóloga Junguiana",
-  "description": "Psicóloga junguiana com atendimento presencial em Salvador e online para adultos, inclusive brasileiros no exterior.",
-  "telephone": "+55-71-99983483",
-  "email": "luizalimazehnle.psi@gmail.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Rua Arthur de Azevedo Machado, 1459, sala 608",
-    "addressLocality": "Salvador",
-    "addressRegion": "BA",
-    "addressCountry": "BR"
+ "@context": "https://schema.org",
+ "@graph": [
+
+  {
+   "@type": "Person",
+   "@id": "https://www.luizazehnle.com/#person",
+   "name": "Luiza Lima Zehnle",
+   "jobTitle": "Psicóloga Junguiana",
+   "url": "https://www.luizazehnle.com",
+   "image": "https://www.luizazehnle.com/LUIZA.jpg",
+   "telephone": "+55-71-99983483",
+   "email": "luizalimazehnle.psi@gmail.com",
+   "worksFor": {
+     "@id": "https://www.luizazehnle.com/#business"
+   }
   },
-  "areaServed": ["Salvador", "Pituba", "Bahia", "Brasil", "Portugal", "Europa", "Estados Unidos", "Brasileiros no exterior"],
-  "availableLanguage": "pt-BR",
-  "sameAs": [
-    "https://www.linkedin.com/in/luiza-zehnle-psicologia/"
-  ]
+
+  {
+   "@type": "MedicalBusiness",
+   "@id": "https://www.luizazehnle.com/#business",
+   "name": "Luiza Zehnle Psicologia",
+   "url": "https://www.luizazehnle.com",
+   "address": {
+     "@type": "PostalAddress",
+     "streetAddress": "Rua Arthur de Azevedo Machado, 1459, sala 608",
+     "addressLocality": "Salvador",
+     "addressRegion": "BA",
+     "postalCode": "41820-790",
+     "addressCountry": "BR"
+   },
+   "areaServed": [
+     "Brasil",
+     "Portugal",
+     "Estados Unidos",
+     "Europa"
+   ],
+   "availableLanguage": "pt-BR"
+  }
+
+ ]
 }
 </script>
     
