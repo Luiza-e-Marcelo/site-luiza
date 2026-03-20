@@ -111,7 +111,7 @@
 
   .btn-primary {
     display: inline-flex; align-items: center; gap: 9px;
-    background: #a66767; color: white;
+    background: transparent; border: 2px solid #a66767; color: #a66767;
     font-family: 'Inter', sans-serif; font-weight: 600; font-size: 15px;
     padding: 13px 24px; border-radius: 10px;
     text-decoration: none;
@@ -122,12 +122,12 @@
 
   .btn-primary:hover { background: #8f5454; transform: translateY(-2px); }
 
-  .btn-outline {
+.btn-outline {
     display: inline-flex; align-items: center; gap: 8px;
-    background: transparent; color: #6b4f2c;
+    background: #a66767; color: white;
     font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13px;
     padding: 9px 18px; border-radius: 10px;
-    border: 1.5px solid rgba(107,79,44,0.35);
+    border: 2px solid #a66767;
     text-decoration: none; transition: all 0.2s;
   }
 
@@ -161,7 +161,7 @@
   .sobre-row { display: flex; gap: 20px; align-items: flex-start; }
 
   .sobre-row img {
-    width: 100px; height: 120px;
+    width: 150px; height: 180px;
     object-fit: cover; object-position: top;
     border-radius: 10px; flex-shrink: 0;
     box-shadow: 0 4px 16px rgba(60,30,10,0.18);
