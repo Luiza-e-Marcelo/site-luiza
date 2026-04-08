@@ -889,6 +889,231 @@ summary::after{
     grid-template-columns: 1fr 1fr;
   }
 }
+  /* ===== AJUSTE HERO + SOBRE ===== */
+
+.hero{
+  padding: 34px 22px 34px;
+  text-align: center;
+  border-bottom: 1px solid rgba(93,67,50,0.12);
+}
+
+.hero-shell{
+  display: block;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.hero-content{
+  width: 100%;
+}
+
+.hero-media{
+  display: none;
+}
+
+.hero-tag{
+  display: inline-block;
+  margin-bottom: 16px;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: #7b8f6a;
+  border: 1px solid rgba(123, 143, 106, 0.35);
+  background: rgba(255,255,255,0.36);
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+.hero h1{
+  font-size: clamp(32px, 9vw, 46px);
+  line-height: 1.08;
+  color: #5d4332;
+  margin-bottom: 14px;
+}
+
+.hero h1 em{
+  color: #b07a7a;
+}
+
+.hero-desc{
+  max-width: 520px;
+  margin: 0 auto 16px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #6e5d54;
+}
+
+.hero-proof{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin: 0 0 22px;
+}
+
+.hero-proof span{
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: #5d4332;
+  background: rgba(255,255,255,0.46);
+  border: 1px solid rgba(93,67,50,0.08);
+  border-radius: 999px;
+  padding: 7px 11px;
+}
+
+.hero-actions{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn-primary{
+  justify-content: center;
+  width: 100%;
+  max-width: 440px;
+  background: linear-gradient(135deg, #7b8f6a, #667958);
+  border: 1px solid rgba(0,0,0,0.02);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 15px 20px;
+  border-radius: 16px;
+  box-shadow: 0 12px 26px rgba(102,121,88,0.28);
+  margin-bottom: 0;
+  transition: transform .24s ease, box-shadow .24s ease, background-color .24s ease;
+}
+
+.btn-primary svg{
+  transition: transform .24s ease;
+}
+
+.btn-primary:hover{
+  background: linear-gradient(135deg, #869a75, #6c8060);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(102,121,88,0.30);
+}
+
+.btn-primary:hover svg{
+  transform: translateX(3px);
+}
+
+.btn-outline{
+  justify-content: center;
+  width: 100%;
+  max-width: 360px;
+  background: rgba(255,255,255,0.32);
+  color: #667958;
+  border: 1px solid rgba(123,143,106,0.34);
+  font-size: 13px;
+  padding: 12px 18px;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: transform .24s ease, background-color .24s ease, color .24s ease;
+}
+
+.btn-outline:hover{
+  background: rgba(123,143,106,0.10);
+  transform: translateY(-1px);
+}
+
+/* SOBRE MIM REORGANIZADO */
+.sobre-row{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+}
+
+.sobre-photo-frame{
+  width: min(100%, 290px);
+  padding: 10px;
+  background: rgba(255,255,255,0.34);
+  border-radius: 26px;
+  border: 1px solid rgba(255,255,255,0.42);
+  box-shadow: 0 18px 45px rgba(60,30,10,0.14);
+}
+
+.sobre-row img{
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 20px;
+  box-shadow: none;
+}
+
+.sobre-content{
+  background: rgba(255,255,255,0.34);
+  border: 1px solid rgba(93,67,50,0.08);
+  border-radius: 22px;
+  padding: 22px 18px;
+  box-shadow: 0 10px 30px rgba(60,30,10,0.10);
+}
+
+.sobre-content h3{
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: #b07a7a;
+  margin-bottom: 6px;
+}
+
+.sobre-crp{
+  font-size: 10px;
+  color: #6e5d54;
+  margin-bottom: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: block;
+}
+
+.sobre-content p{
+  font-size: 14px;
+  line-height: 1.8;
+  color: #3b2f2a;
+}
+
+.btn-traj{
+  margin-top: 6px;
+  color: #b07a7a;
+  border: 1px solid rgba(176,122,122,0.34);
+  background: rgba(255,255,255,0.30);
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-size: 13px;
+  text-decoration: none;
+  transition: transform .24s ease, background-color .24s ease;
+}
+
+.btn-traj:hover{
+  background: rgba(176,122,122,0.12);
+  transform: translateY(-1px);
+}
+
+@media (min-width: 700px){
+  .hero{
+    padding: 42px 34px 40px;
+  }
+
+  .hero-actions{
+    align-items: center;
+  }
+
+  .btn-primary,
+  .btn-outline{
+    width: auto;
+  }
+
+  .sobre-row{
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    align-items: center;
+    text-align: left;
+  }
+}
 </style>
   <script>
 function gtag_report_conversion(url) {
@@ -917,7 +1142,6 @@ function gtag_report_conversion(url) {
 
   <div class="card">
 
-    <!-- HERO -->
 <!-- HERO -->
 <div class="hero">
   <div class="hero-shell">
@@ -958,14 +1182,6 @@ function gtag_report_conversion(url) {
         </a>
       </div>
     </div>
-
-    <div class="hero-media">
-      <div class="hero-photo-wrap">
-        <div class="hero-photo-glow"></div>
-        <img src="luiza.webp" alt="Luiza Lima Zehnle" class="hero-photo">
-      </div>
-      <p class="hero-note">Acolhimento em português, com escuta clínica e atenção às travessias de quem vive fora do Brasil.</p>
-    </div>
   </div>
 </div>
 
@@ -982,8 +1198,7 @@ function gtag_report_conversion(url) {
       </ul>
     </div>
 
-    <!-- SOBRE MIM -->
-<!-- SOBRE MIM -->
+ <!-- SOBRE MIM -->
 <div class="section section-alt">
   <h2>Sobre Mim</h2>
   <div class="sobre-row">
