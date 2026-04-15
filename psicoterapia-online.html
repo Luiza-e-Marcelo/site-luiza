@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>Luiza Zehnle | Psicoterapia Online para Adultos | CRP 03/20324</title>
+  <meta name="description" content="Psicoterapia online para adultos com escuta profunda, ética e individualizada. Atendimento psicológico para quem busca compreender melhor seus conflitos, padrões e travessias." />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J84C9ZE889"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-J84C9ZE889');
+    gtag('config', 'AW-18023297873');
+  </script>
+
+  <link rel="icon" type="image/png" href="7.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="bg_1.jpeg" />
+
+  <style>
+    :root{
+      --bg-base:#d7a858;
+      --text-main:#3b2f2a;
+      --text-soft:#6e5d54;
+      --title:#5d4332;
+      --title-alt:#6b4f2c;
+      --accent:#7b8f6a;
+      --accent-dark:#667958;
+      --accent-soft:rgba(123,143,106,0.10);
+      --secondary:#a66767;
+      --secondary-soft:rgba(166,103,103,0.12);
+      --card-bg:rgba(244,235,222,0.76);
+      --card-strong:rgba(249,243,233,0.88);
+      --line:rgba(93,67,50,0.12);
+      --shadow-soft:0 14px 40px rgba(60,30,10,0.10);
+      --shadow-mid:0 22px 60px rgba(60,30,10,0.14);
+      --shadow-strong:0 28px 90px rgba(60,30,10,0.18);
+      --radius-xl:28px;
+      --radius-lg:22px;
+      --radius-md:18px;
+      --container:760px;
+    }
+
+    *, *::before, *::after{ box-sizing:border-box; margin:0; padding:0; }
+    html{ scroll-behavior:smooth; }
+
+    body{
+      font-family:'Manrope', sans-serif;
+      color:var(--text-main);
+      background-color:var(--bg-base);
+      min-height:100vh;
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:'';
+      position:fixed;
+      inset:0;
+      background-image:url('bg_1.jpeg');
+      background-size:cover;
+      background-position:center;
+      opacity:.50;
+      z-index:-2;
+      pointer-events:none;
+    }
+
+    body::after{
+      content:'';
+      position:fixed;
+      inset:0;
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.20), transparent 28%),
+        radial-gradient(circle at left center, rgba(166,103,103,0.10), transparent 24%),
+        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0));
+      z-index:-1;
+      pointer-events:none;
+    }
+
+    img{ max-width:100%; display:block; }
+    a{ color:inherit; }
+
+    .wrap{
+      width:min(100%, var(--container));
+      margin:0 auto;
+      padding:0 20px 92px;
+    }
+
+    .logo-bar{
+      display:flex;
+      justify-content:center;
+      padding:24px 0 14px;
+    }
+
+    .logo-bar img{
+      height:104px;
+      width:auto;
+      object-fit:contain;
+      filter:drop-shadow(0 4px 14px rgba(60,30,10,.18));
+    }
+
+    .card{
+      background:var(--card-bg);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      border:1px solid rgba(255,255,255,.28);
+      border-radius:var(--radius-xl);
+      box-shadow:var(--shadow-strong);
+      overflow:hidden;
+      position:relative;
+      isolation:isolate;
+    }
+
+    .card::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,0));
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .card > *{ position:relative; z-index:1; }
+
+    .section{
+      padding:38px 24px;
+      border-bottom:1px solid var(--line);
+    }
+
+    .section-alt{ background:rgba(255,255,255,.08); }
+
+    .section h2,
+    .cta-final h2{
+      font-family:'Playfair Display', serif;
+      font-size:clamp(28px, 4.5vw, 36px);
+      line-height:1.15;
+      letter-spacing:-.02em;
+      color:var(--title);
+      text-align:center;
+      margin-bottom:14px;
+    }
+
+    .section-intro{
+      max-width:620px;
+      margin:0 auto 28px;
+      font-size:15px;
+      line-height:1.9;
+      color:var(--text-soft);
+      text-align:center;
+    }
+
+    .hero{
+      padding:38px 24px 34px;
+      text-align:center;
+      border-bottom:1px solid var(--line);
+    }
+
+    .hero-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:18px;
+      padding:7px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.38);
+      border:1px solid rgba(123,143,106,.30);
+      color:var(--accent-dark);
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+
+    .hero h1{
+      max-width:13ch;
+      margin:0 auto 18px;
+      font-family:'Playfair Display', serif;
+      font-size:clamp(38px, 7vw, 58px);
+      line-height:1.03;
+      letter-spacing:-.03em;
+      color:var(--title);
+    }
+
+    .hero h1 em{
+      font-style:normal;
+      color:var(--secondary);
+    }
+
+    .hero-desc{
+      max-width:600px;
+      margin:0 auto 22px;
+      font-size:16px;
+      line-height:1.9;
+      color:#6b5a52;
+    }
+
+    .hero-proof{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:8px;
+      margin:0 0 22px;
+    }
+
+    .hero-proof span,
+    .mini-badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      padding:8px 11px;
+      border-radius:999px;
+      background:rgba(255,255,255,.45);
+      border:1px solid rgba(93,67,50,.08);
+      color:var(--title);
+      font-size:11px;
+      font-weight:600;
+    }
+
+    .hero-actions,
+    .cta-actions{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:10px;
+    }
+
+    .hero-note,
+    .cta-note{
+      font-size:12px;
+      color:var(--text-soft);
+      line-height:1.65;
+    }
+
+    .btn-primary,
+    .btn-outline,
+    .btn-wpp,
+    .btn-soft{
+      transition:transform .22s ease, box-shadow .22s ease, background-color .22s ease, border-color .22s ease, color .22s ease;
+    }
+
+    .btn-primary,
+    .btn-wpp{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      width:100%;
+      max-width:440px;
+      padding:15px 22px;
+      border-radius:18px;
+      text-decoration:none;
+      border:1px solid rgba(0,0,0,.03);
+      background:linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color:#fff;
+      font-size:15px;
+      font-weight:700;
+      box-shadow:0 14px 30px rgba(102,121,88,.26);
+      animation:btnPulse 2.8s ease-in-out infinite;
+    }
+
+    .btn-primary:hover,
+    .btn-wpp:hover{
+      transform:translateY(-2px);
+      background:linear-gradient(135deg, #8a9e7a, #6c8060);
+      box-shadow:0 18px 38px rgba(102,121,88,.30);
+      animation:none;
+    }
+
+    .btn-outline,
+    .btn-soft{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:100%;
+      max-width:350px;
+      padding:12px 18px;
+      border-radius:15px;
+      text-decoration:none;
+      font-size:13px;
+      font-weight:700;
+      background:rgba(255,255,255,.32);
+      border:1px solid rgba(123,143,106,.30);
+      color:var(--accent-dark);
+    }
+
+    .btn-outline:hover,
+    .btn-soft:hover{
+      transform:translateY(-1px);
+      background:var(--accent-soft);
+    }
+
+    .cards-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+    }
+
+    .pain-card,
+    .fit-card,
+    .faq-item,
+    .step,
+    .diff-card,
+    .testimonial-card{
+      border-radius:20px;
+      background:rgba(255,255,255,.42);
+      border:1px solid rgba(93,67,50,.10);
+      box-shadow:var(--shadow-soft);
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+    }
+
+    .pain-card,
+    .fit-card,
+    .diff-card{
+      padding:18px;
+    }
+
+    .pain-card{
+      display:grid;
+      grid-template-columns:30px 1fr;
+      gap:14px;
+      align-items:start;
+      transition:transform .22s ease, background .22s ease, border-color .22s ease;
+    }
+
+    .pain-card:hover,
+    .fit-card:hover,
+    .diff-card:hover{
+      transform:translateY(-3px);
+      background:rgba(255,255,255,.72);
+      border-color:rgba(166,103,103,.22);
+    }
+
+    .pain-icon{
+      width:30px;
+      height:30px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:17px;
+      color:var(--secondary);
+      margin-top:2px;
+    }
+
+    .proposal-box{
+      max-width:640px;
+      margin:0 auto;
+      padding:26px 22px;
+      background:linear-gradient(180deg, rgba(255,255,255,.60), rgba(255,255,255,.34));
+      border:1px solid rgba(93,67,50,.10);
+      border-radius:24px;
+      box-shadow:var(--shadow-mid);
+      text-align:center;
+    }
+
+    .proposal-box p{
+      font-size:15px;
+      line-height:1.95;
+      color:var(--text-main);
+      margin-bottom:16px;
+    }
+
+    .proposal-box p:last-child{ margin-bottom:0; }
+
+    .sobre-row{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:18px;
+      text-align:center;
+    }
+
+    .sobre-photo-frame{
+      width:min(100%, 290px);
+      padding:10px;
+      background:rgba(255,255,255,.35);
+      border-radius:26px;
+      border:1px solid rgba(255,255,255,.42);
+      box-shadow:var(--shadow-mid);
+    }
+
+    .sobre-photo-frame img{
+      width:100%;
+      aspect-ratio:4/5;
+      object-fit:cover;
+      object-position:top;
+      border-radius:20px;
+    }
+
+    .sobre-content{
+      background:rgba(255,255,255,.44);
+      border:1px solid rgba(93,67,50,.08);
+      border-radius:24px;
+      padding:28px 22px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .sobre-content h3{
+      font-family:'Playfair Display', serif;
+      font-size:26px;
+      color:var(--secondary);
+      margin-bottom:6px;
+    }
+
+    .sobre-crp{
+      display:block;
+      margin-bottom:14px;
+      font-size:10px;
+      color:var(--text-soft);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .sobre-content p{
+      margin-bottom:16px;
+      font-size:14.8px;
+      line-height:1.9;
+      color:var(--text-main);
+    }
+
+    .sobre-content p:last-of-type{ margin-bottom:0; }
+
+    .sobre-highlight{
+      padding:14px 0 0 14px;
+      border-left:2px solid rgba(166,103,103,.32);
+      font-style:italic;
+      color:var(--title);
+    }
+
+    .fit-grid,
+    .diff-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:12px;
+    }
+
+    .fit-card strong,
+    .diff-card strong{
+      display:block;
+      margin-bottom:6px;
+      color:var(--title);
+      font-size:14.2px;
+    }
+
+    .fit-card span,
+    .diff-card span{
+      font-size:13.5px;
+      line-height:1.8;
+      color:var(--text-soft);
+    }
+
+    .steps{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      max-width:650px;
+      margin:0 auto;
+    }
+
+    .step{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      padding:17px;
+    }
+
+    .step-num{
+      width:34px;
+      height:34px;
+      flex-shrink:0;
+      border-radius:999px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:var(--secondary);
+      color:#fff;
+      font-size:12px;
+      font-weight:700;
+      box-shadow:0 10px 24px rgba(166,103,103,.20);
+    }
+
+    .step strong{
+      display:block;
+      margin-bottom:4px;
+      color:var(--title);
+      font-size:14px;
+    }
+
+    .step span{
+      font-size:13.5px;
+      line-height:1.75;
+      color:var(--text-soft);
+    }
+
+    details{
+      margin-bottom:12px;
+      overflow:hidden;
+    }
+
+    summary{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      padding:17px 18px;
+      list-style:none;
+      cursor:pointer;
+      font-size:14px;
+      font-weight:700;
+      color:var(--title);
+    }
+
+    summary::-webkit-details-marker{ display:none; }
+
+    summary::after{
+      content:'+';
+      font-size:22px;
+      line-height:1;
+      color:var(--secondary);
+      flex-shrink:0;
+      transition:transform .26s ease;
+    }
+
+    details[open] summary::after{ transform:rotate(45deg); }
+
+    .faq-body{
+      padding:0 18px 18px;
+      font-size:13.5px;
+      line-height:1.85;
+      color:var(--text-main);
+    }
+
+    .testimonial-track{ overflow:hidden; }
+    .testimonial-slides{ display:flex; transition:transform .42s cubic-bezier(.4,0,.2,1); }
+
+    .testimonial-card{
+      min-width:100%;
+      position:relative;
+      overflow:hidden;
+      padding:22px 18px;
+      background:rgba(255,255,255,.60);
+    }
+
+    .testimonial-card::before{
+      content:'“';
+      position:absolute;
+      top:8px;
+      right:14px;
+      font-family:'Playfair Display', serif;
+      font-size:54px;
+      line-height:1;
+      color:rgba(166,103,103,.14);
+    }
+
+    .testimonial-stars{
+      display:block;
+      margin-bottom:10px;
+      font-size:14px;
+      letter-spacing:.08em;
+      color:#c5a15a;
+    }
+
+    .testimonial-text{
+      position:relative;
+      z-index:1;
+      margin-bottom:12px;
+      font-size:14px;
+      line-height:1.9;
+      color:var(--text-main);
+      font-style:italic;
+    }
+
+    .testimonial-author{
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      color:var(--title);
+    }
+
+    .carousel-nav{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:14px;
+      margin-top:14px;
+    }
+
+    .carousel-arrow{
+      width:34px;
+      height:34px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      border:1.5px solid rgba(166,103,103,.35);
+      background:rgba(255,255,255,.55);
+      color:var(--secondary);
+      font-size:16px;
+      line-height:1;
+      cursor:pointer;
+      transition:transform .2s ease, background .2s ease;
+    }
+
+    .carousel-arrow:hover{
+      transform:scale(1.08);
+      background:rgba(166,103,103,.10);
+    }
+
+    .carousel-dots{
+      display:flex;
+      justify-content:center;
+      gap:8px;
+      margin-top:16px;
+    }
+
+    .carousel-dot{
+      width:7px;
+      height:7px;
+      border:none;
+      border-radius:50%;
+      background:rgba(166,103,103,.24);
+      cursor:pointer;
+      transition:transform .2s ease, background .2s ease;
+    }
+
+    .carousel-dot.active{
+      background:var(--secondary);
+      transform:scale(1.35);
+    }
+
+    .cta-final{
+      padding:36px 24px;
+      text-align:center;
+      background:linear-gradient(180deg, #654937 0%, #5a4031 100%);
+    }
+
+    .cta-final h2{
+      color:#f1e2cc;
+      margin-bottom:12px;
+    }
+
+    .cta-final p{
+      max-width:560px;
+      margin:0 auto 22px;
+      font-size:14px;
+      line-height:1.8;
+      color:rgba(241,226,204,.78);
+    }
+
+    .cta-safe{
+      display:block;
+      margin-top:12px;
+      font-size:10px;
+      color:rgba(241,226,204,.45);
+      letter-spacing:.04em;
+    }
+
+    .footer{
+      text-align:center;
+      padding:20px;
+      font-size:10px;
+      line-height:1.75;
+      color:rgba(255,255,255,.58);
+    }
+
+    .float-wpp{
+      position:fixed;
+      right:22px;
+      bottom:22px;
+      z-index:50;
+      width:56px;
+      height:56px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      text-decoration:none;
+      color:#fff;
+      background:linear-gradient(135deg, var(--accent), var(--accent-dark));
+      box-shadow:0 12px 30px rgba(60,30,10,.22);
+      animation:btnPulse 2.8s ease-in-out infinite;
+      transition:transform .22s ease, box-shadow .22s ease;
+    }
+
+    .float-wpp:hover{
+      transform:scale(1.06) translateY(-1px);
+      animation:none;
+    }
+
+    @media (max-width: 560px){
+      .section{ padding:30px 20px; }
+      .hero{ padding:34px 20px 30px; }
+      .cta-final{ padding:28px 20px; }
+      .logo-bar img{ height:96px; }
+    }
+
+    @media (min-width:700px){
+      .wrap{ max-width:800px; }
+      .hero{ padding:44px 34px 40px; }
+      .section{ padding:42px 34px; }
+      .btn-primary,
+      .btn-outline,
+      .btn-soft{ width:auto; }
+      .cards-grid,
+      .fit-grid,
+      .diff-grid{ grid-template-columns:1fr 1fr; gap:16px; }
+      .sobre-row{
+        display:grid;
+        grid-template-columns:230px 1fr;
+        align-items:flex-start;
+        gap:28px;
+        text-align:left;
+      }
+      .sobre-content{ padding:30px 26px; }
+    }
+
+    @media (min-width:900px){
+      .hero h1{ font-size:60px; max-width:13ch; }
+      .hero-desc{ font-size:17px; max-width:670px; }
+      .cards-grid{ gap:18px; }
+      .pain-card{ min-height:138px; padding:20px; }
+    }
+
+    @keyframes btnPulse{
+      0%, 100%{ box-shadow:0 6px 18px rgba(74,93,35,.35), 0 0 0 0 rgba(74,93,35,.22); }
+      55%{ box-shadow:0 6px 18px rgba(74,93,35,.35), 0 0 0 12px rgba(74,93,35,0); }
+    }
+  </style>
+
+  <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) !== 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18023297873/vA0QCLuVlo0cENHmlpJD',
+        'event_callback': callback
+      });
+      return false;
+    }
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="logo-bar">
+      <a href="https://www.luizazehnle.com/" aria-label="Ir para o site principal da Luiza Zehnle">
+        <img src="LOGO_LUIZA.png" alt="Luiza Lima Zehnle" fetchpriority="high" />
+      </a>
+    </div>
+
+    <div class="card">
+      <section class="hero">
+        <span class="hero-tag">Psicoterapia online para adultos</span>
+        <h1>Tem momentos em que <em>seguir em frente</em> já não basta.</h1>
+        <p class="hero-desc">
+          Um espaço de escuta profunda para adultos que querem compreender melhor seus conflitos,
+          padrões, relações e travessias — com ética, presença e uma clínica que respeita a singularidade da sua história.
+        </p>
+
+        <div class="hero-proof">
+          <span>Atendimento online</span>
+          <span>Psicoterapia individual</span>
+          <span>8 anos de experiência</span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="https://wa.me/557199983483?utm_source=google&utm_medium=cpc&utm_campaign=psicoterapia_brasil&utm_content=hero&text=Olá,%20Luiza.%20Gostaria%20de%20agendar%20uma%20entrevista%20inicial." onclick="return gtag_report_conversion(this.href)" target="_blank" class="btn-primary" aria-label="Agendar entrevista inicial pelo WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            Agendar entrevista inicial
+          </a>
+          <a href="#como-funciona" class="btn-outline">Entender como funciona</a>
+          <span class="hero-note">Primeiro contato direto pelo WhatsApp, com sigilo e acolhimento.</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Talvez você esteja vivendo algo assim</h2>
+        <p class="section-intro">
+          Nem sempre o sofrimento aparece de forma óbvia. Às vezes ele vem como cansaço, repetição, confusão ou a sensação de estar vivendo longe de si.
+        </p>
+
+        <div class="cards-grid">
+          <article class="pain-card">
+            <span class="pain-icon">◌</span>
+            <p>Você percebe que repete padrões em vínculos, escolhas ou formas de se posicionar, mas não consegue sair disso sozinho.</p>
+          </article>
+          <article class="pain-card">
+            <span class="pain-icon">◌</span>
+            <p>Tem estado sobrecarregado, ansioso ou emocionalmente cansado, como se algo estivesse sempre no limite por dentro.</p>
+          </article>
+          <article class="pain-card">
+            <span class="pain-icon">◌</span>
+            <p>Passou por mudanças, perdas, crises ou transições e sente que ainda não conseguiu elaborar o que está vivendo.</p>
+          </article>
+          <article class="pain-card">
+            <span class="pain-icon">◌</span>
+            <p>Funciona por fora, mas por dentro carrega conflitos, dúvidas, autoexigência ou uma sensação persistente de desalinho.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-alt">
+        <h2>Uma clínica para quem quer ir além do alívio imediato</h2>
+        <div class="proposal-box">
+          <p>
+            A psicoterapia pode ser um espaço para dar nome ao que está confuso, reconhecer movimentos inconscientes,
+            compreender repetições e construir uma relação mais verdadeira com a própria vida.
+          </p>
+          <p>
+            Meu trabalho não se orienta por respostas prontas nem por fórmulas de bem-estar.
+            É um processo ético, cuidadoso e individualizado, voltado à complexidade do que você vive.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Sobre mim</h2>
+        <div class="sobre-row">
+          <div class="sobre-photo-frame">
+            <img src="luiza.webp" alt="Foto de Luiza Lima Zehnle" />
+          </div>
+
+          <div class="sobre-content">
+            <h3>Olá, sou Luiza</h3>
+            <span class="sobre-crp">Psicóloga · CRP 03/20324 · Especialista em Psicoterapia Junguiana</span>
+
+            <p>
+              Sou psicóloga há 8 anos e trabalho com uma escuta clínica que considera a singularidade de cada pessoa,
+              sua história, seus afetos, seus contextos e os sentidos que emergem em suas experiências.
+            </p>
+
+            <p class="sobre-highlight">
+              Acredito numa psicoterapia que não reduza alguém a um sintoma, mas que abra espaço para compreender a complexidade da vida psíquica com profundidade e responsabilidade.
+            </p>
+
+            <p>
+              Minha trajetória inclui experiência clínica, atuação em saúde mental, escolas, contextos culturais e atendimento a mulheres em situação de violência.
+              Esses atravessamentos alimentam uma prática atenta às dimensões subjetivas, sociais e simbólicas do sofrimento.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt">
+        <h2>Para quem este processo pode fazer sentido</h2>
+        <p class="section-intro">
+          Esta psicoterapia costuma fazer mais sentido para adultos que desejam implicação real com o próprio processo — não só uma resposta rápida para apagar incômodos.
+        </p>
+
+        <div class="fit-grid">
+          <article class="fit-card">
+            <strong>Para quem busca profundidade</strong>
+            <span>Pessoas que querem compreender emoções, padrões e conflitos com mais densidade, e não apenas “funcionar melhor”.</span>
+          </article>
+          <article class="fit-card">
+            <strong>Para quem atravessa crises ou transições</strong>
+            <span>Mudanças de vida, términos, lutos, impasses profissionais, conflitos familiares e momentos de reposicionamento subjetivo.</span>
+          </article>
+          <article class="fit-card">
+            <strong>Para quem deseja autoconhecimento com consistência</strong>
+            <span>Sem clichê terapêutico. Com escuta, elaboração e um trabalho construído ao longo do tempo.</span>
+          </article>
+          <article class="fit-card">
+            <strong>Para quem quer um vínculo clínico ético</strong>
+            <span>Um espaço de cuidado com presença, rigor e respeito ao seu ritmo, sem promessas fáceis nem linguagem artificial.</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>O que sustenta meu trabalho</h2>
+        <div class="diff-grid">
+          <article class="diff-card">
+            <strong>Escuta profunda e individualizada</strong>
+            <span>Cada processo é construído a partir da história, da linguagem e dos conflitos específicos de quem chega.</span>
+          </article>
+          <article class="diff-card">
+            <strong>Base junguiana em linguagem viva</strong>
+            <span>Uma clínica que considera inconsciente, simbolismo, narrativas e repetições sem transformar isso em discurso hermético.</span>
+          </article>
+          <article class="diff-card">
+            <strong>Olhar atento ao contexto</strong>
+            <span>A vida psíquica não existe no vácuo. Relações, cultura, gênero e atravessamentos sociais também importam.</span>
+          </article>
+          <article class="diff-card">
+            <strong>Presença sem performance</strong>
+            <span>Sem personagem terapêutica, sem frases prontas, sem um marketing que promete cura em cinco passos. Ainda bem.</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="como-funciona">
+        <h2>Como funciona</h2>
+        <div class="steps">
+          <article class="step">
+            <span class="step-num">1</span>
+            <div>
+              <strong>Você entra em contato</strong>
+              <span>Pelo WhatsApp, para agendar uma entrevista inicial e alinhar as primeiras informações.</span>
+            </div>
+          </article>
+          <article class="step">
+            <span class="step-num">2</span>
+            <div>
+              <strong>Realizamos um primeiro encontro</strong>
+              <span>Esse momento serve para compreender sua busca, conversar sobre o processo e avaliar se esse espaço faz sentido para você.</span>
+            </div>
+          </article>
+          <article class="step">
+            <span class="step-num">3</span>
+            <div>
+              <strong>Definimos os combinados clínicos</strong>
+              <span>Frequência, horário, modalidade e demais acordos necessários para o início do acompanhamento.</span>
+            </div>
+          </article>
+          <article class="step">
+            <span class="step-num">4</span>
+            <div>
+              <strong>As sessões acontecem online</strong>
+              <span>Com duração média de 50 minutos, em um setting ético, sigiloso e reservado exclusivamente para você.</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Perguntas frequentes</h2>
+
+        <details class="faq-item">
+          <summary>O que acontece na entrevista inicial?</summary>
+          <div class="faq-body">
+            A entrevista inicial é um primeiro encontro para nos conhecermos, compreender a sua demanda atual e conversarmos sobre o funcionamento do processo. Também é um momento para você sentir como se percebe nesse espaço antes de decidir iniciar a psicoterapia.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Preciso estar em crise para fazer terapia?</summary>
+          <div class="faq-body">
+            Não. A psicoterapia pode ser importante tanto em momentos de sofrimento intenso quanto em fases de autoconhecimento, transição, impasse ou desejo de compreender melhor a própria vida emocional.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Como funciona a psicoterapia online?</summary>
+          <div class="faq-body">
+            Os atendimentos acontecem por videochamada, com sigilo e enquadre clínico. É importante estar em um local com privacidade e boa conexão, para que o encontro possa acontecer com segurança e presença.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Quanto tempo dura o processo terapêutico?</summary>
+          <div class="faq-body">
+            Não existe uma resposta única. O tempo varia conforme a demanda, o momento de vida e o ritmo de cada pessoa. A psicoterapia é um processo que se constrói ao longo do vínculo e do trabalho clínico.
+          </div>
+        </details>
+      </section>
+
+      <section class="section section-alt">
+        <h2>Depoimentos</h2>
+        <p class="section-intro">Você pode manter aqui o mesmo modelo de depoimentos do seu exterior.html. Já deixei o carrossel pronto para isso.</p>
+
+        <div class="testimonial-track" aria-label="Depoimentos de pacientes">
+          <div class="testimonial-slides" id="testimonialSlides">
+            <article class="testimonial-card">
+              <span class="testimonial-stars">★★★★★</span>
+              <p class="testimonial-text">Seu depoimento entra aqui. Idealmente, use falas curtas, específicas e humanas. Quanto mais concreto, melhor. “Excelente profissional” sozinho converte menos do que você imagina.</p>
+              <span class="testimonial-author">Paciente</span>
+            </article>
+            <article class="testimonial-card">
+              <span class="testimonial-stars">★★★★★</span>
+              <p class="testimonial-text">Outro depoimento aqui. Prefira relatos que mostrem percepção de processo, vínculo, profundidade e mudança real — sem promessas grandiosas.</p>
+              <span class="testimonial-author">Paciente</span>
+            </article>
+            <article class="testimonial-card">
+              <span class="testimonial-stars">★★★★★</span>
+              <p class="testimonial-text">Mais um depoimento aqui. Três a cinco depoimentos bem escolhidos costumam funcionar melhor do que uma coleção de frases genéricas.</p>
+              <span class="testimonial-author">Paciente</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="carousel-nav">
+          <button class="carousel-arrow" id="prevSlide" aria-label="Depoimento anterior">‹</button>
+          <button class="carousel-arrow" id="nextSlide" aria-label="Próximo depoimento">›</button>
+        </div>
+        <div class="carousel-dots" id="carouselDots"></div>
+      </section>
+
+      <section class="cta-final">
+        <h2>Se fizer sentido para você, podemos começar por uma primeira conversa</h2>
+        <p>
+          A entrevista inicial é um espaço para entender sua busca, tirar dúvidas e avaliar se este processo pode ser um bom caminho neste momento da sua vida.
+        </p>
+
+        <div class="cta-actions">
+          <a href="https://wa.me/557199983483?utm_source=google&utm_medium=cpc&utm_campaign=psicoterapia_brasil&utm_content=cta_final&text=Olá,%20Luiza.%20Gostaria%20de%20agendar%20uma%20entrevista%20inicial." onclick="return gtag_report_conversion(this.href)" target="_blank" class="btn-wpp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            Agendar entrevista inicial
+          </a>
+          <span class="cta-note">Atendimento online para adultos.</span>
+          <span class="cta-safe">Psicóloga · CRP 03/20324</span>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer">
+      Luiza Lima Zehnle · Psicóloga · CRP 03/20324<br />
+      Atendimento psicológico online para adultos.
+    </footer>
+  </div>
+
+  <a href="https://wa.me/557199983483?utm_source=google&utm_medium=cpc&utm_campaign=psicoterapia_brasil&utm_content=float&text=Olá,%20Luiza.%20Gostaria%20de%20agendar%20uma%20entrevista%20inicial." onclick="return gtag_report_conversion(this.href)" target="_blank" class="float-wpp" aria-label="Abrir WhatsApp para agendar entrevista inicial">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+  </a>
+
+  <script>
+    const slides = document.getElementById('testimonialSlides');
+    const dotsWrap = document.getElementById('carouselDots');
+    const prev = document.getElementById('prevSlide');
+    const next = document.getElementById('nextSlide');
+
+    if (slides && dotsWrap && prev && next) {
+      const totalSlides = slides.children.length;
+      let currentSlide = 0;
+
+      function renderDots(){
+        dotsWrap.innerHTML = '';
+        for(let i = 0; i < totalSlides; i++){
+          const dot = document.createElement('button');
+          dot.className = 'carousel-dot' + (i === currentSlide ? ' active' : '');
+          dot.setAttribute('aria-label', 'Ir para o depoimento ' + (i + 1));
+          dot.addEventListener('click', () => goToSlide(i));
+          dotsWrap.appendChild(dot);
+        }
+      }
+
+      function goToSlide(index){
+        currentSlide = (index + totalSlides) % totalSlides;
+        slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+        renderDots();
+      }
+
+      prev.addEventListener('click', () => goToSlide(currentSlide - 1));
+      next.addEventListener('click', () => goToSlide(currentSlide + 1));
+
+      renderDots();
+    }
+  </script>
+</body>
+</html>
