@@ -1327,6 +1327,66 @@ summary::after{
   color: #6b4b3e;
   font-size: 1.05em;
 }
+  /* ===== AJUSTE FINO SOBRE MIM ===== */
+
+.sobre-row{
+  align-items: flex-start; /* alinha topo da foto com texto */
+}
+
+.sobre-photo-frame{
+  transform: translateY(4px); /* tira sensação de "flutuar" */
+}
+
+.sobre-content{
+  padding: 26px 22px; /* mais respiro interno */
+}
+
+.sobre-content p{
+  font-size: 14.5px;
+  line-height: 1.85;
+  margin-bottom: 18px;
+}
+
+.sobre-destaque{
+  font-size: 15.2px;
+  line-height: 1.9;
+  color: #5d4332;
+  font-style: italic;
+  padding-left: 12px;
+  border-left: 2px solid rgba(176,122,122,0.35);
+}
+
+/* melhora o botão */
+.btn-traj{
+  margin-top: 10px;
+  padding: 12px 18px;
+  border-radius: 14px;
+  font-size: 13.5px;
+  transition: all 0.25s ease;
+}
+
+.btn-traj:hover{
+  transform: translateY(-2px);
+  background: rgba(176,122,122,0.18);
+}
+
+/* desktop refinado */
+@media (min-width: 700px){
+
+  .sobre-row{
+    grid-template-columns: 230px 1fr; /* diminui levemente a foto */
+    gap: 28px;
+  }
+
+  .sobre-photo-frame{
+    width: 100%;
+  }
+
+  .sobre-content{
+    padding: 28px 26px;
+  }
+
+}
 </style>
   <script>
 function gtag_report_conversion(url) {
