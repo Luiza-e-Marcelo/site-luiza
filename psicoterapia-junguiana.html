@@ -2146,6 +2146,46 @@
    .hero:not(.hero-new){
   display:none !important;
 }
+   /* ===== HERO NOVA — AJUSTE FINAL BRANCO > TRANSPARENTE ===== */
+
+.hero.hero-new{
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,252,249,0.96) 0%,
+      rgba(255,251,248,0.92) 20%,
+      rgba(255,250,246,0.75) 40%,
+      rgba(255,248,244,0.40) 60%,
+      rgba(255,246,241,0.10) 75%,
+      rgba(255,245,240,0.00) 100%
+    ) !important;
+}
+
+.hero.hero-new::before{
+  opacity:.75 !important;
+}
+
+.hero.hero-new::after{
+  content:'' !important;
+  position:absolute !important;
+  inset:0 !important;
+  z-index:1 !important;
+  pointer-events:none !important;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,252,249,0.92) 0%,
+      rgba(255,252,249,0.75) 12%,
+      rgba(255,251,247,0.45) 22%,
+      rgba(255,250,246,0.18) 32%,
+      rgba(255,249,245,0.05) 42%,
+      rgba(255,249,245,0.00) 55%
+    ) !important;
+}
+
+.hero-new-bottom-fade{
+  background:transparent !important;
+}
   </style>
 
   <script>
