@@ -199,29 +199,21 @@
        HERO — layout do Código 1 (centrado, tag verde,
        título com <em>, prova social, botão animado)
     ============================================= */
-   .hero{
-  padding:44px 32px 40px;
-  border-bottom:1px solid var(--line);
-  position:relative;
-  z-index:2;
-}
+    .hero{
+      padding:44px 32px 40px;
+      text-align:center;
+      border-bottom:1px solid var(--line);
+      position:relative;
+      z-index:2;
+    }
 
-.hero-grid{
-  display:grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap:40px;
-  align-items:center;
-}
-
-.hero-content{
-  text-align:left;
-}
-
-.hero-image img{
-  width:100%;
-  border-radius:20px;
-  object-fit:cover;
-}
+    .hero-inner{
+      max-width:620px;
+      margin:0 auto;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
 
     /* tag estilo Código 1 */
     .hero-tag{
@@ -887,129 +879,120 @@
       .about-photo-wrap{max-width:340px}
     }
 
-   @media (max-width: 760px){
-  :root{--nav-offset:96px}
+    @media (max-width: 760px){
+      :root{--nav-offset:96px}
 
-  .site-shell{padding:12px 12px 86px}
-  .hero-shell{padding:12px}
-  .hero-card{border-radius:24px}
+      .site-shell{padding:12px 12px 86px}
+      .hero-shell{padding:12px}
+      .hero-card{border-radius:24px}
 
-  .topbar{
-    padding:18px 18px 8px;
-    align-items:flex-start;
-  }
+      .topbar{
+        padding:18px 18px 8px;
+        align-items:flex-start;
+      }
 
-  .brand-inline img{height:52px}
+      .brand-inline img{height:52px}
 
-  .mobile-menu-btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    min-height:44px;
-    padding:10px 14px;
-    border-radius:999px;
-    border:1px solid rgba(107,81,72,0.10);
-    background:rgba(255,255,255,0.30);
-    color:var(--brown);
-    font-size:14px;
-    font-weight:700;
-    backdrop-filter:blur(8px);
-    -webkit-backdrop-filter:blur(8px);
-  }
+      .mobile-menu-btn{
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        min-height:44px;
+        padding:10px 14px;
+        border-radius:999px;
+        border:1px solid rgba(107,81,72,0.10);
+        background:rgba(255,255,255,0.30);
+        color:var(--brown);
+        font-size:14px;
+        font-weight:700;
+        backdrop-filter:blur(8px);
+        -webkit-backdrop-filter:blur(8px);
+      }
 
-  .nav{
-    position:relative;
-    flex-direction:column;
-    align-items:flex-end;
-  }
+      .nav{
+        position:relative;
+        flex-direction:column;
+        align-items:flex-end;
+      }
 
-  .nav-links{
-    position:absolute;
-    top:calc(100% + 10px);
-    right:0;
-    display:none;
-    min-width:220px;
-    flex-direction:column;
-    gap:6px;
-    padding:10px;
-    border-radius:18px;
-    background:rgba(255,250,246,0.78);
-    border:1px solid rgba(255,255,255,0.34);
-    box-shadow:var(--shadow-soft);
-    backdrop-filter:blur(14px);
-    -webkit-backdrop-filter:blur(14px);
-  }
+      .nav-links{
+        position:absolute;
+        top:calc(100% + 10px);
+        right:0;
+        display:none;
+        min-width:220px;
+        flex-direction:column;
+        gap:6px;
+        padding:10px;
+        border-radius:18px;
+        background:rgba(255,250,246,0.78);
+        border:1px solid rgba(255,255,255,0.34);
+        box-shadow:var(--shadow-soft);
+        backdrop-filter:blur(14px);
+        -webkit-backdrop-filter:blur(14px);
+      }
 
-  .nav-links.is-open{display:flex}
+      .nav-links.is-open{display:flex}
+      .nav-links a,
+      .nav-links button{
+        width:100%;
+        text-align:left;
+        min-height:44px;
+        padding:10px 12px;
+      }
 
-  .nav-links a,
-  .nav-links button{
-    width:100%;
-    text-align:left;
-    min-height:44px;
-    padding:10px 12px;
-  }
+      .hero{
+        padding:28px 20px 30px;
+      }
 
-  .hero{
-    padding:28px 20px 30px;
-  }
+      .hero h1{
+        font-size:clamp(2.4rem, 11vw, 3.2rem);
+      }
 
-  .hero h1{
-    font-size:clamp(2.4rem, 11vw, 3.2rem);
-  }
+      .hero-desc{font-size:15.5px}
 
-  .hero-desc{font-size:15.5px}
+      .btn-hero-primary,
+      .btn-hero-secondary{
+        max-width:none;
+        width:100%;
+      }
 
-  .btn-hero-primary,
-  .btn-hero-secondary{
-    max-width:none;
-    width:100%;
-  }
+      .section,
+      .cta-final,
+      .detail-inner{
+        padding-left:20px;
+        padding-right:20px;
+      }
 
-  .section,
-  .cta-final,
-  .detail-inner{
-    padding-left:20px;
-    padding-right:20px;
-  }
+      .section{
+        padding-top:54px;
+        padding-bottom:54px;
+      }
 
-  .section{
-    padding-top:54px;
-    padding-bottom:54px;
-  }
+      .section-title{font-size:clamp(2rem, 9vw, 2.7rem)}
+      .faq-trigger{font-size:24px}
+      .bio-title{font-size:38px}
 
-  .section-title{font-size:clamp(2rem, 9vw, 2.7rem)}
-  .faq-trigger{font-size:24px}
-  .bio-title{font-size:38px}
+      .about-badge{
+        width:84px;
+        height:84px;
+        top:-10px;
+        right:-10px;
+      }
 
-  .about-badge{
-    width:84px;
-    height:84px;
-    top:-10px;
-    right:-10px;
-  }
+      .cta-final{
+        padding-top:68px;
+        padding-bottom:68px;
+      }
 
-  .cta-final{
-    padding-top:68px;
-    padding-bottom:68px;
-  }
-
-  .float-wpp{
-    right:14px;
-    bottom:14px;
-    width:52px;
-    height:52px;
-  }
-
-  /* HERO GRID MOBILE */
-  .hero-grid{
-    grid-template-columns:1fr;
-  }
-
-  .hero-content{
-    text-align:left;
-  }
-}  </style>
+      .float-wpp{
+        right:14px;
+        bottom:14px;
+        width:52px;
+        height:52px;
+      }
+    }
+  </style>
 
   <script>
     function gtag_report_conversion(url) {
@@ -1056,46 +1039,43 @@
 
           <!-- HERO (conteúdo do Código 1) -->
           <div class="hero">
-  <div class="hero-grid">
+            <div class="hero-inner">
+              <span class="hero-tag">Psicoterapia Junguiana Profunda online</span>
 
-    <!-- TEXTO -->
-    <div class="hero-content">
-      <span class="hero-tag">Psicoterapia Junguiana Profunda online</span>
+              <h1>Estar mais perto de si é um caminho que <em>faz sentido</em></h1>
 
-      <h1>Estar mais perto de si é um caminho que <em>faz sentido</em></h1>
+              <p class="hero-desc">
+                A psicoterapia pode ser um espaço de escuta profunda para olhar com mais calma para aquilo que se repete, pesa, confunde ou pede <strong>elaboração.</strong>
+              </p>
 
-      <p class="hero-desc">
-        A psicoterapia pode ser um espaço de escuta profunda para olhar com mais calma para aquilo que se repete, pesa, confunde ou pede <strong>elaboração.</strong>
-      </p>
+              <div class="hero-proof">
+                <span>CRP 03/20324</span>
+                <span>8 anos de experiência</span>
+                <span>Atendimento online e presencial</span>
+              </div>
 
-      <div class="hero-proof">
-        <span>CRP 03/20324</span>
-        <span>8 anos de experiência</span>
-        <span>Atendimento online e presencial</span>
-      </div>
+              <div class="hero-actions">
+                <a class="btn-hero-primary"
+                   href="https://wa.me/557199983483?utm_source=google&utm_medium=cpc&utm_campaign=psicoterapia_brasil&utm_content=hero&text=Olá,%20Luiza.%20Gostaria%20de%20agendar%20uma%20primeira%20conversa."
+                   onclick="return gtag_report_conversion(this.href)"
+                   target="_blank"
+                   rel="noopener">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                  </svg>
+                  Agendar conversa inicial
+                </a>
 
-      <div class="hero-actions">
-        <a class="btn-hero-primary"
-           href="https://wa.me/557199983483?text=Olá,%20Luiza.%20Gostaria%20de%20agendar%20uma%20primeira%20conversa."
-           target="_blank">
-          Agendar conversa inicial
-        </a>
+                <a class="btn-hero-secondary"
+                   href="#sobre-resumo"
+                   onclick="showHomeAndScroll('sobre-resumo'); return false;">
+                  Conhecer mais sobre meu trabalho
+                </a>
+              </div>
+            </div>
+          </div>
 
-        <a class="btn-hero-secondary"
-           href="#sobre-resumo"
-           onclick="showHomeAndScroll('sobre-resumo'); return false;">
-          Conhecer mais sobre meu trabalho
-        </a>
-      </div>
-    </div>
-
-    <!-- IMAGEM -->
-    <div class="hero-image">
-      <img src="luiza-atendendo.webp" alt="Luiza atendendo paciente">
-    </div>
-
-  </div>
-</div>
+        </div><!-- /hero-card -->
       </section>
 
       <!-- ==========================================
