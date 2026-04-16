@@ -24,7 +24,7 @@
 
   <style>
     /* =============================================
-       VARIÁVEIS GLOBAIS (Código 2, paleta principal)
+       VARIÁVEIS GLOBAIS
     ============================================= */
     :root{
       --bg:#d7a858;
@@ -40,7 +40,6 @@
       --brown:#7a6152;
       --button:#c7ab95;
       --button-hover:#bb9d86;
-      /* variáveis do Código 1 também disponíveis */
       --accent:#7b8f6a;
       --accent-dark:#667958;
       --accent-soft:rgba(123,143,106,0.10);
@@ -94,7 +93,7 @@
     button{font:inherit}
 
     /* =============================================
-       SHELL / LAYOUT EXTERNO (Código 2)
+       SHELL / LAYOUT EXTERNO
     ============================================= */
     .site-shell{
       width:min(100%, var(--max));
@@ -119,7 +118,7 @@
     .main-card.is-hidden{display:none}
 
     /* =============================================
-       HERO SHELL (do Código 2 — wrapper com padding)
+       HERO SHELL
     ============================================= */
     .hero-shell{
       padding:24px;
@@ -133,30 +132,34 @@
       box-shadow:var(--shadow-mid);
       backdrop-filter:blur(12px);
       -webkit-backdrop-filter:blur(12px);
-      overflow:hidden;
+      /* REMOVIDO overflow:hidden — estava cortando o dropdown do menu */
+      overflow:visible;
     }
 
     .hero-card::before{
       content:'';
       position:absolute;
       inset:0;
+      border-radius:30px; /* repete o radius para o pseudo-elemento */
       background:
         radial-gradient(circle at 16% 18%, rgba(255,255,255,0.38), transparent 28%),
         radial-gradient(circle at 82% 82%, rgba(150,112,95,0.10), transparent 22%);
       pointer-events:none;
+      overflow:hidden;
     }
 
     /* =============================================
-       TOPBAR / NAV (Código 2)
+       TOPBAR / NAV
+       — menu sempre como botão (desktop e mobile)
     ============================================= */
     .topbar{
       display:flex;
       align-items:center;
-      justify-content:space-between;
+      justify-content:flex-end;
       gap:20px;
       padding:26px 32px 12px;
       position:relative;
-      z-index:2;
+      z-index:200; /* alto o suficiente para o dropdown ficar sobre o hero */
     }
 
     .brand-inline img{
@@ -170,41 +173,119 @@
       align-items:center;
       gap:6px;
       flex-wrap:wrap;
+      position:relative; /* ancora o dropdown */
     }
 
-    .nav a,
-    .nav button{
+    /* ── Botão "Menu" — sempre visível em todos os breakpoints ── */
+    .mobile-menu-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-height:44px;
+      padding:10px 18px;
+      border-radius:999px;
+      border:1px solid rgba(107,81,72,0.16);
+      background:rgba(255,255,255,0.38);
+      color:var(--brown);
+      font-size:14px;
+      font-weight:700;
+      cursor:pointer;
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+      transition:background .22s ease, transform .22s ease;
+      position:relative;
+      z-index:201;
+    }
+
+    .mobile-menu-btn:hover{
+      background:rgba(255,255,255,0.58);
+      transform:translateY(-1px);
+    }
+
+    /* Ícone hambúrguer / X */
+    .menu-icon{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:4px;
+      width:16px;
+    }
+
+    .menu-icon span{
+      display:block;
+      height:1.5px;
+      background:var(--brown);
+      border-radius:2px;
+      transition:transform .24s ease, opacity .24s ease;
+      transform-origin:center;
+    }
+
+    /* Estado aberto: transforma em X */
+    .mobile-menu-btn.is-open .menu-icon span:nth-child(1){
+      transform:translateY(5.5px) rotate(45deg);
+    }
+    .mobile-menu-btn.is-open .menu-icon span:nth-child(2){
+      opacity:0;
+    }
+    .mobile-menu-btn.is-open .menu-icon span:nth-child(3){
+      transform:translateY(-5.5px) rotate(-45deg);
+    }
+
+    /* ── Dropdown de links — oculto por padrão em todos os breakpoints ── */
+    .nav-links{
+      position:absolute;
+      top:calc(100% + 10px);
+      right:0;
+      display:none;
+      min-width:220px;
+      flex-direction:column;
+      gap:4px;
+      padding:10px;
+      border-radius:18px;
+      background:rgba(255,250,246,0.92);
+      border:1px solid rgba(255,255,255,0.50);
+      box-shadow:var(--shadow-mid);
+      backdrop-filter:blur(20px);
+      -webkit-backdrop-filter:blur(20px);
+      z-index:300; /* sobre todo o conteúdo hero */
+    }
+
+    .nav-links.is-open{
+      display:flex;
+    }
+
+    .nav-links a,
+    .nav-links button{
       border:none;
       background:transparent;
       color:rgba(73,55,47,0.82);
       font-size:15px;
       font-weight:500;
-      padding:10px 14px;
-      border-radius:999px;
+      padding:11px 16px;
+      border-radius:12px;
       cursor:pointer;
-      transition:background .22s ease, color .22s ease, transform .22s ease;
+      transition:background .18s ease, color .18s ease;
+      text-align:left;
+      width:100%;
     }
 
-    .nav a:hover,
-    .nav button:hover,
-    .nav .is-active{
-      background:rgba(255,255,255,0.34);
+    .nav-links a:hover,
+    .nav-links button:hover,
+    .nav-links .is-active{
+      background:rgba(122,97,82,0.10);
       color:var(--title);
-      transform:translateY(-1px);
     }
-
-    .mobile-menu-btn{display:none}
 
     /* =============================================
-       HERO — layout do Código 1 (centrado, tag verde,
-       título com <em>, prova social, botão animado)
+       HERO — layout centrado
     ============================================= */
     .hero{
       padding:44px 32px 40px;
       text-align:center;
       border-bottom:1px solid var(--line);
       position:relative;
-      z-index:2;
+      z-index:1; /* abaixo do topbar/nav */
     }
 
     .hero-inner{
@@ -215,7 +296,6 @@
       align-items:center;
     }
 
-    /* tag estilo Código 1 */
     .hero-tag{
       display:inline-block;
       margin-bottom:20px;
@@ -232,7 +312,6 @@
       -webkit-backdrop-filter:blur(6px);
     }
 
-    /* título com <em> do Código 1 */
     .hero h1{
       font-family:'Playfair Display',serif;
       font-size:clamp(2.6rem, 5.5vw, 4.4rem);
@@ -258,7 +337,6 @@
       margin-bottom:28px;
     }
 
-    /* prova social — estilo Código 1 mas com cores do Código 2 */
     .hero-proof{
       display:flex;
       flex-wrap:wrap;
@@ -282,7 +360,6 @@
       -webkit-backdrop-filter:blur(6px);
     }
 
-    /* botões hero — do Código 1, adaptados à paleta do Código 2 */
     .hero-actions{
       display:flex;
       flex-direction:column;
@@ -361,7 +438,7 @@
     }
 
     /* =============================================
-       RESTANTE DO SITE — Código 2 intacto
+       RESTANTE DO SITE
     ============================================= */
     .section{
       padding:78px 44px;
@@ -866,6 +943,33 @@
     }
 
     /* =============================================
+       LOGO — posição e cor marrom
+    ============================================= */
+    .hero-card{
+      position:relative;
+    }
+
+    .topbar{
+      justify-content:flex-end;
+    }
+
+    .hero-logo{
+      position:absolute;
+      top:20px;
+      left:50%;
+      transform:translateX(-50%);
+      z-index:3;
+    }
+
+    .hero-logo img{
+      height:90px;
+      width:auto;
+      object-fit:contain;
+      /* Cor marrom — converte a logo para o tom --title (#6b5148) */
+      filter: brightness(0) saturate(100%) invert(33%) sepia(18%) saturate(580%) hue-rotate(330deg) brightness(88%) contrast(92%);
+    }
+
+    /* =============================================
        RESPONSIVO
     ============================================= */
     @media (max-width: 1020px){
@@ -888,58 +992,10 @@
 
       .topbar{
         padding:18px 18px 8px;
-        align-items:flex-start;
-      }
-
-      .brand-inline img{height:52px}
-
-      .mobile-menu-btn{
-        display:inline-flex;
         align-items:center;
-        justify-content:center;
-        min-height:44px;
-        padding:10px 14px;
-        border-radius:999px;
-        border:1px solid rgba(107,81,72,0.10);
-        background:rgba(255,255,255,0.30);
-        color:var(--brown);
-        font-size:14px;
-        font-weight:700;
-        backdrop-filter:blur(8px);
-        -webkit-backdrop-filter:blur(8px);
       }
 
-      .nav{
-        position:relative;
-        flex-direction:column;
-        align-items:flex-end;
-      }
-
-      .nav-links{
-        position:absolute;
-        top:calc(100% + 10px);
-        right:0;
-        display:none;
-        min-width:220px;
-        flex-direction:column;
-        gap:6px;
-        padding:10px;
-        border-radius:18px;
-        background:rgba(255,250,246,0.78);
-        border:1px solid rgba(255,255,255,0.34);
-        box-shadow:var(--shadow-soft);
-        backdrop-filter:blur(14px);
-        -webkit-backdrop-filter:blur(14px);
-      }
-
-      .nav-links.is-open{display:flex}
-      .nav-links a,
-      .nav-links button{
-        width:100%;
-        text-align:left;
-        min-height:44px;
-        padding:10px 12px;
-      }
+      .hero-logo img{height:70px}
 
       .hero{
         padding:28px 20px 30px;
@@ -992,31 +1048,6 @@
         height:52px;
       }
     }
-    .hero-card{
-  position:relative;
-}
-
-.topbar{
-  justify-content:flex-end;
-}
-
-.hero-logo{
-  position:absolute;
-  top:20px;
-  left:50%;
-  transform:translateX(-50%);
-  z-index:3;
-}
-
-.hero-logo img{
-  height:90px;
-  width:auto;
-  object-fit:contain;
-}
-.hero-logo-out img{
-  height:110px;
-  filter: brightness(0) saturate(100%) invert(32%) sepia(18%) saturate(600%) hue-rotate(340deg) brightness(90%) contrast(90%);
-}
   </style>
 
   <script>
@@ -1038,32 +1069,42 @@
   <div class="site-shell">
     <main id="home-view" class="main-card is-visible">
 
-      <!-- ==========================================
-           HERO SHELL + CARD (estrutura do Código 2)
-           com conteúdo da HERO do Código 1
-      =========================================== -->
       <section class="hero-shell" id="hero">
         <div class="hero-card">
 
-          <!-- NAV (Código 2) -->
-         <div class="topbar">
-  <div class="hero-logo">
-    <img src="LOGO_LUIZA.png" alt="Luiza Zehnle" />
-  </div>
+          <!-- LOGO CENTRALIZADA -->
+          <div class="hero-logo">
+            <img src="LOGO_LUIZA.png" alt="Luiza Zehnle" />
+          </div>
 
-  <nav class="nav">
-    <button class="mobile-menu-btn" onclick="toggleMobileMenu()">Menu</button>
-    <div class="nav-links" id="navLinks">
-      <button class="is-active" onclick="showHomeAndScroll('hero')">Início</button>
-      <a href="#abordagem" onclick="showHomeAndScroll('abordagem'); return false;">Abordagem</a>
-      <a href="#sobre-resumo" onclick="showHomeAndScroll('sobre-resumo'); return false;">Sobre Mim</a>
-      <a href="#faq" onclick="showHomeAndScroll('faq'); return false;">FAQ</a>
-      <a href="#contato" onclick="showHomeAndScroll('contato'); return false;">Contato</a>
-    </div>
-  </nav>
-</div>
+          <!-- TOPBAR com botão de menu -->
+          <div class="topbar">
+            <nav class="nav">
+              <button
+                class="mobile-menu-btn"
+                id="menuBtn"
+                onclick="toggleMobileMenu()"
+                aria-expanded="false"
+                aria-label="Abrir menu de navegação">
+                <div class="menu-icon" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                Menu
+              </button>
 
-          <!-- HERO (conteúdo do Código 1) -->
+              <div class="nav-links" id="navLinks" role="menu">
+                <button class="is-active" onclick="showHomeAndScroll('hero')" role="menuitem">Início</button>
+                <a href="#abordagem" onclick="showHomeAndScroll('abordagem'); return false;" role="menuitem">Abordagem</a>
+                <a href="#sobre-resumo" onclick="showHomeAndScroll('sobre-resumo'); return false;" role="menuitem">Sobre Mim</a>
+                <a href="#faq" onclick="showHomeAndScroll('faq'); return false;" role="menuitem">FAQ</a>
+                <a href="#contato" onclick="showHomeAndScroll('contato'); return false;" role="menuitem">Contato</a>
+              </div>
+            </nav>
+          </div>
+
+          <!-- HERO -->
           <div class="hero">
             <div class="hero-inner">
               <span class="hero-tag">Psicoterapia Junguiana Profunda online</span>
@@ -1104,9 +1145,7 @@
         </div><!-- /hero-card -->
       </section>
 
-      <!-- ==========================================
-           RESTANTE DO SITE — Código 2 intacto
-      =========================================== -->
+      <!-- RESTANTE DO SITE -->
       <section class="section" id="reconhece">
         <div class="section-head">
           <span class="eyebrow">Você se reconhece aqui?</span>
@@ -1319,14 +1358,33 @@
     const homeView = document.getElementById('home-view');
     const bioView  = document.getElementById('bio-view');
     const navLinks = document.getElementById('navLinks');
+    const menuBtn  = document.getElementById('menuBtn');
 
     function closeMobileMenu(){
       if(navLinks) navLinks.classList.remove('is-open');
+      if(menuBtn)  menuBtn.classList.remove('is-open');
+      if(menuBtn)  menuBtn.setAttribute('aria-expanded', 'false');
     }
 
     function toggleMobileMenu(){
-      if(navLinks) navLinks.classList.toggle('is-open');
+      const isOpen = navLinks.classList.toggle('is-open');
+      menuBtn.classList.toggle('is-open', isOpen);
+      menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     }
+
+    // Fecha o menu ao clicar fora dele
+    document.addEventListener('click', function(e){
+      if(navLinks && menuBtn){
+        if(!navLinks.contains(e.target) && !menuBtn.contains(e.target)){
+          closeMobileMenu();
+        }
+      }
+    });
+
+    // Fecha com Escape
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') closeMobileMenu();
+    });
 
     function showHome(){
       homeView.classList.remove('is-hidden');
