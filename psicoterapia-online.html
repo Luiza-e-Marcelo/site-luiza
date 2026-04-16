@@ -19,10 +19,13 @@
   <link rel="icon" type="image/png" href="7.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="bg_1.jpeg" />
 
   <style>
+    /* =============================================
+       VARIÁVEIS GLOBAIS (Código 2, paleta principal)
+    ============================================= */
     :root{
       --bg:#d7a858;
       --ink:#49372f;
@@ -37,6 +40,11 @@
       --brown:#7a6152;
       --button:#c7ab95;
       --button-hover:#bb9d86;
+      /* variáveis do Código 1 também disponíveis */
+      --accent:#7b8f6a;
+      --accent-dark:#667958;
+      --accent-soft:rgba(123,143,106,0.10);
+      --secondary:#b07a7a;
       --shadow-soft:0 16px 40px rgba(65,34,16,0.10);
       --shadow-mid:0 24px 70px rgba(65,34,16,0.13);
       --shadow-strong:0 30px 110px rgba(65,34,16,0.15);
@@ -85,6 +93,9 @@
     a{text-decoration:none;color:inherit}
     button{font:inherit}
 
+    /* =============================================
+       SHELL / LAYOUT EXTERNO (Código 2)
+    ============================================= */
     .site-shell{
       width:min(100%, var(--max));
       margin:0 auto;
@@ -107,6 +118,9 @@
     .main-card.is-visible{display:block}
     .main-card.is-hidden{display:none}
 
+    /* =============================================
+       HERO SHELL (do Código 2 — wrapper com padding)
+    ============================================= */
     .hero-shell{
       padding:24px;
     }
@@ -132,6 +146,9 @@
       pointer-events:none;
     }
 
+    /* =============================================
+       TOPBAR / NAV (Código 2)
+    ============================================= */
     .topbar{
       display:flex;
       align-items:center;
@@ -178,22 +195,184 @@
 
     .mobile-menu-btn{display:none}
 
-   .hero{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 34px 32px 32px;
-  min-height: 630px;
-  position: relative;
-  z-index: 2;
-}
+    /* =============================================
+       HERO — layout do Código 1 (centrado, tag verde,
+       título com <em>, prova social, botão animado)
+    ============================================= */
+    .hero{
+      padding:44px 32px 40px;
+      text-align:center;
+      border-bottom:1px solid var(--line);
+      position:relative;
+      z-index:2;
+    }
 
-    .hero-copy{
-  max-width: 720px;
-  width: 100%;
-  text-align: center;
-  margin: 0 auto;
-}
+    .hero-inner{
+      max-width:620px;
+      margin:0 auto;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+
+    /* tag estilo Código 1 */
+    .hero-tag{
+      display:inline-block;
+      margin-bottom:20px;
+      padding:7px 16px;
+      border-radius:999px;
+      font-size:10.5px;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--accent-dark);
+      border:1px solid rgba(123,143,106,0.38);
+      background:rgba(255,255,255,0.40);
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+    }
+
+    /* título com <em> do Código 1 */
+    .hero h1{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(2.6rem, 5.5vw, 4.4rem);
+      line-height:1.06;
+      letter-spacing:-.03em;
+      color:var(--title);
+      font-weight:500;
+      margin-bottom:22px;
+      max-width:13ch;
+    }
+
+    .hero h1 em{
+      color:var(--secondary);
+      font-style:italic;
+    }
+
+    .hero-desc{
+      font-size:17px;
+      line-height:1.85;
+      color:var(--ink-soft);
+      font-weight:300;
+      max-width:38ch;
+      margin-bottom:28px;
+    }
+
+    /* prova social — estilo Código 1 mas com cores do Código 2 */
+    .hero-proof{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:8px;
+      margin-bottom:28px;
+    }
+
+    .hero-proof span{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:7px 13px;
+      border-radius:999px;
+      font-size:11.5px;
+      font-weight:600;
+      color:var(--brown);
+      background:rgba(255,255,255,0.42);
+      border:1px solid rgba(93,67,50,0.10);
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+    }
+
+    /* botões hero — do Código 1, adaptados à paleta do Código 2 */
+    .hero-actions{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:12px;
+      width:100%;
+    }
+
+    .btn-hero-primary{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      width:100%;
+      max-width:420px;
+      padding:15px 24px;
+      border-radius:16px;
+      font-size:15px;
+      font-weight:700;
+      color:#fff;
+      background:linear-gradient(135deg, var(--accent), var(--accent-dark));
+      border:none;
+      cursor:pointer;
+      box-shadow:0 12px 28px rgba(102,121,88,0.30);
+      animation:heroPulse 2.8s ease-in-out infinite;
+      transition:transform .24s ease, box-shadow .24s ease, background .24s ease;
+      text-decoration:none;
+    }
+
+    .btn-hero-primary svg{
+      transition:transform .24s ease;
+      flex-shrink:0;
+    }
+
+    .btn-hero-primary:hover{
+      background:linear-gradient(135deg, #869a75, #6c8060);
+      transform:translateY(-2px);
+      box-shadow:0 16px 36px rgba(102,121,88,0.32);
+      animation:none;
+    }
+
+    .btn-hero-primary:hover svg{
+      transform:translateX(3px);
+    }
+
+    .btn-hero-secondary{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      width:100%;
+      max-width:340px;
+      padding:12px 18px;
+      border-radius:14px;
+      font-size:13.5px;
+      font-weight:600;
+      color:var(--brown);
+      background:rgba(255,255,255,0.32);
+      border:1px solid rgba(107,81,72,0.20);
+      cursor:pointer;
+      text-decoration:none;
+      transition:background .24s ease, transform .24s ease, border-color .24s ease;
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+    }
+
+    .btn-hero-secondary:hover{
+      background:rgba(255,255,255,0.52);
+      border-color:rgba(107,81,72,0.30);
+      transform:translateY(-1px);
+    }
+
+    @keyframes heroPulse{
+      0%,100%{box-shadow:0 12px 28px rgba(102,121,88,0.30), 0 0 0 0 rgba(102,121,88,0.20)}
+      55%{box-shadow:0 12px 28px rgba(102,121,88,0.30), 0 0 0 13px rgba(102,121,88,0)}
+    }
+
+    /* =============================================
+       RESTANTE DO SITE — Código 2 intacto
+    ============================================= */
+    .section{
+      padding:78px 44px;
+      border-top:1px solid var(--line);
+      scroll-margin-top:var(--nav-offset);
+    }
+
+    .section-head{
+      max-width:760px;
+      margin-bottom:34px;
+    }
 
     .eyebrow{
       display:inline-block;
@@ -205,7 +384,6 @@
       text-transform:uppercase;
     }
 
-    .hero h1,
     .section-title,
     .bio-title,
     .cta-final h2,
@@ -214,130 +392,6 @@
       color:var(--title);
       letter-spacing:-.03em;
       font-weight:500;
-    }
-
-    .hero h1{
-      font-size:clamp(3rem, 5.6vw, 5rem);
-      line-height:1.03;
-      max-width:8ch;
-      margin-bottom:26px;
-    }
-
-    .hero p{
-      font-size:18px;
-      line-height:1.9;
-      color:var(--ink-soft);
-      max-width:34ch;
-      font-weight:300;
-      margin-bottom:30px;
-    }
-
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      align-items:center;
-      margin-bottom:34px;
-    }
-
-    .btn-primary,
-    .btn-secondary,
-    .btn-ghost,
-    .contact-btn,
-    .float-wpp{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      border:none;
-      cursor:pointer;
-      transition:transform .24s ease, box-shadow .24s ease, background .24s ease, color .24s ease, border-color .24s ease;
-    }
-
-    .btn-primary{
-      min-height:52px;
-      padding:14px 24px;
-      background:var(--button);
-      color:#fff;
-      border-radius:16px;
-      font-size:15px;
-      font-weight:700;
-      box-shadow:0 14px 34px rgba(133,101,79,0.18);
-    }
-
-    .btn-primary:hover{
-      background:var(--button-hover);
-      transform:translateY(-2px);
-      box-shadow:0 18px 38px rgba(133,101,79,0.20);
-    }
-
-    .btn-secondary{
-      min-height:50px;
-      padding:12px 0;
-      background:transparent;
-      color:var(--brown);
-      font-size:15px;
-      font-weight:700;
-      border-bottom:1px solid rgba(122,97,82,0.24);
-      border-radius:0;
-    }
-
-    .btn-secondary:hover{
-      color:var(--title);
-      border-color:rgba(107,81,72,0.38);
-    }
-
-    .hero-trust{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-
-    .hero-trust span{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:8px 12px;
-      border-radius:999px;
-      background:rgba(255,255,255,0.28);
-      border:1px solid rgba(255,255,255,0.28);
-      color:var(--brown);
-      font-size:12px;
-      font-weight:700;
-      backdrop-filter:blur(6px);
-      -webkit-backdrop-filter:blur(6px);
-    }
-
-    .hero-media{
-      align-self:end;
-      justify-self:end;
-      width:min(100%, 470px);
-    }
-
-    .hero-frame{
-      border-radius:28px 28px 0 0;
-      overflow:hidden;
-      background:rgba(255,255,255,0.24);
-      box-shadow:var(--shadow-mid);
-      border:1px solid rgba(255,255,255,0.30);
-    }
-
-    .hero-frame img{
-      width:100%;
-      aspect-ratio:4/4.9;
-      object-fit:cover;
-      object-position:center;
-    }
-
-    .section{
-      padding:78px 44px;
-      border-top:1px solid var(--line);
-      scroll-margin-top:var(--nav-offset);
-    }
-
-    .section-head{
-      max-width:760px;
-      margin-bottom:34px;
     }
 
     .section-title{
@@ -537,6 +591,34 @@
       margin-top:24px;
     }
 
+    .btn-primary,
+    .btn-ghost{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      border:none;
+      cursor:pointer;
+      transition:transform .24s ease, box-shadow .24s ease, background .24s ease, color .24s ease, border-color .24s ease;
+    }
+
+    .btn-primary{
+      min-height:52px;
+      padding:14px 24px;
+      background:var(--button);
+      color:#fff;
+      border-radius:16px;
+      font-size:15px;
+      font-weight:700;
+      box-shadow:0 14px 34px rgba(133,101,79,0.18);
+    }
+
+    .btn-primary:hover{
+      background:var(--button-hover);
+      transform:translateY(-2px);
+      box-shadow:0 18px 38px rgba(133,101,79,0.20);
+    }
+
     .btn-ghost{
       min-height:52px;
       padding:14px 18px;
@@ -691,6 +773,9 @@
     }
 
     .contact-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
       width:100%;
       min-height:50px;
       padding:14px 16px;
@@ -698,8 +783,11 @@
       font-weight:700;
       font-size:14px;
       border-radius:16px;
+      text-decoration:none;
+      transition:transform .24s ease, opacity .24s ease;
     }
 
+    .contact-btn:hover{opacity:.88;transform:translateY(-1px)}
     .contact-btn.whatsapp{background:#25D366}
     .contact-btn.linkedin{background:#0a66c2}
     .contact-btn.google{background:#fff;color:#5b4b40;border:1px solid rgba(107,79,44,0.12)}
@@ -756,10 +844,15 @@
       width:58px;
       height:58px;
       border-radius:50%;
-      background:linear-gradient(135deg, #7b8f6a, #667958);
+      background:linear-gradient(135deg, var(--accent), var(--accent-dark));
       color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
       box-shadow:0 12px 30px rgba(60,30,10,.22);
       animation:wppPulse 2.8s ease-in-out infinite;
+      transition:transform .2s ease;
     }
 
     .float-wpp:hover{
@@ -772,25 +865,14 @@
       55%{box-shadow:0 12px 30px rgba(60,30,10,.22), 0 0 0 12px rgba(102,121,88,0)}
     }
 
+    /* =============================================
+       RESPONSIVO
+    ============================================= */
     @media (max-width: 1020px){
-      .hero,
       .service-layout,
       .sobre-layout,
       .bio-grid{grid-template-columns:1fr}
 
-      .hero{
-        min-height:auto;
-        gap:28px;
-      }
-
-      .hero-copy{max-width:none}
-      .hero h1{max-width:10ch}
-      .hero p{max-width:40ch}
-      .hero-media{
-        justify-self:stretch;
-        width:100%;
-        max-width:560px;
-      }
       .recon-list,
       .cards-grid{grid-template-columns:1fr}
       .bio-side{position:static}
@@ -800,12 +882,10 @@
     @media (max-width: 760px){
       :root{--nav-offset:96px}
 
-      .site-shell{
-        padding:12px 12px 86px;
-      }
-
+      .site-shell{padding:12px 12px 86px}
       .hero-shell{padding:12px}
       .hero-card{border-radius:24px}
+
       .topbar{
         padding:18px 18px 8px;
         align-items:flex-start;
@@ -862,76 +942,19 @@
       }
 
       .hero{
-        padding:18px 18px 18px;
-        gap:22px;
-      }
-
-      .hero-copy{
-        padding:8px 2px 0;
-      }
-
-      .eyebrow{
-        margin-bottom:16px;
-        font-size:11px;
-        letter-spacing:.13em;
+        padding:28px 20px 30px;
       }
 
       .hero h1{
-        font-size:clamp(2.45rem, 12vw, 3.35rem);
-        line-height:1.04;
-        max-width:7ch;
-        margin-bottom:18px;
+        font-size:clamp(2.4rem, 11vw, 3.2rem);
       }
 
-      .hero p,
-      .section-copy,
-      .about-copy p,
-      .bio-main p,
-      .cta-final p,
-      .faq-inner,
-      .recon-card p,
-      .dark-card p{
-        font-size:15px;
-        line-height:1.82;
-      }
+      .hero-desc{font-size:15.5px}
 
-      .hero p{
-        max-width:27ch;
-        margin-bottom:22px;
-      }
-
-      .hero-actions{
-        flex-direction:column;
-        align-items:stretch;
-        gap:12px;
-        margin-bottom:24px;
-      }
-
-      .btn-primary,
-      .btn-ghost,
-      .contact-btn{width:100%}
-
-      .btn-secondary{
-        align-self:flex-start;
-        min-height:auto;
-      }
-
-      .hero-trust{
-        gap:8px;
-      }
-
-      .hero-trust span{
-        font-size:11px;
-        padding:7px 10px;
-      }
-
-      .hero-media{max-width:none}
-      .hero-frame{
-        border-radius:22px;
-      }
-
-      .hero-frame img{
-        aspect-ratio:4/4.3;
+      .btn-hero-primary,
+      .btn-hero-secondary{
+        max-width:none;
+        width:100%;
       }
 
       .section,
@@ -949,6 +972,7 @@
       .section-title{font-size:clamp(2rem, 9vw, 2.7rem)}
       .faq-trigger{font-size:24px}
       .bio-title{font-size:38px}
+
       .about-badge{
         width:84px;
         height:84px;
@@ -964,11 +988,10 @@
       .float-wpp{
         right:14px;
         bottom:14px;
-        width:54px;
-        height:54px;
+        width:52px;
+        height:52px;
       }
     }
-   
   </style>
 
   <script>
@@ -989,13 +1012,19 @@
 <body>
   <div class="site-shell">
     <main id="home-view" class="main-card is-visible">
+
+      <!-- ==========================================
+           HERO SHELL + CARD (estrutura do Código 2)
+           com conteúdo da HERO do Código 1
+      =========================================== -->
       <section class="hero-shell" id="hero">
         <div class="hero-card">
+
+          <!-- NAV (Código 2) -->
           <div class="topbar">
             <a class="brand-inline" href="#" onclick="showHomeAndScroll('hero'); return false;" aria-label="Voltar para o início">
               <img src="LOGO_LUIZA.png" alt="Luiza Zehnle" fetchpriority="high" />
             </a>
-
             <nav class="nav">
               <button class="mobile-menu-btn" onclick="toggleMobileMenu()">Menu</button>
               <div class="nav-links" id="navLinks">
@@ -1008,23 +1037,23 @@
             </nav>
           </div>
 
-       <!-- HERO (conteúdo do Código 1) -->
+          <!-- HERO (conteúdo do Código 1) -->
           <div class="hero">
             <div class="hero-inner">
               <span class="hero-tag">Psicoterapia Junguiana Profunda online</span>
- 
+
               <h1>Estar mais perto de si é um caminho que <em>faz sentido</em></h1>
- 
+
               <p class="hero-desc">
                 A psicoterapia pode ser um espaço de escuta profunda para olhar com mais calma para aquilo que se repete, pesa, confunde ou pede <strong>elaboração.</strong>
               </p>
- 
+
               <div class="hero-proof">
                 <span>CRP 03/20324</span>
                 <span>8 anos de experiência</span>
                 <span>Atendimento online e presencial</span>
               </div>
- 
+
               <div class="hero-actions">
                 <a class="btn-hero-primary"
                    href="https://wa.me/557199983483?utm_source=google&utm_medium=cpc&utm_campaign=psicoterapia_brasil&utm_content=hero&text=Olá,%20Luiza.%20Gostaria%20de%20agendar%20uma%20primeira%20conversa."
@@ -1036,7 +1065,7 @@
                   </svg>
                   Agendar conversa inicial
                 </a>
- 
+
                 <a class="btn-hero-secondary"
                    href="#sobre-resumo"
                    onclick="showHomeAndScroll('sobre-resumo'); return false;">
@@ -1045,10 +1074,13 @@
               </div>
             </div>
           </div>
- 
+
         </div><!-- /hero-card -->
       </section>
 
+      <!-- ==========================================
+           RESTANTE DO SITE — Código 2 intacto
+      =========================================== -->
       <section class="section" id="reconhece">
         <div class="section-head">
           <span class="eyebrow">Você se reconhece aqui?</span>
@@ -1087,7 +1119,7 @@
               Sigo a abordagem junguiana, que compreende a vida psíquica como formada por conteúdos conscientes e inconscientes, presentes nas nossas escolhas, conflitos, relações, emoções e também no corpo.
             </p>
             <div class="quote-box">
-              <blockquote>“Quem olha para fora sonha, quem olha para dentro desperta.”</blockquote>
+              <blockquote>"Quem olha para fora sonha, quem olha para dentro desperta."</blockquote>
               <cite>— C.G. Jung</cite>
             </div>
             <p class="section-copy dark-text">
@@ -1141,7 +1173,11 @@
 
             <div class="about-actions">
               <button class="btn-ghost" onclick="showBio()">Ler página completa sobre mim</button>
-              <a class="btn-primary" href="https://wa.me/557199983483?utm_source=google&utm_medium=cpc&utm_campaign=psicoterapia_brasil&utm_content=sobre&text=Olá,%20Luiza.%20Gostaria%20de%20agendar%20uma%20primeira%20conversa." onclick="return gtag_report_conversion(this.href)" target="_blank" rel="noopener">Agendar primeira conversa</a>
+              <a class="btn-primary"
+                 href="https://wa.me/557199983483?utm_source=google&utm_medium=cpc&utm_campaign=psicoterapia_brasil&utm_content=sobre&text=Olá,%20Luiza.%20Gostaria%20de%20agendar%20uma%20primeira%20conversa."
+                 onclick="return gtag_report_conversion(this.href)"
+                 target="_blank"
+                 rel="noopener">Agendar primeira conversa</a>
             </div>
           </div>
         </div>
@@ -1178,11 +1214,16 @@
         <p>
           Um espaço baseado em ética, escuta atenta e aprofundamento, para olharmos com calma para suas experiências emocionais e formas de se relacionar com a vida.
         </p>
-        <a class="btn-primary" href="https://wa.me/557199983483?utm_source=google&utm_medium=cpc&utm_campaign=psicoterapia_brasil&utm_content=cta_final&text=Olá,%20Luiza.%20Gostaria%20de%20agendar%20uma%20primeira%20conversa." onclick="return gtag_report_conversion(this.href)" target="_blank" rel="noopener">Agendar primeira conversa</a>
+        <a class="btn-primary"
+           href="https://wa.me/557199983483?utm_source=google&utm_medium=cpc&utm_campaign=psicoterapia_brasil&utm_content=cta_final&text=Olá,%20Luiza.%20Gostaria%20de%20agendar%20uma%20primeira%20conversa."
+           onclick="return gtag_report_conversion(this.href)"
+           target="_blank"
+           rel="noopener">Agendar primeira conversa</a>
         <div class="cta-meta">Sigilo profissional garantido · CRP 03/20324 · Psicologia Analítica</div>
       </section>
     </main>
 
+    <!-- BIO VIEW -->
     <section id="bio-view" class="detail-card">
       <div class="detail-inner">
         <button class="back-link" onclick="showHome()">← Voltar para Início</button>
@@ -1193,7 +1234,11 @@
               <img src="luiza.webp" alt="Foto de Luiza Lima Zehnle" />
             </div>
 
-            <a class="contact-btn whatsapp" href="https://wa.me/557199983483?utm_source=google&utm_medium=cpc&utm_campaign=psicoterapia_brasil&utm_content=bio_whatsapp&text=Olá,%20Luiza.%20Gostaria%20de%20agendar%20uma%20primeira%20conversa." onclick="return gtag_report_conversion(this.href)" target="_blank" rel="noopener">Entrar em Contato</a>
+            <a class="contact-btn whatsapp"
+               href="https://wa.me/557199983483?utm_source=google&utm_medium=cpc&utm_campaign=psicoterapia_brasil&utm_content=bio_whatsapp&text=Olá,%20Luiza.%20Gostaria%20de%20agendar%20uma%20primeira%20conversa."
+               onclick="return gtag_report_conversion(this.href)"
+               target="_blank"
+               rel="noopener">Entrar em Contato</a>
             <a class="contact-btn linkedin" href="https://www.linkedin.com/in/luiza-zehnle-psicologia/" target="_blank" rel="noopener">LinkedIn</a>
             <a class="contact-btn google" href="https://share.google/AB3UlR1JRQAgihvtZ" target="_blank" rel="noopener">Google Empresa</a>
 
@@ -1232,35 +1277,43 @@
     </footer>
   </div>
 
-  <a class="float-wpp" href="https://wa.me/557199983483?utm_source=google&utm_medium=cpc&utm_campaign=psicoterapia_brasil&utm_content=float&text=Olá,%20Luiza.%20Gostaria%20de%20agendar%20uma%20primeira%20conversa." onclick="return gtag_report_conversion(this.href)" target="_blank" rel="noopener" aria-label="Abrir WhatsApp para agendar primeira conversa">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a class="float-wpp"
+     href="https://wa.me/557199983483?utm_source=google&utm_medium=cpc&utm_campaign=psicoterapia_brasil&utm_content=float&text=Olá,%20Luiza.%20Gostaria%20de%20agendar%20uma%20primeira%20conversa."
+     onclick="return gtag_report_conversion(this.href)"
+     target="_blank"
+     rel="noopener"
+     aria-label="Abrir WhatsApp para agendar primeira conversa">
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
   </a>
 
   <script>
     const homeView = document.getElementById('home-view');
-    const bioView = document.getElementById('bio-view');
+    const bioView  = document.getElementById('bio-view');
     const navLinks = document.getElementById('navLinks');
 
     function closeMobileMenu(){
-      if(navLinks){ navLinks.classList.remove('is-open'); }
+      if(navLinks) navLinks.classList.remove('is-open');
     }
 
     function toggleMobileMenu(){
-      if(navLinks){ navLinks.classList.toggle('is-open'); }
+      if(navLinks) navLinks.classList.toggle('is-open');
     }
 
     function showHome(){
       homeView.classList.remove('is-hidden');
       homeView.classList.add('is-visible');
       bioView.classList.remove('is-visible');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top:0, behavior:'smooth' });
       closeMobileMenu();
     }
 
     function showBio(){
       homeView.classList.add('is-hidden');
       bioView.classList.add('is-visible');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top:0, behavior:'smooth' });
       closeMobileMenu();
     }
 
@@ -1269,17 +1322,14 @@
       homeView.classList.add('is-visible');
       bioView.classList.remove('is-visible');
       closeMobileMenu();
-
       requestAnimationFrame(() => {
         const el = document.getElementById(targetId);
-        if(el){
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        if(el) el.scrollIntoView({ behavior:'smooth', block:'start' });
       });
     }
 
     function toggleFaq(btn){
-      const item = btn.parentElement;
+      const item   = btn.parentElement;
       const isOpen = item.classList.contains('open');
       document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
       if(!isOpen) item.classList.add('open');
