@@ -161,15 +161,15 @@
     .main-card.is-visible{display:block}
     .main-card.is-hidden{display:none}
 
-    .hero{
-      display:grid;
-      grid-template-columns:1.02fr .98fr;
-      align-items:center;
-      gap:56px;
-      padding:64px 38px 54px;
-      min-height:680px;
-      position:relative;
-    }
+   .hero{
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  align-items:center;
+  gap:40px;
+  padding:70px 48px 60px;
+  min-height:640px;
+  position:relative;
+}
 
     .hero::before{
       content:'';
@@ -203,12 +203,12 @@
 
   .hero h1{
   font-family:'Playfair Display',serif;
-  font-size:clamp(2.7rem, 5.6vw, 4.6rem);
-  line-height:1.04;
-  letter-spacing:-.03em;
+  font-size:clamp(2.35rem, 4.6vw, 3.8rem);
+  line-height:1.06;
+  letter-spacing:-0.03em;
   color:#873d59;
-  max-width:8ch;
-  margin-bottom:22px;
+  max-width:7ch;
+  margin-bottom:20px;
 }
 
     .hero p{
@@ -837,7 +837,12 @@
         cursor:pointer;
       }
 
-      .hero h1{font-size:clamp(2.9rem, 13vw, 4rem);max-width:9ch}
+      .hero h1{
+  font-size:clamp(2.15rem, 10vw, 3.1rem);
+  line-height:1.08;
+  max-width:7ch;
+  margin-bottom:18px;
+}
       .hero p,
       .section-copy,
       .cta-final p,
