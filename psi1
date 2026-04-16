@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luiza Zehnle | Psicoterapia Junguiana</title>
+  <meta
+    name="description"
+    content="Psicoterapia junguiana online com uma interface editorial, acolhedora e contemporânea."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #d8d1ce;
+      --paper: #f3ede7;
+      --paper-soft: rgba(255, 250, 246, 0.76);
+      --paper-strong: rgba(249, 243, 237, 0.92);
+      --sand: #d0a066;
+      --sand-deep: #b7834b;
+      --rose-brown: #8c6251;
+      --ink: #5e4335;
+      --ink-soft: #7d6659;
+      --line: rgba(108, 77, 56, 0.12);
+      --shadow: 0 26px 70px rgba(74, 46, 29, 0.14);
+      --shadow-soft: 0 18px 38px rgba(74, 46, 29, 0.1);
+      --max: 1240px;
+      --radius-xl: 34px;
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --nav-h: 88px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.4), transparent 26%),
+        linear-gradient(180deg, #d9d2cf 0%, #d8d1ce 100%);
+      color: var(--ink);
+      font-family: 'Manrope', sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.05));
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+
+    .page {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+      padding: 22px 20px 90px;
+    }
+
+    .shell {
+      background: linear-gradient(180deg, rgba(255,255,255,0.38), rgba(255,255,255,0.2));
+      border: 1px solid rgba(255,255,255,0.45);
+      border-radius: 42px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .topbar {
+      position: sticky;
+      top: 12px;
+      z-index: 20;
+      width: calc(100% - 32px);
+      margin: 0 auto 18px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: rgba(98, 72, 57, 0.76);
+      color: rgba(255,255,255,0.92);
+      border: 1px solid rgba(255,255,255,0.16);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 14px 40px rgba(46, 24, 10, 0.14);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.34);
+      display: grid;
+      place-items: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      color: rgba(255,255,255,0.78);
+      transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    }
+
+    .nav a:hover,
+    .nav a.cta-link {
+      background: rgba(255,255,255,0.14);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 70px);
+      padding: 32px;
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-visual {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      position: relative;
+      min-height: 720px;
+    }
+
+    .hero-copy {
+      background: linear-gradient(180deg, rgba(247,241,236,0.92), rgba(241,232,223,0.84));
+      border: 1px solid rgba(255,255,255,0.52);
+      padding: clamp(34px, 4vw, 58px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: var(--shadow-soft);
+      z-index: 2;
+    }
+
+    .hero-copy::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.72), transparent 34%),
+        linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0));
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+      color: var(--rose-brown);
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      content: '';
+      width: 48px;
+      height: 1px;
+      background: rgba(140, 98, 81, 0.18);
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      letter-spacing: -0.04em;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 5vw, 5.35rem);
+      line-height: 0.98;
+      color: var(--ink);
+      max-width: 10ch;
+      margin-bottom: 24px;
+    }
+
+    .hero-lead {
+      max-width: 56ch;
+      color: var(--ink-soft);
+      font-size: 1.04rem;
+      line-height: 1.9;
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(180deg, #d6a365, #c59158);
+      color: #fffaf4;
+      padding: 16px 26px;
+      border-radius: 16px;
+      font-size: 0.98rem;
+      font-weight: 700;
+      box-shadow: 0 14px 36px rgba(197, 145, 88, 0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 42px rgba(197, 145, 88, 0.34);
+    }
+
+    .btn-secondary {
+      color: var(--ink);
+      padding: 16px 0;
+      background: transparent;
+      border-bottom: 1px solid rgba(94, 67, 53, 0.18);
+      border-radius: 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(94,67,53,0.08);
+      background: rgba(255,255,255,0.52);
+      color: var(--ink);
+      font-size: 0.79rem;
+      font-weight: 700;
+    }
+
+    .hero-visual {
+      background: linear-gradient(180deg, rgba(255,255,255,0.15), rgba(255,255,255,0.02));
+      display: grid;
+      align-items: end;
+      box-shadow: var(--shadow-soft);
+      isolation: isolate;
+    }
+
+    .hero-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 75% 20%, rgba(255,255,255,0.3), transparent 24%),
+        linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0));
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hero-photo {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(243,237,231,0.05), rgba(243,237,231,0.1)),
+        url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1400&q=80') center / cover no-repeat;
+      -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.75) 18%, #000 36%, #000 78%, transparent 100%);
+      mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.75) 18%, #000 36%, #000 78%, transparent 100%);
+      z-index: 1;
+    }
+
+    .hero-card {
+      position: relative;
+      z-index: 3;
+      width: min(520px, calc(100% - 44px));
+      margin: 0 22px 24px auto;
+      padding: 28px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(248,242,236,0.88), rgba(243,235,228,0.78));
+      border: 1px solid rgba(255,255,255,0.54);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 18px 50px rgba(61, 38, 22, 0.12);
+    }
+
+    .hero-card small {
+      display: block;
+      color: var(--rose-brown);
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .hero-card h2 {
+      font-size: clamp(1.9rem, 2.6vw, 2.8rem);
+      line-height: 1.02;
+      margin-bottom: 14px;
+      color: var(--ink);
+      max-width: 11ch;
+    }
+
+    .hero-card p {
+      color: var(--ink-soft);
+      line-height: 1.85;
+      font-size: 0.98rem;
+      margin-bottom: 20px;
+      max-width: 32ch;
+    }
+
+    .hero-card .card-meta {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(94, 67, 53, 0.1);
+      color: var(--rose-brown);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .section {
+      padding: 84px 32px;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-header {
+      max-width: 700px;
+      margin-bottom: 34px;
+    }
+
+    .section-kicker {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: var(--rose-brown);
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .section h2 {
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      line-height: 1.02;
+      margin-bottom: 14px;
+    }
+
+    .section-header p,
+    .card p,
+    .faq-body,
+    .about-copy p,
+    .dark-copy p {
+      color: var(--ink-soft);
+      line-height: 1.85;
+      font-size: 1rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.5);
+      border: 1px solid rgba(94,67,53,0.08);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card h3,
+    .dark-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      font-size: 1.65rem;
+      margin-bottom: 8px;
+    }
+
+    .section-dark {
+      background: linear-gradient(180deg, #5f4839, #4f3c2f);
+      color: #f5ebe0;
+    }
+
+    .section-dark .section-kicker,
+    .section-dark h2,
+    .section-dark .quote,
+    .section-dark .dark-card h3 {
+      color: #f5ebe0;
+    }
+
+    .section-dark .dark-copy p,
+    .section-dark .dark-card p,
+    .section-dark .quote-note {
+      color: rgba(245,235,224,0.76);
+    }
+
+    .approach {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 26px;
+      align-items: start;
+    }
+
+    .quote-wrap {
+      margin: 24px 0;
+      padding: 24px;
+      border-left: 2px solid rgba(245,235,224,0.42);
+      background: rgba(255,255,255,0.06);
+      border-radius: 0 20px 20px 0;
+    }
+
+    .quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      line-height: 1.28;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    .quote-note {
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .dark-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .dark-card {
+      padding: 22px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .stars {
+      color: var(--sand-deep);
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+    }
+
+    .testimonial p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.18rem;
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 16px;
+    }
+
+    .author {
+      color: var(--rose-brown);
+      font-size: 0.76rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 360px minmax(0, 1fr);
+      gap: 30px;
+      align-items: center;
+    }
+
+    .about-photo-wrap {
+      position: relative;
+    }
+
+    .about-photo {
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      background: #e3dbd3;
+    }
+
+    .about-photo img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .about-badge {
+      position: absolute;
+      top: -18px;
+      right: -18px;
+      width: 106px;
+      height: 106px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: #fffaf4;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      box-shadow: var(--shadow-soft);
+      padding: 14px;
+    }
+
+    .about-badge strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .about-badge span {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1.35;
+    }
+
+    .about-copy .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .faq-item {
+      border-radius: 22px;
+      background: rgba(255,255,255,0.42);
+      border: 1px solid rgba(94,67,53,0.08);
+      overflow: hidden;
+    }
+
+    .faq-button {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--ink);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .faq-button span:last-child {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(94,67,53,0.12);
+      font-family: 'Manrope', sans-serif;
+      font-size: 1rem;
+    }
+
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 24px;
+    }
+
+    .faq-item.open .faq-body {
+      max-height: 220px;
+      padding: 0 24px 22px;
+    }
+
+    .faq-item.open .faq-button span:last-child {
+      background: var(--ink);
+      color: #fff;
+      transform: rotate(45deg);
+    }
+
+    .cta {
+      text-align: center;
+      background: linear-gradient(180deg, #534032, #453428);
+      color: #f6eadf;
+    }
+
+    .cta h2,
+    .cta p,
+    .cta .section-kicker {
+      color: inherit;
+    }
+
+    .cta p {
+      max-width: 640px;
+      margin: 0 auto 28px;
+      color: rgba(246,234,223,0.78);
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(246,234,223,0.48);
+      font-weight: 700;
+    }
+
+    @media (max-width: 1080px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-copy,
+      .hero-visual {
+        min-height: auto;
+      }
+
+      .hero-copy { order: 2; }
+      .hero-visual {
+        order: 1;
+        min-height: 620px;
+      }
+
+      .about,
+      .approach,
+      .grid-2,
+      .dark-grid,
+      .testimonials {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        padding: 14px 12px 64px;
+      }
+
+      .shell {
+        border-radius: 24px;
+      }
+
+      .topbar {
+        position: static;
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 20px;
+        padding: 14px;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .brand {
+        justify-content: center;
+      }
+
+      .nav {
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 14px;
+        gap: 0;
+      }
+
+      .hero-copy,
+      .hero-visual {
+        border-radius: 20px;
+      }
+
+      .hero-visual {
+        min-height: 730px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.03));
+      }
+
+      .hero-copy {
+        position: absolute;
+        inset: 0;
+        z-index: 4;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 24px 22px 18px;
+        justify-content: flex-start;
+        pointer-events: none;
+      }
+
+      .hero-copy > * {
+        pointer-events: auto;
+      }
+
+      .hero-copy::before {
+        display: none;
+      }
+
+      .hero-photo {
+        inset: 0;
+        background:
+          linear-gradient(180deg, rgba(243,237,231,0.05), rgba(243,237,231,0.1)),
+          url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80') center / cover no-repeat;
+        -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.18) 12%, #000 24%, #000 74%, transparent 100%);
+        mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.18) 12%, #000 24%, #000 74%, transparent 100%);
+      }
+
+      .eyebrow {
+        justify-content: center;
+        margin-bottom: 16px;
+        font-size: 0.74rem;
+      }
+
+      .eyebrow::before,
+      .eyebrow::after {
+        width: 34px;
+      }
+
+      h1 {
+        font-size: clamp(2.45rem, 10vw, 3.8rem);
+        max-width: 10ch;
+        text-align: center;
+        margin: 0 auto 16px;
+      }
+
+      .hero-lead,
+      .hero-meta,
+      .btn-secondary,
+      .nav a:not(.cta-link) {
+        display: none;
+      }
+
+      .hero-card {
+        width: calc(100% - 28px);
+        margin: auto 14px 18px;
+        padding: 22px 18px 18px;
+        border-radius: 22px;
+      }
+
+      .hero-card h2 {
+        font-size: 2rem;
+        max-width: 11ch;
+      }
+
+      .hero-card p {
+        font-size: 1rem;
+        max-width: none;
+      }
+
+      .hero-actions {
+        justify-content: center;
+        margin-bottom: 0;
+      }
+
+      .btn-primary {
+        width: 100%;
+        min-height: 56px;
+      }
+
+      .section {
+        padding: 56px 18px;
+      }
+
+      .faq-button {
+        font-size: 1.3rem;
+        padding: 20px 18px;
+      }
+
+      .faq-item.open .faq-body {
+        padding: 0 18px 18px;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .about-photo-wrap {
+        max-width: 340px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="#topo">
+        <span class="brand-mark">L</span>
+        <span>Luiza Zehnle</span>
+      </a>
+
+      <nav class="nav" aria-label="principal">
+        <a href="#abordagem">Abordagem</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#faq">FAQ</a>
+        <a class="cta-link" href="https://wa.me/5571999983483" target="_blank" rel="noopener">Agendar</a>
+      </nav>
+    </header>
+
+    <main class="shell" id="topo">
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">Agende sua sessão online</span>
+          <h1>Agende sua primeira sessão de psicoterapia</h1>
+          <p class="hero-lead">
+            Uma landing que mistura o editorial sofisticado do primeiro código com a clareza comercial do segundo,
+            mantendo a atmosfera acolhedora da sua referência mobile.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn-primary" href="https://wa.me/5571999983483" target="_blank" rel="noopener">
+              Agendar Sessão Online
+            </a>
+            <a class="btn-secondary" href="#sobre">Conhecer mais sobre meu trabalho</a>
+          </div>
+
+          <div class="hero-meta">
+            <span>Psicoterapia Online</span>
+            <span>Terapeuta Junguiana</span>
+            <span>CRP 03/20324</span>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Imagem principal de ambiente terapêutico">
+          <div class="hero-photo"></div>
+
+          <div class="hero-card">
+            <small>Luiza Zehnle</small>
+            <h2>Descubra caminhos para lidar melhor com suas emoções e desafios</h2>
+            <p>
+              No mobile, a proposta vira um cartão sobreposto à imagem com fade por transparência.
+              No desktop, esse mesmo bloco flutua como painel de conversão sobre uma composição mais ampla.
+            </p>
+            <a class="btn-primary" href="https://wa.me/5571999983483" target="_blank" rel="noopener">
+              Agendar Sessão Online
+            </a>
+            <div class="card-meta">Terapeuta Junguiana · CRP 03/20324</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="reconhece">
+        <div class="section-header">
+          <span class="section-kicker">Você se reconhece aqui?</span>
+          <h2>Há momentos em que seguir funcionando por fora já não basta</h2>
+          <p>
+            Aqui eu mantive a densidade emocional do primeiro layout, mas com uma hierarquia mais direta,
+            como no segundo. Isso ajuda a converter sem perder sofisticação.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3>Padrões que se repetem</h3>
+            <p>Nos vínculos, nas escolhas ou na forma de se colocar, como se algo voltasse sempre ao mesmo ponto.</p>
+          </article>
+          <article class="card">
+            <h3>Emoções difíceis de nomear</h3>
+            <p>Ansiedade, tristeza, irritação ou vazio que parecem maiores do que aquilo que aparece por fora.</p>
+          </article>
+          <article class="card">
+            <h3>Travessias e mudanças</h3>
+            <p>Términos, lutos, crises e fases em que referências antigas deixam de sustentar a vida cotidiana.</p>
+          </article>
+          <article class="card">
+            <h3>Autoconhecimento real</h3>
+            <p>Não como frase bonita, mas como busca consistente por consciência, coerência e profundidade.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-dark" id="abordagem">
+        <div class="approach">
+          <div class="dark-copy">
+            <span class="section-kicker">A abordagem</span>
+            <h2>Psicologia Analítica, ou Psicologia Profunda</h2>
+            <p>
+              Sigo a abordagem junguiana, que compreende a vida psíquica como formada por conteúdos conscientes e inconscientes,
+              presentes nas escolhas, conflitos, relações, emoções e também no corpo.
+            </p>
+
+            <div class="quote-wrap">
+              <div class="quote">“Quem olha para fora sonha, quem olha para dentro desperta.”</div>
+              <div class="quote-note">C. G. Jung</div>
+            </div>
+
+            <p>
+              O foco não é adequar alguém a um modelo, mas ampliar percepção, responsabilidade e coerência interna.
+            </p>
+          </div>
+
+          <div class="dark-grid">
+            <article class="dark-card">
+              <h3>Escuta sem interpretações prontas</h3>
+              <p>Cada pessoa tem uma singularidade. Não há receita, nem leitura engessada da experiência.</p>
+            </article>
+            <article class="dark-card">
+              <h3>Sonhos, símbolos e imagens</h3>
+              <p>Elementos da vida psíquica aparecem como recurso clínico, sem virar misticismo decorativo.</p>
+            </article>
+            <article class="dark-card">
+              <h3>Individuação como norte</h3>
+              <p>Tornar-se quem se é: dialogar com muitas partes de si, em vez de silenciá-las.</p>
+            </article>
+            <article class="dark-card">
+              <h3>Cultura, corpo e contexto</h3>
+              <p>Saúde mental não existe no vácuo. História pessoal e atravessamentos sociais importam.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="depoimentos">
+        <div class="section-header">
+          <span class="section-kicker">Experiências reais</span>
+          <h2>Depoimentos</h2>
+        </div>
+
+        <div class="testimonials">
+          <article class="card testimonial">
+            <div class="stars">★★★★★</div>
+            <p>“Me ajudou a entender muito do que se passava ao meu redor de forma simples e clara.”</p>
+            <div class="author">H. — Google</div>
+          </article>
+          <article class="card testimonial">
+            <div class="stars">★★★★★</div>
+            <p>“Combina uma sensibilidade rara com maturidade profissional, ética e profundidade.”</p>
+            <div class="author">F. — Google</div>
+          </article>
+          <article class="card testimonial">
+            <div class="stars">★★★★★</div>
+            <p>“Me trouxe clareza e foco para fazer uma travessia importante.”</p>
+            <div class="author">A. — Google</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="sobre">
+        <div class="about">
+          <div class="about-photo-wrap">
+            <div class="about-photo">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80" alt="Retrato de apresentação" />
+            </div>
+            <div class="about-badge">
+              <div>
+                <strong>8</strong>
+                <span>anos de clínica</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-copy">
+            <span class="section-kicker">Sobre mim</span>
+            <h2>Olá, sou Luiza</h2>
+            <p>
+              Sou psicóloga com experiência clínica e formação em psicoterapia junguiana. Meu trabalho busca unir escuta ética,
+              profundidade simbólica e atenção às condições concretas da vida psíquica.
+            </p>
+            <p>
+              Para desktop, a melhor leitura é uma composição em duas colunas: retrato mais institucional de um lado e texto mais respirado do outro.
+              Isso conversa melhor com a lógica da interface de computador do que simplesmente ampliar o mobile.
+            </p>
+
+            <div class="actions">
+              <a class="btn-primary" href="https://wa.me/5571999983483" target="_blank" rel="noopener">Agendar primeira conversa</a>
+              <a class="btn-secondary" href="#faq">Ver dúvidas frequentes</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="section-header">
+          <span class="section-kicker">FAQ</span>
+          <h2>Perguntas comuns</h2>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item open">
+            <button class="faq-button" type="button">
+              <span>O que esperar do primeiro encontro?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-body">
+              É um momento para se conhecerem, entender sua busca e combinar o formato do processo terapêutico.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-button" type="button">
+              <span>Como funciona o atendimento online?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-body">
+              Com uma boa conexão e um ambiente reservado, a sessão acontece com sigilo, continuidade e conforto.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-button" type="button">
+              <span>Qual o valor da sessão?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-body">
+              Esse ponto pode ser tratado diretamente no contato inicial, junto com disponibilidade e formato de atendimento.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cta" id="contato">
+        <span class="section-kicker">Primeira conversa</span>
+        <h2>Se fizer sentido para você, estou disponível</h2>
+        <p>
+          O site foi montado para manter o clima acolhedor da referência mobile, mas com uma estrutura mais segura para desktop,
+          mais legível e mais forte para conversão.
+        </p>
+        <a class="btn-primary" href="https://wa.me/5571999983483" target="_blank" rel="noopener">Falar no WhatsApp</a>
+        <div class="footer-note">Psicoterapia online · CRP 03/20324 · Psicologia Analítica</div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const faqButtons = document.querySelectorAll('.faq-button');
+
+    faqButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        const isOpen = item.classList.contains('open');
+
+        document.querySelectorAll('.faq-item').forEach((faq) => faq.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+</body>
+</html>
