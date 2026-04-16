@@ -159,9 +159,12 @@
       z-index:2;
     }
 
-    .brand-inline{
-  display:none;
-}
+    .brand-inline img{
+      width:auto;
+      height:62px;
+      object-fit:contain;
+    }
+
     .nav{
       display:flex;
       align-items:center;
@@ -989,100 +992,6 @@
         height:52px;
       }
     }
-    .hero-logo-top{
-  margin-bottom:14px;
-}
-
-.hero-logo-top img{
-  height:82px;
-}
-
-.topbar{
-  justify-content:flex-end;
-}
-
-.nav-full{
-  width:100%;
-  justify-content:flex-end;
-}
-    .hero-logo{
-  margin-bottom: 26px;
-  display: flex;
-  justify-content: center;
-}
-
-.hero-logo img{
-  height: 110px;
-  width: auto;
-  object-fit: contain;
-  opacity: 0.95;
-}
-    .hero-shell{
-  padding:24px;
-}
-
-.hero-logo-top{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  margin-bottom:18px;
-}
-
-.hero-logo-top img{
-  width:auto;
-  height:120px;
-  object-fit:contain;
-  opacity:0.98;
-}
-
-.nav-full{
-  width:100%;
-  display:flex;
-  justify-content:flex-end;
-  align-items:center;
-}
-
-.topbar{
-  display:flex;
-  justify-content:flex-end;
-  align-items:center;
-  gap:20px;
-  padding:26px 32px 12px;
-}
-    .logo-over-river{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  margin-bottom:22px;
-}
-
-.logo-over-river img{
-  width:auto;
-  height:120px;
-  object-fit:contain;
-  opacity:0.98;
-}
-
-.nav-full{
-  width:100%;
-  display:flex;
-  justify-content:flex-end;
-  align-items:center;
-}
-
-.topbar{
-  display:flex;
-  justify-content:flex-end;
-  align-items:center;
-  gap:20px;
-  padding:26px 32px 12px;
-}
-
-.hero-logo,
-.hero-logo-top,
-.brand-inline{
-  display:none;
-}
   </style>
 
   <script>
@@ -1102,28 +1011,21 @@
 </head>
 <body>
   <div class="site-shell">
+    <main id="home-view" class="main-card is-visible">
 
-  <div class="logo-over-river">
-    <a href="#" onclick="showHomeAndScroll('hero'); return false;" aria-label="Voltar para o início">
-      <img src="LOGO_LUIZA.png" alt="Luiza Zehnle" fetchpriority="high" />
-    </a>
-  </div>
-
-  <main id="home-view" class="main-card is-visible">
-
-    <section class="hero-shell" id="hero">
-      <div class="hero-card">
-        
-    <a href="#" onclick="showHomeAndScroll('hero'); return false;" aria-label="Voltar para o início">
-      <img src="LOGO_LUIZA.png" alt="Luiza Zehnle" fetchpriority="high" />
-    </a>
-  </div>
-
-  <div class="hero-card">
+      <!-- ==========================================
+           HERO SHELL + CARD (estrutura do Código 2)
+           com conteúdo da HERO do Código 1
+      =========================================== -->
+      <section class="hero-shell" id="hero">
+        <div class="hero-card">
 
           <!-- NAV (Código 2) -->
           <div class="topbar">
-  <nav class="nav nav-full">
+            <a class="brand-inline" href="#" onclick="showHomeAndScroll('hero'); return false;" aria-label="Voltar para o início">
+              <img src="LOGO_LUIZA.png" alt="Luiza Zehnle" fetchpriority="high" />
+            </a>
+            <nav class="nav">
               <button class="mobile-menu-btn" onclick="toggleMobileMenu()">Menu</button>
               <div class="nav-links" id="navLinks">
                 <button class="is-active" onclick="showHomeAndScroll('hero')">Início</button>
@@ -1138,8 +1040,6 @@
           <!-- HERO (conteúdo do Código 1) -->
           <div class="hero">
             <div class="hero-inner">
-
-
               <span class="hero-tag">Psicoterapia Junguiana Profunda online</span>
 
               <h1>Estar mais perto de si é um caminho que <em>faz sentido</em></h1>
