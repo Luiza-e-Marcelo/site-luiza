@@ -1,1368 +1,1907 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="format-detection" content="telephone=no">
-<title> Luiza Zehnle | Psicóloga Brasileira Online |CRP 03/20324</title>
-<meta name="description" content="Psicóloga brasileira que atende em português para quem vive fora do Brasil. Terapia online no seu fuso, com quem entende sua cultura. CRP 03/20324.">
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J84C9ZE889"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-J84C9ZE889');
-  gtag('config', 'AW-18023297873');
-</script>
-
-<link rel="icon" type="image/png" href="7.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="bg_1.jpeg">
-
-<style>
-.no-link{
-  color: inherit !important;
-  text-decoration: none !important;
-  pointer-events: none;
-  -webkit-tap-highlight-color: transparent;
-  cursor: default;
-}
-
-:root{
-  --text-main: #3b2f2a;
-  --text-soft: #6e5d54;
-  --title: #5d4332;
-  --title-alt: #6b4f2c;
-  --accent: #7b8f6a;
-  --accent-dark: #667958;
-  --accent-soft: rgba(123,143,106,0.10);
-  --secondary: #b07a7a;
-  --secondary-soft: rgba(176,122,122,0.12);
-  --card-bg: rgba(244,235,222,0.72);
-  --line: rgba(93,67,50,0.12);
-  --shadow-soft: 0 10px 30px rgba(60,30,10,0.10);
-  --shadow-mid: 0 18px 45px rgba(60,30,10,0.14);
-}
-
-*, *::before, *::after{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html{
-  scroll-behavior: smooth;
-}
-
-body{
-  font-family: 'Manrope', sans-serif;
-  color: #3a2e25;
-  background-color: #d7a858;
-  min-height: 100vh;
-}
-
-body::before{
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url('bg_1.jpeg');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.5;
-  z-index: -1;
-  pointer-events: none;
-}
-
-.wrap{
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 0 20px 80px;
-}
-
-/* LOGO */
-.logo-bar{
-  text-align: center;
-  padding: 22px 0 14px;
-}
-
-.logo-bar img{
-  height: 104px;
-  width: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(60,30,10,0.2));
-}
-
-/* CARD / SECTIONS */
-.card{
-  background: var(--card-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.26);
-  border-radius: 26px;
-  box-shadow: 0 24px 70px rgba(60,30,10,0.16);
-  overflow: hidden;
-}
-
-.section{
-  padding: 36px 24px;
-  border-bottom: 1px solid var(--line);
-}
-
-.section-alt{
-  background: rgba(255,255,255,0.08);
-}
-
-.section h2{
-  font-family: 'Playfair Display', serif;
-  font-size: 26px;
-  font-weight: 700;
-  color: var(--title);
-  text-align: center;
-  margin-bottom: 22px;
-  letter-spacing: -0.01em;
-}
-
-/* HERO */
-.hero{
-  padding: 34px 22px;
-  text-align: center;
-  border-bottom: 1px solid var(--line);
-}
-
-.hero-shell{
-  display: block;
-  max-width: 560px;
-  margin: 0 auto;
-}
-
-.hero-content{
-  width: 100%;
-}
-
-.hero-media{
-  display: none;
-}
-
-.hero-flag{
-  font-size: 26px;
-  display: block;
-  margin-bottom: 8px;
-}
-
-.hero-tag{
-  display: inline-block;
-  margin-bottom: 16px;
-  padding: 6px 14px;
-  border-radius: 999px;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
-  border: 1px solid rgba(123,143,106,0.35);
-  background: rgba(255,255,255,0.36);
-}
-
-.hero h1{
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(34px, 6vw, 54px);
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  color: var(--title);
-  margin: 0 auto 18px;
-  max-width: 12ch;
-}
-
-.hero h1 em{
-  color: var(--secondary);
-}
-
-.hero-desc{
-  max-width: 560px;
-  margin: 0 auto 22px;
-  font-size: 16px;
-  line-height: 1.8;
-  color: #6b5a52;
-  letter-spacing: 0.01em;
-}
-
-.hero-proof{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-  margin: 0 0 22px;
-}
-
-.hero-proof span{
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 7px 11px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--title);
-  background: rgba(255,255,255,0.46);
-  border: 1px solid rgba(93,67,50,0.08);
-}
-
-.hero-actions{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-}
-
-.hero-photo-wrap{
-  position: relative;
-  width: 100%;
-  max-width: 320px;
-  margin: 0 auto;
-}
-
-.hero-photo-glow{
-  position: absolute;
-  inset: auto 12% -8% 12%;
-  height: 32%;
-  background: radial-gradient(circle, rgba(176,122,122,0.22), transparent 68%);
-  filter: blur(16px);
-  z-index: 0;
-}
-
-.hero-photo{
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: top;
-  border-radius: 26px;
-  box-shadow: var(--shadow-mid);
-  border: 1px solid rgba(255,255,255,0.45);
-}
-
-.hero-note{
-  margin-top: 12px;
-  text-align: center;
-  font-size: 12px;
-  line-height: 1.5;
-  color: var(--text-soft);
-}
-
-/* BUTTONS */
-.btn-primary,
-.btn-outline,
-.btn-traj,
-.btn-wpp{
-  transition: transform .24s ease, box-shadow .24s ease, background-color .24s ease, border-color .24s ease, color .24s ease;
-}
-
-.btn-primary{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  max-width: 440px;
-  padding: 15px 20px;
-  border-radius: 16px;
-  text-decoration: none;
-  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-  border: 1px solid rgba(0,0,0,0.02);
-  color: #fff;
-  font-size: 15px;
-  font-weight: 600;
-  box-shadow: 0 12px 26px rgba(102,121,88,0.28);
-  animation: btn-pulse 2.8s ease-in-out infinite;
-}
-
-.btn-primary svg{
-  transition: transform .24s ease;
-}
-
-.btn-primary:hover{
-  background: linear-gradient(135deg, #869a75, #6c8060);
-  transform: translateY(-2px);
-  box-shadow: 0 16px 34px rgba(102,121,88,0.30);
-  animation: none;
-}
-
-.btn-primary:hover svg{
-  transform: translateX(3px);
-}
-
-.btn-outline{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 100%;
-  max-width: 360px;
-  padding: 12px 18px;
-  border-radius: 14px;
-  text-decoration: none;
-  background: rgba(255,255,255,0.32);
-  color: var(--accent-dark);
-  border: 1px solid rgba(123,143,106,0.34);
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.btn-outline:hover{
-  background: var(--accent-soft);
-  transform: translateY(-1px);
-}
-
-.btn-traj{
-  display: inline-block;
-  margin-top: 10px;
-  padding: 12px 18px;
-  border-radius: 14px;
-  text-decoration: none;
-  color: var(--secondary);
-  border: 1px solid rgba(176,122,122,0.34);
-  background: rgba(255,255,255,0.30);
-  font-size: 13.5px;
-  font-weight: 600;
-}
-
-.btn-traj:hover{
-  background: rgba(176,122,122,0.18);
-  transform: translateY(-2px);
-}
-
-.btn-wpp{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  padding: 15px 22px;
-  border-radius: 16px;
-  text-decoration: none;
-  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-  color: #fff;
-  font-size: 15px;
-  font-weight: 700;
-  box-shadow: 0 12px 28px rgba(60,30,10,0.22);
-}
-
-.btn-wpp:hover{
-  background: linear-gradient(135deg, #869a75, #6c8060);
-  transform: translateY(-2px);
-}
-
-/* RECONHECIMENTO */
-.rec-list{
-  list-style: none;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-}
-
-.rec-list li{
-  display: grid;
-  grid-template-columns: 30px 1fr;
-  align-items: start;
-  gap: 14px;
-  padding: 18px;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.38);
-  border: 1px solid rgba(93,67,50,0.12);
-  box-shadow: 0 12px 28px rgba(60,30,10,0.08);
-  line-height: 1.7;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  transition: transform .22s ease, background .22s ease, border-color .22s ease, box-shadow .22s ease;
-  cursor: default;
-}
-
-.rec-list li:hover{
-  transform: translateX(5px);
-  background: rgba(255,255,255,0.72);
-  border-color: rgba(176,122,122,0.38);
-  box-shadow: 0 14px 32px rgba(60,30,10,0.12);
-}
-
-.rec-icon{
-  width: 30px;
-  height: 30px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 2px;
-  font-size: 16px;
-}
-
-/* SOBRE */
-.sobre-row{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
-  text-align: center;
-}
-
-.sobre-photo-frame{
-  width: min(100%, 290px);
-  padding: 10px;
-  background: rgba(255,255,255,0.34);
-  border-radius: 26px;
-  border: 1px solid rgba(255,255,255,0.42);
-  box-shadow: var(--shadow-mid);
-}
-
-.sobre-row img{
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: top;
-  border-radius: 20px;
-  box-shadow: none;
-}
-
-.sobre-content{
-  background: rgba(255,255,255,0.42);
-  border: 1px solid rgba(93,67,50,0.08);
-  border-radius: 22px;
-  padding: 26px 22px;
-  box-shadow: var(--shadow-soft);
-}
-
-.sobre-content h3{
-  font-family: 'Playfair Display', serif;
-  font-size: 24px;
-  color: var(--secondary);
-  margin-bottom: 6px;
-}
-
-.sobre-crp{
-  display: block;
-  margin-bottom: 12px;
-  font-size: 10px;
-  color: var(--text-soft);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.sobre-content p{
-  margin-bottom: 18px;
-  font-size: 14.5px;
-  line-height: 1.85;
-  color: var(--text-main);
-  letter-spacing: 0.01em;
-}
-
-.sobre-destaque{
-  padding-left: 12px;
-  border-left: 2px solid rgba(176,122,122,0.35);
-  font-style: italic;
-  font-size: 15.2px;
-  line-height: 1.9;
-  color: var(--title);
-}
-
-/* PAÍSES */
-.paises{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin: 4px 0 12px;
-}
-
-.pais-tag{
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.60);
-  border: 1px solid rgba(93,67,50,0.08);
-  box-shadow: var(--shadow-soft);
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--title);
-}
-
-.paises-sub{
-  margin-top: 4px;
-  font-size: 12px;
-  color: var(--text-soft);
-  text-align: center;
-}
-
-/* COMO FUNCIONA */
-.steps{
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.step{
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.36);
-  border: 1px solid rgba(93,67,50,0.10);
-  box-shadow: 0 10px 26px rgba(60,30,10,0.08);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
-
-.step-num{
-  width: 34px;
-  height: 34px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--secondary);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.step-strong{
-  display: block;
-  margin-bottom: 4px;
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--title);
-}
-
-.step-span{
-  font-size: 13px;
-  line-height: 1.65;
-  color: var(--text-soft);
-}
-
-/* DIFERENCIAIS */
-.dif-grid{
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-}
-
-.dif-item{
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 15px;
-  border-radius: 16px;
-  background: rgba(255,255,255,0.34);
-  border: 1px solid rgba(93,67,50,0.10);
-  box-shadow: 0 10px 24px rgba(60,30,10,0.07);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  font-size: 13px;
-  color: var(--text-main);
-}
-
-.dif-check{
-  color: var(--accent);
-  font-size: 15px;
-  flex-shrink: 0;
-}
-
-/* FAQ */
-details{
-  background: rgba(255,255,255,0.42);
-  border: 1px solid rgba(93,67,50,0.12);
-  border-radius: 18px;
-  margin-bottom: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 28px rgba(60,30,10,0.08);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
-
-summary{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 18px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--title);
-  cursor: pointer;
-  list-style: none;
-  transition: background .15s;
-}
-
-summary:hover{
-  background: rgba(255,255,255,0.32);
-}
-
-summary::-webkit-details-marker{
-  display: none;
-}
-
-summary::after{
-  content: '+';
-  margin-left: 12px;
-  flex-shrink: 0;
-  display: inline-block;
-  font-size: 22px;
-  line-height: 1;
-  color: var(--secondary);
-  transition: transform .28s ease;
-}
-
-details[open] summary::after{
-  transform: rotate(45deg);
-}
-
-.faq-body{
-  padding: 0 18px 18px;
-  font-size: 13px;
-  line-height: 1.8;
-  color: var(--text-main);
-}
-
-/* DEPOIMENTOS */
-.testimonials{
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.testimonial-track{
-  overflow: hidden;
-}
-
-.testimonial-slides{
-  display: flex;
-  transition: transform .42s cubic-bezier(.4,0,.2,1);
-}
-
-.testimonial-card{
-  min-width: 100%;
-  position: relative;
-  overflow: hidden;
-  padding: 20px 18px;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.60);
-  border: 1px solid rgba(93,67,50,0.08);
-  box-shadow: var(--shadow-soft);
-}
-
-.testimonial-card::before{
-  content: "“";
-  position: absolute;
-  top: 8px;
-  right: 16px;
-  font-family: 'Playfair Display', serif;
-  font-size: 56px;
-  line-height: 1;
-  color: rgba(176,122,122,0.14);
-}
-
-.testimonial-stars{
-  display: block;
-  margin-bottom: 10px;
-  color: #c5a15a;
-  font-size: 14px;
-  letter-spacing: 0.08em;
-}
-
-.testimonial-text{
-  position: relative;
-  z-index: 1;
-  margin-bottom: 12px;
-  font-size: 14px;
-  line-height: 1.85;
-  color: var(--text-main);
-  font-style: italic;
-  letter-spacing: 0.01em;
-}
-
-.testimonial-author{
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--title);
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
-}
-
-.carousel-nav{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-  margin-top: 14px;
-}
-
-.carousel-arrow{
-  width: 34px;
-  height: 34px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  border: 1.5px solid rgba(166,103,103,0.35);
-  background: rgba(255,255,255,0.55);
-  color: #a66767;
-  font-size: 16px;
-  line-height: 1;
-  cursor: pointer;
-  transition: background .2s ease, transform .2s ease;
-}
-
-.carousel-arrow:hover{
-  background: rgba(166,103,103,0.12);
-  transform: scale(1.08);
-}
-
-.carousel-dots{
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 16px;
-}
-
-.carousel-dot{
-  width: 7px;
-  height: 7px;
-  padding: 0;
-  border: none;
-  border-radius: 50%;
-  background: rgba(176,122,122,0.25);
-  cursor: pointer;
-  transition: background .25s ease, transform .25s ease;
-}
-
-.carousel-dot.active{
-  background: #a66767;
-  transform: scale(1.35);
-}
-
-.reviews-google-cta{
-  display: flex;
-  justify-content: center;
-  margin-top: 26px;
-  padding-bottom: 0;
-}
-
-.google-reviews-btn{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  max-width: 100%;
-  padding: 11px 18px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  background: transparent;
-  color: #7b5a4d;
-  border: 1.5px solid rgba(123,90,77,0.28);
-  transition: all .25s ease;
-}
-
-.google-reviews-btn:hover{
-  background: rgba(123,90,77,0.08);
-  border-color: rgba(123,90,77,0.45);
-  transform: translateY(-1px);
-}
-
-.google-reviews-btn:focus-visible{
-  outline: 2px solid #7b5a4d;
-  outline-offset: 3px;
-}
-
-.google-icon{
-  width: 18px;
-  height: 18px;
-  display: block;
-}
-
-/* CTA FINAL */
-.cta-final{
-  padding: 34px 22px;
-  text-align: center;
-  background: linear-gradient(180deg, #654937 0%, #5a4031 100%);
-}
-
-.cta-final h2{
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 1.35;
-  color: #f1e2cc;
-  margin-bottom: 10px;
-}
-
-.cta-final p{
-  margin-bottom: 22px;
-  font-size: 13px;
-  line-height: 1.65;
-  color: rgba(241,226,204,0.7);
-}
-
-.cta-safe{
-  display: block;
-  margin-top: 12px;
-  font-size: 10px;
-  color: rgba(241,226,204,0.45);
-}
-
-/* FOOTER */
-.footer{
-  text-align: center;
-  padding: 20px;
-  font-size: 10px;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.55);
-}
-
-/* FLOAT WPP */
-.float-wpp{
-  position: fixed;
-  right: 22px;
-  bottom: 22px;
-  z-index: 50;
-  width: 54px;
-  height: 54px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  text-decoration: none;
-  color: #fff;
-  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-  box-shadow: 0 10px 28px rgba(60,30,10,0.22);
-  animation: btn-pulse 2.8s ease-in-out infinite;
-  transition: transform .2s ease, box-shadow .24s ease;
-}
-
-.float-wpp:hover{
-  transform: scale(1.06) translateY(-1px);
-  animation: none;
-}
-
-/* MOBILE SMALL */
-@media (max-width: 560px){
-  .section{
-    padding: 28px 20px;
-  }
-
-  .hero{
-    padding: 34px 20px 30px;
-  }
-
-  .cta-final{
-    padding: 28px 20px;
-  }
-
-  .logo-bar img{
-    height: 96px;
-  }
-
-  .sobre-photo-frame{
-    max-width: 240px;
-  }
-
-  .reviews-google-cta{
-    margin-top: 22px;
-    padding: 0 6px;
-  }
-
-  .google-reviews-btn{
-    gap: 8px;
-    padding: 10px 16px;
-    font-size: 13px;
-    white-space: nowrap;
-  }
-
-  .google-icon{
-    width: 17px;
-    height: 17px;
-  }
-}
-
-/* TABLET / DESKTOP */
-@media (min-width: 700px){
-  .wrap{
-    max-width: 760px;
-  }
-
-  .hero{
-    padding: 42px 34px 40px;
-  }
-
-  .hero-actions{
-    align-items: center;
-  }
-
-  .btn-primary,
-  .btn-outline{
-    width: auto;
-  }
-
-  .section{
-    padding: 40px 34px;
-  }
-
-  .rec-list{
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-  }
-
-  .sobre-row{
-    display: grid;
-    grid-template-columns: 230px 1fr;
-    align-items: flex-start;
-    gap: 28px;
-    text-align: left;
-  }
-
-  .sobre-photo-frame{
-    width: 100%;
-    transform: translateY(4px);
-  }
-
-  .sobre-content{
-    padding: 28px 26px;
-  }
-
-  .dif-grid{
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (min-width: 900px){
-  .hero{
-    padding: 44px 40px 40px;
-  }
-
-  .hero h1{
-    font-size: 58px;
-    max-width: 13ch;
-    line-height: 1.04;
-  }
-
-  .hero-desc{
-    max-width: 680px;
-    font-size: 17px;
-  }
-
-  .rec-list{
-    gap: 20px;
-    align-items: stretch;
-  }
-
-  .rec-list li{
-    min-height: 148px;
-    padding: 22px 20px;
-  }
-}
-
-@keyframes btn-pulse{
-  0%, 100%{
-    box-shadow: 0 4px 16px rgba(74,93,35,0.35), 0 0 0 0 rgba(74,93,35,0.22);
-  }
-  55%{
-    box-shadow: 0 4px 16px rgba(74,93,35,0.35), 0 0 0 12px rgba(74,93,35,0);
-  }
- .rec-intro{
-  max-width: 760px;
-  margin: 0 auto 28px;
-  font-size: 16px;
-  line-height: 1.65;
-  color: #5d4332;
-  text-align: left;
-}
-
-@media (max-width: 560px){
-  .rec-intro{
-    margin: 0 auto 22px;
-    font-size: 15px;
-    line-height: 1.6;
-  }
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>Luiza Zehnle | Psicóloga Brasileira Online | Atendo no Exterior | CRP 03/20324</title>
+  <meta name="description" content="Psicóloga brasileira que atende em português para quem vive fora do Brasil. Psicoterapia online no seu fuso, com quem entende sua cultura. CRP 03/20324." />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J84C9ZE889"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-J84C9ZE889');
+    gtag('config', 'AW-18023297873');
+  </script>
+
+  <link rel="icon" type="image/png" href="7.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="bg_1.jpeg" />
+
+  <style>
+    /* =============================================
+       VARIÁVEIS GLOBAIS
+    ============================================= */
+    :root{
+      --bg:#d7a858;
+      --ink:#49372f;
+      --ink-soft:#3f312b;
+      --title:#6b5148;
+      --line:rgba(107,79,44,0.12);
+      --card:rgba(255,250,246,0.58);
+      --card-strong:rgba(255,250,246,0.68);
+      --card-dark:rgba(84,62,47,0.82);
+      --card-dark-soft:rgba(84,62,47,0.72);
+      --stroke:rgba(255,255,255,0.34);
+      --brown:#7a6152;
+      --button:#c7ab95;
+      --button-hover:#bb9d86;
+      --accent:#7b8f6a;
+      --accent-dark:#667958;
+      --accent-soft:rgba(123,143,106,0.10);
+      --secondary:#b07a7a;
+      --shadow-soft:0 16px 40px rgba(65,34,16,0.10);
+      --shadow-mid:0 24px 70px rgba(65,34,16,0.13);
+      --shadow-strong:0 30px 110px rgba(65,34,16,0.15);
+      --max:1180px;
+      --nav-offset:112px;
+      --radius-xl:34px;
+      --radius-lg:26px;
+      --radius-md:18px;
+    }
+
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      min-height:100vh;
+      font-family:'Manrope',sans-serif;
+      color:var(--ink);
+      background:var(--bg);
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:'';
+      position:fixed;
+      inset:0;
+      background-image:
+        linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.05) 22%, rgba(40,24,16,0.03)),
+        url('bg_1.jpeg');
+      background-size:cover;
+      background-position:center;
+      opacity:.58;
+      z-index:-2;
+      pointer-events:none;
+      transform:scale(1.03);
+    }
+
+    body::after{
+      content:'';
+      position:fixed;
+      inset:0;
+      background:linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.02) 18%, rgba(255,255,255,0.05));
+      z-index:-1;
+      pointer-events:none;
+    }
+
+    img{display:block;max-width:100%}
+    a{text-decoration:none;color:inherit}
+    button{font:inherit}
+
+    /* =============================================
+       SHELL / LAYOUT EXTERNO
+    ============================================= */
+    .site-shell{
+      width:min(100%, var(--max));
+      margin:0 auto;
+      padding:24px 20px 88px;
+    }
+
+    .main-card{
+      background:linear-gradient(180deg, rgba(255,248,243,0.28), rgba(255,248,243,0.18));
+      border:1px solid rgba(255,255,255,0.30);
+      border-radius:var(--radius-xl);
+      box-shadow:var(--shadow-strong);
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+      overflow:hidden;
+    }
+
+    /* =============================================
+       HERO SHELL
+    ============================================= */
+    .hero-shell{
+      padding:0;
+    }
+
+    .hero-card{
+      position:relative;
+      border-radius:30px;
+      box-shadow:var(--shadow-mid);
+      overflow:hidden;
+      background:
+        linear-gradient(180deg, rgba(183,131,45,0.20) 0 170px, rgba(245,236,224,0.78) 170px 100%);
+      border:1px solid rgba(255,255,255,0.34);
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+    }
+
+    .hero-card::before{
+      content:'';
+      position:absolute;
+      inset:0 0 auto 0;
+      height:170px;
+      background:
+        linear-gradient(180deg, rgba(180,130,50,0.18), rgba(160,110,40,0.28)),
+        url('bg_1.jpeg') center/cover no-repeat;
+      pointer-events:none;
+      z-index:0;
+    }
+
+    /* =============================================
+       HERO TOPO
+    ============================================= */
+    .hero-top-banner{
+      position:relative;
+      z-index:2;
+      width:100%;
+      min-height:170px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:18px 24px 0;
+      background:none;
+    }
+
+    .hero-top-banner::after{
+      content:none;
+    }
+
+    .hero-logo-wrap{
+      position:relative;
+      z-index:3;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .hero-logo-wrap img{
+      height:92px;
+      width:auto;
+      object-fit:contain;
+      filter:brightness(0) invert(1);
+      display:block;
+    }
+
+    /* =============================================
+       TOPBAR / NAV
+    ============================================= */
+    .topbar{
+      position:absolute;
+      top:160px;
+      right:28px;
+      z-index:20;
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      padding:0;
+      border-bottom:none;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      flex-wrap:wrap;
+      position:relative;
+    }
+
+    .mobile-menu-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-height:42px;
+      padding:10px 18px;
+      border-radius:999px;
+      border:1px solid rgba(107,81,72,0.14);
+      background:rgba(255,248,243,0.82);
+      color:var(--brown);
+      font-size:14px;
+      font-weight:700;
+      cursor:pointer;
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+      transition:background .22s ease, transform .22s ease;
+      position:relative;
+      z-index:201;
+      box-shadow:0 6px 18px rgba(65,34,16,0.08);
+    }
+
+    .mobile-menu-btn:hover{
+      background:rgba(255,255,255,0.58);
+      transform:translateY(-1px);
+    }
+
+    .menu-icon{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:4px;
+      width:16px;
+    }
+
+    .menu-icon span{
+      display:block;
+      height:1.5px;
+      background:var(--brown);
+      border-radius:2px;
+      transition:transform .24s ease, opacity .24s ease;
+      transform-origin:center;
+    }
+
+    .mobile-menu-btn.is-open .menu-icon span:nth-child(1){
+      transform:translateY(5.5px) rotate(45deg);
+    }
+    .mobile-menu-btn.is-open .menu-icon span:nth-child(2){
+      opacity:0;
+    }
+    .mobile-menu-btn.is-open .menu-icon span:nth-child(3){
+      transform:translateY(-5.5px) rotate(-45deg);
+    }
+
+    .nav-links{
+      position:absolute;
+      top:calc(100% + 10px);
+      right:0;
+      display:none;
+      min-width:220px;
+      flex-direction:column;
+      gap:4px;
+      padding:10px;
+      border-radius:18px;
+      background:rgba(255,250,246,0.96);
+      border:1px solid rgba(255,255,255,0.50);
+      box-shadow:var(--shadow-mid);
+      backdrop-filter:blur(20px);
+      -webkit-backdrop-filter:blur(20px);
+      z-index:300;
+    }
+
+    .nav-links.is-open{
+      display:flex;
+    }
+
+    .nav-links a,
+    .nav-links button{
+      border:none;
+      background:transparent;
+      color:rgba(73,55,47,0.82);
+      font-size:15px;
+      font-weight:500;
+      padding:11px 16px;
+      border-radius:12px;
+      cursor:pointer;
+      transition:background .18s ease, color .18s ease;
+      text-align:left;
+      width:100%;
+    }
+
+    .nav-links a:hover,
+    .nav-links button:hover,
+    .nav-links .is-active{
+      background:rgba(122,97,82,0.10);
+      color:var(--title);
+    }
+
+    /* =============================================
+       HERO — layout centrado
+    ============================================= */
+    .hero{
+      padding:72px 32px 40px;
+      text-align:center;
+      border-bottom:1px solid var(--line);
+      position:relative;
+      z-index:1;
+    }
+
+    .hero-inner{
+      max-width:620px;
+      margin:0 auto;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+
+    .hero-tag{
+      display:inline-block;
+      margin-bottom:20px;
+      padding:4px 0 8px;
+      border-radius:0;
+      font-size:10.5px;
+      font-weight:600;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:var(--ink-soft);
+      border:none;
+      border-bottom:1px solid rgba(107,81,72,0.30);
+      background:transparent;
+      backdrop-filter:none;
+      -webkit-backdrop-filter:none;
+    }
+
+    .hero h1{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(2.6rem, 5.5vw, 4.4rem);
+      line-height:1.06;
+      letter-spacing:-.03em;
+      color:var(--title);
+      font-weight:500;
+      margin-bottom:22px;
+      max-width:14ch;
+    }
+
+    .hero h1 em{
+      color:var(--secondary);
+      font-style:italic;
+    }
+
+    .hero-desc{
+      font-size:17px;
+      line-height:1.85;
+      color:var(--ink-soft);
+      font-weight:300;
+      max-width:40ch;
+      margin-bottom:28px;
+    }
+
+    .hero-proof{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:8px;
+      margin-bottom:28px;
+    }
+
+    .hero-proof span{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:7px 13px;
+      border-radius:999px;
+      font-size:11.5px;
+      font-weight:600;
+      color:var(--brown);
+      background:rgba(255,255,255,0.42);
+      border:1px solid rgba(93,67,50,0.10);
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:12px;
+      width:100%;
+    }
+
+    .btn-hero-primary{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      width:100%;
+      max-width:420px;
+      padding:15px 24px;
+      border-radius:16px;
+      font-size:15px;
+      font-weight:700;
+      color:#fff;
+      background:linear-gradient(135deg, var(--accent), var(--accent-dark));
+      border:none;
+      cursor:pointer;
+      box-shadow:0 12px 28px rgba(102,121,88,0.30);
+      animation:heroPulse 2.8s ease-in-out infinite;
+      transition:transform .24s ease, box-shadow .24s ease, background .24s ease;
+      text-decoration:none;
+    }
+
+    .btn-hero-primary svg{
+      transition:transform .24s ease;
+      flex-shrink:0;
+    }
+
+    .btn-hero-primary:hover{
+      background:linear-gradient(135deg, #869a75, #6c8060);
+      transform:translateY(-2px);
+      box-shadow:0 16px 36px rgba(102,121,88,0.32);
+      animation:none;
+    }
+
+    .btn-hero-primary:hover svg{
+      transform:translateX(3px);
+    }
+
+    .btn-hero-secondary{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      width:100%;
+      max-width:380px;
+      padding:14px 22px;
+      border-radius:14px;
+      font-size:14px;
+      font-weight:700;
+      color:var(--title);
+      background:rgba(255,255,255,0.60);
+      border:1.5px solid rgba(107,81,72,0.28);
+      cursor:pointer;
+      text-decoration:none;
+      transition:background .24s ease, transform .24s ease, border-color .24s ease, box-shadow .24s ease;
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+      box-shadow:0 6px 20px rgba(107,81,72,0.10);
+      letter-spacing:0.01em;
+    }
+
+    .btn-hero-secondary:hover{
+      background:rgba(255,255,255,0.82);
+      border-color:rgba(107,81,72,0.42);
+      transform:translateY(-2px);
+      box-shadow:0 10px 28px rgba(107,81,72,0.16);
+    }
+
+    .btn-hero-secondary svg{
+      transition:transform .24s ease;
+    }
+
+    .btn-hero-secondary:hover svg{
+      transform:translateX(3px);
+    }
+
+    @keyframes heroPulse{
+      0%,100%{box-shadow:0 12px 28px rgba(102,121,88,0.30), 0 0 0 0 rgba(102,121,88,0.20)}
+      55%{box-shadow:0 12px 28px rgba(102,121,88,0.30), 0 0 0 13px rgba(102,121,88,0)}
+    }
+
+    /* =============================================
+       SEÇÕES
+    ============================================= */
+    .section{
+      padding:78px 44px;
+      border-top:1px solid var(--line);
+      scroll-margin-top:var(--nav-offset);
+    }
+
+    .section-head{
+      max-width:760px;
+      margin-bottom:34px;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      margin-bottom:22px;
+      color:#8d7267;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+
+    .section-title,
+    .bio-title,
+    .cta-final h2,
+    .faq-trigger{
+      font-family:'Playfair Display',serif;
+      color:var(--title);
+      letter-spacing:-.03em;
+      font-weight:500;
+    }
+
+    .section-title{
+      font-size:clamp(2.4rem, 4vw, 3.8rem);
+      line-height:1.08;
+      margin-bottom:14px;
+    }
+
+    .section-copy{
+      font-size:17px;
+      line-height:1.9;
+      color:var(--ink-soft);
+      font-weight:300;
+    }
+
+    /* =============================================
+       RECONHECIMENTO
+    ============================================= */
+    .recon-list{
+      display:grid;
+      gap:18px;
+      grid-template-columns:1fr 1fr;
+    }
+
+    .recon-card{
+      border-radius:22px;
+      box-shadow:var(--shadow-soft);
+      padding:24px 22px;
+      background:rgba(255,255,255,0.26);
+      border:1px solid rgba(255,255,255,0.30);
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+      transition:transform .22s ease, background .22s ease, border-color .22s ease, box-shadow .22s ease;
+    }
+
+    .recon-card:hover{
+      transform:translateX(5px);
+      background:rgba(255,255,255,0.52);
+      border-color:rgba(176,122,122,0.28);
+      box-shadow:0 18px 44px rgba(65,34,16,0.13);
+    }
+
+    .recon-card-inner{
+      display:flex;
+      align-items:flex-start;
+      gap:14px;
+    }
+
+    .recon-icon{
+      width:32px;
+      height:32px;
+      flex-shrink:0;
+      margin-top:4px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .recon-card strong{
+      display:block;
+      margin-bottom:8px;
+      color:var(--brown);
+      font-size:15px;
+      font-weight:700;
+      line-height:1.3;
+    }
+
+    .recon-card p{
+      font-size:15px;
+      line-height:1.85;
+      color:var(--ink-soft);
+      font-weight:300;
+    }
+
+    /* =============================================
+       SOBRE MIM
+    ============================================= */
+    .sobre-layout{
+      display:grid;
+      grid-template-columns:340px 1fr;
+      gap:44px;
+      align-items:start;
+    }
+
+    .about-photo-wrap{position:relative}
+
+    .about-photo{
+      width:100%;
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:var(--shadow-mid);
+      border:1px solid rgba(255,255,255,0.30);
+    }
+
+    .about-photo img{
+      width:100%;
+      aspect-ratio:4/5;
+      object-fit:cover;
+      object-position:top;
+    }
+
+    .about-badge{
+      position:absolute;
+      top:-16px;
+      right:-16px;
+      width:98px;
+      height:98px;
+      border-radius:50%;
+      background:rgba(93,70,57,0.90);
+      color:#fff;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      box-shadow:0 18px 34px rgba(60,30,10,.18);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+    }
+
+    .about-badge strong{
+      font-family:'Playfair Display',serif;
+      font-size:32px;
+      line-height:1;
+      font-weight:500;
+    }
+
+    .about-badge span{
+      font-size:10px;
+      text-transform:uppercase;
+      letter-spacing:.10em;
+      line-height:1.35;
+      max-width:66px;
+    }
+
+    .about-crp{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(107,81,72,0.16);
+      background:rgba(255,255,255,0.28);
+      color:var(--title);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-top:10px;
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+    }
+
+    .about-copy p{
+      font-size:15.5px;
+      line-height:1.9;
+      color:var(--ink-soft);
+      font-weight:300;
+      margin-bottom:18px;
+    }
+
+    .about-destaque{
+      margin:18px 0;
+      padding:18px 20px;
+      border-left:2px solid rgba(176,122,122,0.40);
+      background:rgba(255,255,255,0.22);
+      border-radius:0 16px 16px 0;
+      font-style:italic;
+      font-size:16px;
+      line-height:1.85;
+      color:var(--title);
+    }
+
+    .about-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:24px;
+    }
+
+    .btn-primary,
+    .btn-ghost{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      border:none;
+      cursor:pointer;
+      transition:transform .24s ease, box-shadow .24s ease, background .24s ease, color .24s ease, border-color .24s ease;
+      text-decoration:none;
+    }
+
+    .btn-primary{
+      min-height:52px;
+      padding:14px 24px;
+      background:var(--button);
+      color:#fff;
+      border-radius:16px;
+      font-size:15px;
+      font-weight:700;
+      box-shadow:0 14px 34px rgba(133,101,79,0.18);
+    }
+
+    .btn-primary:hover{
+      background:var(--button-hover);
+      transform:translateY(-2px);
+      box-shadow:0 18px 38px rgba(133,101,79,0.20);
+    }
+
+    .btn-ghost{
+      min-height:52px;
+      padding:14px 18px;
+      border:1px solid rgba(107,81,72,0.16);
+      background:rgba(255,255,255,0.24);
+      color:var(--brown);
+      font-size:14px;
+      font-weight:700;
+      border-radius:16px;
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+    }
+
+    .btn-ghost:hover{
+      background:rgba(255,255,255,0.40);
+      transform:translateY(-1px);
+    }
+
+    /* =============================================
+       ABORDAGEM / DARK
+    ============================================= */
+    .section-dark{
+      background:linear-gradient(180deg, var(--card-dark), var(--card-dark-soft));
+      color:#f4e9e2;
+    }
+
+    .section-dark .eyebrow,
+    .section-dark .section-title{color:#f3e5dc}
+    .section-dark .section-copy,
+    .section-dark .dark-text,
+    .section-dark .dark-card p{color:rgba(244,233,226,0.80)}
+    .section-dark .dark-card h4{color:#fff4ee}
+
+    .service-layout{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:42px;
+      align-items:start;
+    }
+
+    .cards-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .dark-card{
+      border-radius:22px;
+      box-shadow:var(--shadow-soft);
+      padding:22px 20px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.12);
+    }
+
+    .dark-card h4{
+      display:block;
+      margin-bottom:8px;
+      font-size:18px;
+      font-family:'Playfair Display',serif;
+      line-height:1.15;
+      font-weight:500;
+    }
+
+    .dark-card p{
+      font-size:15px;
+      line-height:1.85;
+      font-weight:300;
+    }
+
+    /* =============================================
+       PAÍSES
+    ============================================= */
+    .paises-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:20px;
+    }
+
+    .pais-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:9px 16px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.42);
+      border:1px solid rgba(255,255,255,0.38);
+      box-shadow:0 8px 22px rgba(65,34,16,0.08);
+      font-size:13px;
+      font-weight:600;
+      color:var(--brown);
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+      transition:background .22s ease, transform .22s ease;
+    }
+
+    .pais-tag:hover{
+      background:rgba(255,255,255,0.68);
+      transform:translateY(-1px);
+    }
+
+    .paises-sub{
+      font-size:13px;
+      color:var(--brown);
+      font-weight:500;
+      display:flex;
+      align-items:center;
+      gap:7px;
+    }
+
+    /* =============================================
+       COMO FUNCIONA
+    ============================================= */
+    .steps{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      max-width:760px;
+    }
+
+    .step{
+      display:flex;
+      align-items:flex-start;
+      gap:18px;
+      padding:22px 24px;
+      border-radius:20px;
+      background:rgba(255,255,255,0.30);
+      border:1px solid rgba(255,255,255,0.34);
+      box-shadow:0 12px 28px rgba(65,34,16,0.08);
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+    }
+
+    .step-num{
+      width:38px;
+      height:38px;
+      flex-shrink:0;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:var(--secondary);
+      color:#fff;
+      font-family:'Playfair Display',serif;
+      font-size:16px;
+      font-weight:700;
+    }
+
+    .step-body{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+
+    .step-strong{
+      font-size:15.5px;
+      font-weight:700;
+      color:var(--title);
+      line-height:1.3;
+    }
+
+    .step-span{
+      font-size:14.5px;
+      line-height:1.7;
+      color:var(--ink-soft);
+      font-weight:300;
+    }
+
+    /* =============================================
+       DIFERENCIAIS
+    ============================================= */
+    .dif-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:12px;
+    }
+
+    .dif-item{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:16px 18px;
+      border-radius:16px;
+      background:rgba(255,255,255,0.32);
+      border:1px solid rgba(255,255,255,0.34);
+      box-shadow:0 10px 24px rgba(65,34,16,0.07);
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+      font-size:13.5px;
+      font-weight:600;
+      color:var(--brown);
+    }
+
+    .dif-check{
+      color:var(--accent);
+      font-size:16px;
+      flex-shrink:0;
+    }
+
+    /* =============================================
+       DEPOIMENTOS
+    ============================================= */
+    .testimonials-section{
+      padding:78px 44px;
+      border-top:1px solid var(--line);
+      scroll-margin-top:var(--nav-offset);
+    }
+
+    .testimonials-head{
+      max-width:760px;
+      margin-bottom:34px;
+    }
+
+    .testimonials-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-bottom:28px;
+    }
+
+    .testimonial-card{
+      padding:26px 24px;
+      background:rgba(255,255,255,0.30);
+      border:1px solid rgba(255,255,255,0.38);
+      border-radius:22px;
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+      box-shadow:var(--shadow-soft);
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    .testimonial-stars{
+      display:flex;
+      gap:3px;
+      color:#c8973a;
+      font-size:16px;
+    }
+
+    .testimonial-text{
+      font-size:15px;
+      line-height:1.85;
+      color:var(--ink-soft);
+      font-weight:300;
+      font-style:italic;
+      flex:1;
+    }
+
+    .testimonial-author{
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      color:var(--brown);
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+
+    .testimonial-author::before{
+      content:'';
+      display:inline-block;
+      width:18px;
+      height:1.5px;
+      background:var(--brown);
+      opacity:.4;
+      border-radius:2px;
+    }
+
+    .google-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 20px;
+      border-radius:14px;
+      background:rgba(255,255,255,0.55);
+      border:1.5px solid rgba(107,81,72,0.18);
+      color:var(--title);
+      font-size:13.5px;
+      font-weight:700;
+      cursor:pointer;
+      text-decoration:none;
+      transition:background .24s ease, transform .24s ease, box-shadow .24s ease;
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+      box-shadow:0 4px 14px rgba(107,81,72,0.08);
+    }
+
+    .google-btn:hover{
+      background:rgba(255,255,255,0.80);
+      transform:translateY(-1px);
+      box-shadow:0 8px 24px rgba(107,81,72,0.13);
+    }
+
+    .google-btn svg{
+      flex-shrink:0;
+    }
+
+    /* =============================================
+       FAQ
+    ============================================= */
+    .faq-list{max-width:860px}
+
+    .faq-item{border-bottom:1px solid rgba(107,79,44,0.12)}
+
+    .faq-trigger{
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      padding:22px 0;
+      border:none;
+      background:none;
+      text-align:left;
+      cursor:pointer;
+      font-size:clamp(20px, 3vw, 28px);
+      line-height:1.2;
+    }
+
+    .faq-icon{
+      width:32px;
+      height:32px;
+      min-width:32px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid rgba(107,79,44,0.18);
+      color:var(--brown);
+      font-size:18px;
+      transition:transform .24s ease, background .24s ease, color .24s ease;
+    }
+
+    .faq-item.open .faq-icon{
+      transform:rotate(45deg);
+      background:var(--brown);
+      color:#fff;
+    }
+
+    .faq-answer{
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .36s ease;
+    }
+
+    .faq-inner{
+      padding:0 0 22px;
+      max-width:780px;
+      font-size:15.5px;
+      line-height:1.9;
+      color:var(--ink-soft);
+      font-weight:300;
+    }
+
+    .faq-item.open .faq-answer{max-height:360px}
+
+    /* =============================================
+       CTA FINAL COM IMAGEM
+    ============================================= */
+    .cta-final{
+      margin-top:40px;
+      border-radius:30px;
+      overflow:hidden;
+      background:linear-gradient(180deg, #6b4a3b, #5a3f33);
+      color:#f6ece7;
+    }
+
+    .cta-final-inner{
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr;
+      align-items:center;
+      gap:40px;
+      padding:60px 56px;
+    }
+
+    .cta-text{
+      max-width:520px;
+    }
+
+    .cta-text h2{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(2.2rem, 3.2vw, 3rem);
+      line-height:1.2;
+      margin-bottom:16px;
+      color:#f6ece7;
+    }
+
+    .cta-final .cta-sub{
+      font-size:16px;
+      line-height:1.7;
+      color:rgba(255,255,255,0.88);
+      margin-bottom:24px;
+    }
+
+    .cta-safe{
+      display:block;
+      margin-top:14px;
+      font-size:11px;
+      color:rgba(246,236,231,0.45);
+    }
+
+    .cta-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:15px 24px;
+      border-radius:14px;
+      background:linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color:#fff;
+      font-weight:700;
+      font-size:15px;
+      text-decoration:none;
+      transition:all .24s ease;
+      box-shadow:0 12px 28px rgba(102,121,88,0.30);
+    }
+
+    .cta-btn:hover{
+      transform:translateY(-2px);
+      background:linear-gradient(135deg, #869a75, #6c8060);
+      box-shadow:0 16px 36px rgba(102,121,88,0.32);
+    }
+
+    .cta-image{
+      width:100%;
+      max-width:340px;
+      border-radius:22px;
+      overflow:visible;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .cta-image img{
+      width:100%;
+      height:auto;
+      object-fit:contain;
+      border-radius:22px;
+    }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    .footer{
+      margin-top:20px;
+      padding:24px 12px 0;
+      text-align:center;
+      color:rgba(255,255,255,0.72);
+      font-size:11px;
+      line-height:1.8;
+    }
+
+    /* =============================================
+       BOTÃO FLUTUANTE WHATSAPP
+    ============================================= */
+    .float-wpp{
+      position:fixed;
+      right:20px;
+      bottom:80px;
+      z-index:120;
+      width:58px;
+      height:58px;
+      border-radius:50%;
+      background:linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      box-shadow:0 12px 30px rgba(60,30,10,.22);
+      animation:wppPulse 2.8s ease-in-out infinite;
+      transition:transform .2s ease;
+    }
+
+    .float-wpp:hover{
+      transform:scale(1.06) translateY(-1px);
+      animation:none;
+    }
+
+    @keyframes wppPulse{
+      0%,100%{box-shadow:0 12px 30px rgba(60,30,10,.22), 0 0 0 0 rgba(102,121,88,.22)}
+      55%{box-shadow:0 12px 30px rgba(60,30,10,.22), 0 0 0 12px rgba(102,121,88,0)}
+    }
+
+    /* =============================================
+       BOTÃO VOLTAR AO TOPO
+    ============================================= */
+    .scroll-top-btn{
+      position:fixed;
+      right:20px;
+      bottom:14px;
+      z-index:121;
+      width:48px;
+      height:48px;
+      border-radius:50%;
+      background:rgba(255,250,246,0.82);
+      border:1.5px solid rgba(107,81,72,0.18);
+      color:var(--brown);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      box-shadow:0 8px 24px rgba(65,34,16,0.14);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      opacity:0;
+      pointer-events:none;
+      transform:translateY(10px);
+      transition:opacity .28s ease, transform .28s ease, background .22s ease;
+    }
+
+    .scroll-top-btn.is-visible{
+      opacity:1;
+      pointer-events:auto;
+      transform:translateY(0);
+    }
+
+    .scroll-top-btn:hover{
+      background:rgba(255,255,255,0.96);
+    }
+
+    /* =============================================
+       ANIMAÇÕES HERO
+    ============================================= */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-tag    { animation: fadeUp .7s ease both; animation-delay: .1s; }
+    .hero h1     { animation: fadeUp .7s ease both; animation-delay: .28s; }
+    .hero-desc   { animation: fadeUp .7s ease both; animation-delay: .44s; }
+    .hero-proof  { animation: fadeUp .7s ease both; animation-delay: .58s; }
+    .hero-actions{ animation: fadeUp .7s ease both; animation-delay: .70s; }
+
+    /* =============================================
+       RESPONSIVO
+    ============================================= */
+    @media (max-width: 1020px){
+      .service-layout,
+      .sobre-layout{grid-template-columns:1fr}
+
+      .recon-list,
+      .cards-grid,
+      .testimonials-grid{grid-template-columns:1fr}
+
+      .dif-grid{grid-template-columns:1fr 1fr}
+
+      .about-photo-wrap{max-width:340px}
+
+      .cta-final-inner{
+        grid-template-columns:1fr;
+        padding:44px 36px;
+        gap:28px;
+      }
+
+      .cta-image{
+        order:-1;
+        max-width:280px;
+        margin:0 auto;
+      }
+
+      .cta-text{
+        text-align:center;
+        margin:0 auto;
+      }
+    }
+
+    @media (max-width: 760px){
+      :root{--nav-offset:96px}
+
+      .site-shell{padding:12px 12px 86px}
+
+      .hero-card{
+        border-radius:24px;
+        background:
+          linear-gradient(180deg, rgba(183,131,45,0.18) 0 138px, rgba(245,236,224,0.95) 138px 100%);
+      }
+
+      .hero-card::before{
+        height:138px;
+        border-radius:24px 24px 0 0;
+      }
+
+      .hero-top-banner{
+        min-height:138px;
+        padding:14px 16px 0;
+      }
+
+      .hero-logo-wrap img{
+        height:68px;
+      }
+
+      .topbar{
+        top:130px;
+        right:16px;
+        padding:0;
+      }
+
+      .hero{
+        padding:54px 20px 30px;
+      }
+
+      .hero h1{
+        font-size:clamp(2.4rem, 11vw, 3.2rem);
+      }
+
+      .hero-desc{font-size:15.5px}
+
+      .btn-hero-primary,
+      .btn-hero-secondary{
+        max-width:none;
+        width:100%;
+      }
+
+      .section,
+      .testimonials-section{
+        padding-left:20px;
+        padding-right:20px;
+        padding-top:54px;
+        padding-bottom:54px;
+      }
+
+      .section-title{font-size:clamp(2rem, 9vw, 2.7rem)}
+
+      .recon-list{
+        grid-template-columns:1fr;
+      }
+
+      .dif-grid{grid-template-columns:1fr}
+
+      .testimonials-grid{grid-template-columns:1fr}
+
+      .float-wpp{
+        right:14px;
+        bottom:72px;
+        width:52px;
+        height:52px;
+      }
+
+      .scroll-top-btn{
+        right:14px;
+        bottom:14px;
+        width:44px;
+        height:44px;
+      }
+
+      .cta-final-inner{
+        padding:36px 22px;
+      }
+    }
+  </style>
 
   <script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) !== 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18023297873/vA0QCLuVlo0cENHmlpJD',
+        'event_callback': callback
+      });
+      return false;
     }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-18023297873/vA0QCLuVlo0cENHmlpJD',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
+  </script>
 </head>
 <body>
+  <div class="site-shell">
+    <main class="main-card">
 
-<div class="wrap">
+      <!-- =============================================
+           HERO
+      ============================================= -->
+      <section class="hero-shell" id="hero">
+        <div class="hero-card">
 
-  <div class="logo-bar">
-    <a href="https://www.luizazehnle.com/exterior.html">
-      <img src="LOGO_LUIZA.png" alt="Luiza Lima Zehnle" fetchpriority="high">
-    </a>
-  </div>
+          <div class="hero-top-banner">
+            <div class="hero-logo-wrap">
+              <img src="LOGO_LUIZA.png" alt="Luiza Lima Zehnle" />
+            </div>
+          </div>
 
-  <div class="card">
+          <div class="topbar">
+            <nav class="nav">
+              <button
+                class="mobile-menu-btn"
+                id="menuBtn"
+                onclick="toggleMobileMenu()"
+                aria-expanded="false"
+                aria-label="Abrir menu de navegação">
+                <div class="menu-icon" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                Menu
+              </button>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-shell">
-    <div class="hero-content">
-      <span class="hero-tag">Psicóloga Brasileira · Atendo Qualquer País</span>
+              <div class="nav-links" id="navLinks" role="menu">
+                <button class="is-active" onclick="scrollToSection('hero')" role="menuitem">Início</button>
+                <a href="#sobre" onclick="scrollToSection('sobre'); return false;" role="menuitem">Sobre Mim</a>
+                <a href="#paises" onclick="scrollToSection('paises'); return false;" role="menuitem">Países</a>
+                <a href="#como-funciona" onclick="scrollToSection('como-funciona'); return false;" role="menuitem">Como Funciona</a>
+                <a href="#depoimentos" onclick="scrollToSection('depoimentos'); return false;" role="menuitem">Depoimentos</a>
+                <a href="#faq" onclick="scrollToSection('faq'); return false;" role="menuitem">FAQ</a>
+              </div>
+            </nav>
+          </div>
 
-     <h1>Tem coisas que <br>só se dizem na <br><em>língua da gente!</em></h1>
+          <div class="hero">
+            <div class="hero-inner">
+              <span class="hero-tag">PSICÓLOGA BRASILEIRA · ATENDIMENTO ONLINE · QUALQUER PAÍS</span>
 
-      <p class="hero-desc">
-        Psicoterapia em português para brasileiros no exterior que se sentem deslocados, sobrecarregados ou em dúvida sobre seus <strong>caminhos.</strong>
-      </p>
+              <h1>Tem coisas que só se dizem na <em>língua da gente</em></h1>
 
-      <div class="hero-proof">
-        <span>No seu fuso horário</span>
-        <span>8 anos de experiência</span>
-        <span>Atendimento online</span>
-      </div>
+              <p class="hero-desc">
+                Psicoterapia em português para brasileiros no exterior que se sentem deslocados, sobrecarregados ou em dúvida sobre seus <strong>caminhos.</strong>
+              </p>
 
-      <div class="hero-actions">
-        <a href="https://wa.me/557199983483?utm_source=google&utm_medium=cpc&utm_campaign=exterior&utm_content=hero&text=Olá,%20Luiza!%20Moro%20fora%20do%20Brasil%20e%20gostaria%20de%20agendar%20uma%20primeira%20conversa."
-           onclick="return gtag_report_conversion(this.href)"
+              <div class="hero-proof">
+                <span>CRP 03/20324</span>
+                <span>No seu fuso horário</span>
+                <span>8 anos de experiência</span>
+                <span>Qualquer país do mundo</span>
+              </div>
+
+              <div class="hero-actions">
+                <a class="btn-hero-primary"
+                   href="https://wa.me/557199983483?utm_source=google&utm_medium=cpc&utm_campaign=exterior&utm_content=hero&text=Olá,%20Luiza!%20Moro%20fora%20do%20Brasil%20e%20gostaria%20de%20agendar%20uma%20primeira%20conversa."
+                   onclick="return gtag_report_conversion(this.href)"
+                   target="_blank"
+                   rel="noopener">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                  </svg>
+                  Agendar conversa inicial
+                </a>
+
+                <a class="btn-hero-secondary"
+                   href="#sobre"
+                   onclick="scrollToSection('sobre'); return false;">
+                  Conhecer mais sobre meu trabalho
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- =============================================
+           RECONHECIMENTO
+      ============================================= -->
+      <section class="section" id="reconhece">
+        <div class="section-head">
+          <span class="eyebrow">Por onde começar</span>
+          <h2 class="section-title">Você se reconhece aqui?</h2>
+          <p class="section-copy">
+            Se você está vivendo fora do Brasil e sente que algo não está encaixando como imaginava, a terapia pode ser um espaço para olhar isso com mais calma e clareza.
+          </p>
+        </div>
+
+        <div class="recon-list">
+          <article class="recon-card">
+            <div class="recon-card-inner">
+              <div class="recon-icon">
+                <svg width="24" height="24" viewBox="0 0 50 52" fill="none" stroke="var(--brown)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="5,32 5,52 45,52 45,32"/>
+                  <polyline points="0,34 25,10 50,34"/>
+                  <rect x="18" y="36" width="14" height="16" rx="2"/>
+                  <rect x="8" y="30" width="10" height="10" rx="1"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Saudade de casa</strong>
+                <p>Da família, da rotina, dos afetos de sempre e da sensação de pertencer a um lugar.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="recon-card">
+            <div class="recon-card-inner">
+              <div class="recon-icon">
+                <svg width="24" height="24" viewBox="0 0 50 44" fill="none" stroke="var(--brown)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="0" y="0" width="36" height="26" rx="6"/>
+                  <polyline points="6,26 6,34 14,26"/>
+                  <rect x="14" y="10" width="36" height="26" rx="6"/>
+                  <polyline points="44,36 44,42 36,36"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Dificuldade com outro idioma</strong>
+                <p>Fazer terapia em outra língua é difícil. As palavras certas não saem, e algo sempre se perde.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="recon-card">
+            <div class="recon-card-inner">
+              <div class="recon-icon">
+                <svg width="24" height="24" viewBox="0 0 50 44" fill="none" stroke="var(--brown)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="16" cy="22" r="16"/>
+                  <circle cx="34" cy="22" r="16"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Sensação de não pertencer</strong>
+                <p>Não é completamente de lá, mas também já não é totalmente daqui. Um entre-lugar.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="recon-card">
+            <div class="recon-card-inner">
+              <div class="recon-icon">
+                <svg width="24" height="24" viewBox="0 0 40 36" fill="none" stroke="var(--brown)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="20,2 24,14 36,14 27,22 30,34 20,26 10,34 13,22 4,14 16,14"/>
+                </svg>
+              </div>
+              <div>
+                <strong>A vida que você idealizou</strong>
+                <p>A realidade lá fora é diferente do que você imaginou. E reconhecer isso dói.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="recon-card">
+            <div class="recon-card-inner">
+              <div class="recon-icon">
+                <svg width="24" height="24" viewBox="0 0 50 36" fill="none" stroke="var(--brown)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="10" r="7"/>
+                  <path d="M2,34 Q2,22 12,22 Q22,22 22,34"/>
+                  <circle cx="38" cy="10" r="7"/>
+                  <path d="M28,34 Q28,22 38,22 Q48,22 48,34"/>
+                  <line x1="22" y1="16" x2="28" y2="16" stroke-dasharray="3,3"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Relacionamentos abalados</strong>
+                <p>A distância e o choque cultural impactam os vínculos de formas que às vezes surpreendem.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="recon-card">
+            <div class="recon-card-inner">
+              <div class="recon-icon">
+                <svg width="24" height="24" viewBox="0 0 50 36" fill="none" stroke="var(--brown)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="25" cy="10" r="7"/>
+                  <path d="M12,34 Q12,20 25,20 Q38,20 38,34"/>
+                  <circle cx="7" cy="16" r="4" opacity="0.5"/>
+                  <circle cx="43" cy="16" r="4" opacity="0.5"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Ninguém entende completamente</strong>
+                <p>Há algo que só quem é brasileiro vivendo fora pode entender. E isso isola.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- =============================================
+           SOBRE MIM
+      ============================================= -->
+      <section class="section" id="sobre">
+        <div class="sobre-layout">
+          <div class="about-photo-wrap">
+            <div class="about-photo">
+              <img src="luiza.webp" alt="Foto de Luiza Lima Zehnle" />
+            </div>
+            <div class="about-badge">
+              <strong>8</strong>
+              <span>anos de clínica</span>
+            </div>
+          </div>
+
+          <div class="about-copy">
+            <span class="eyebrow">Sobre Mim</span>
+            <h2 class="section-title">Olá, sou Luiza</h2>
+            <p>
+              Sou psicóloga brasileira, baiana, com 8 anos de experiência clínica e <strong>especialista em Teoria e Psicoterapia Junguiana.</strong> Atendo brasileiros que vivem em qualquer lugar do mundo.
+            </p>
+
+            <div class="about-destaque">
+              Sempre me chamou atenção o que acontece com a gente quando sai do próprio país. Não só as mudanças externas, mas o que isso mexe por dentro: identidade, pertencimento, escolhas e vínculos.
+            </div>
+
+            <p>
+              Trabalho com as especificidades de quem constrói vida fora do Brasil: <strong>a identidade dividida, a saudade, o estranhamento e a reinvenção que vem com tudo isso.</strong> Minha formação inclui clínica, saúde mental, escolas e atendimento a mulheres em situação de violência, atravessamentos que alimentam minha escuta.
+            </p>
+
+            <div class="about-crp">CRP 03/20324 · Registro ativo</div>
+
+            <div class="about-actions">
+              <a class="btn-ghost"
+                 href="https://www.luizazehnle.com/"
+                 target="_blank"
+                 rel="noopener">Conheça minha trajetória completa</a>
+              <a class="btn-primary"
+                 href="https://wa.me/557199983483?utm_source=google&utm_medium=cpc&utm_campaign=exterior&utm_content=sobre&text=Olá,%20Luiza!%20Moro%20fora%20do%20Brasil%20e%20gostaria%20de%20agendar%20uma%20primeira%20conversa."
+                 onclick="return gtag_report_conversion(this.href)"
+                 target="_blank"
+                 rel="noopener">Agendar primeira conversa</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================
+           PAÍSES — dark section
+      ============================================= -->
+      <section class="section section-dark" id="paises">
+        <div class="section-head">
+          <span class="eyebrow">Alcance</span>
+          <h2 class="section-title">Atendo brasileiros em</h2>
+          <p class="section-copy dark-text">
+            Não importa onde você esteja no mundo. Com boa conexão e um ambiente reservado, conseguimos construir um espaço profundo de trabalho — com sigilo e presença.
+          </p>
+        </div>
+
+        <div class="paises-grid">
+          <span class="pais-tag" style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.18);color:#f3e5dc;">🇵🇹 Portugal</span>
+          <span class="pais-tag" style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.18);color:#f3e5dc;">🇺🇸 Estados Unidos</span>
+          <span class="pais-tag" style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.18);color:#f3e5dc;">🇩🇪 Alemanha</span>
+          <span class="pais-tag" style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.18);color:#f3e5dc;">🇬🇧 Reino Unido</span>
+          <span class="pais-tag" style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.18);color:#f3e5dc;">🇫🇷 França</span>
+          <span class="pais-tag" style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.18);color:#f3e5dc;">🇨🇦 Canadá</span>
+          <span class="pais-tag" style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.18);color:#f3e5dc;">🇦🇺 Austrália</span>
+          <span class="pais-tag" style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.18);color:#f3e5dc;">🌍 E mais...</span>
+        </div>
+
+        <p class="paises-sub" style="color:rgba(244,233,226,0.65);">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          Horários adaptados ao seu fuso horário
+        </p>
+      </section>
+
+      <!-- =============================================
+           COMO FUNCIONA
+      ============================================= -->
+      <section class="section" id="como-funciona">
+        <div class="section-head">
+          <span class="eyebrow">O processo</span>
+          <h2 class="section-title">Como funciona</h2>
+          <p class="section-copy">
+            Simples, sigiloso e adaptado à sua realidade — onde quer que você esteja.
+          </p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <span class="step-strong">Você manda uma mensagem em português</span>
+              <span class="step-span">Me conta onde está e o que te traz. Não precisa ter tudo organizado para começar.</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <span class="step-strong">Agendamos uma conversa inicial</span>
+              <span class="step-span">Um primeiro encontro para nos conhecermos, no horário que funciona no seu fuso, sem compromisso.</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <span class="step-strong">Sessões semanais online</span>
+              <span class="step-span">50 minutos, por vídeo, de onde estiver no mundo. Sigilo profissional garantido.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================
+           DIFERENCIAIS
+      ============================================= -->
+      <section class="section" id="diferenciais" style="padding-top:0;border-top:none;">
+        <div class="dif-grid">
+          <div class="dif-item"><span class="dif-check">✓</span> Atendimento em português</div>
+          <div class="dif-item"><span class="dif-check">✓</span> Horário no seu fuso</div>
+          <div class="dif-item"><span class="dif-check">✓</span> Qualquer país do mundo</div>
+          <div class="dif-item"><span class="dif-check">✓</span> 100% sigiloso</div>
+          <div class="dif-item"><span class="dif-check">✓</span> Psicóloga brasileira</div>
+          <div class="dif-item"><span class="dif-check">✓</span> CRP 03/20324 ativo</div>
+        </div>
+      </section>
+
+      <!-- =============================================
+           DEPOIMENTOS
+      ============================================= -->
+      <section class="testimonials-section" id="depoimentos">
+        <div class="testimonials-head">
+          <span class="eyebrow">O que dizem os pacientes</span>
+          <h2 class="section-title">Experiências reais</h2>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"No tempo em que fui atendido por ela, me ajudou a entender muito do que se passava ao meu redor de forma muito simples e clara. Até hoje ainda uso de tudo que trabalhamos na terapia no meu dia a dia."</p>
+            <span class="testimonial-author">H. — Google</span>
+          </article>
+          <article class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Luiza é uma psicóloga jovem que combina de forma rara uma sensibilidade e escuta atenta com uma grande maturidade profissional. Consegue conduzir os atendimentos com ética, cuidado e muita profundidade. A recomendo de olhos fechados para quem busca um acompanhamento sério e responsável."</p>
+            <span class="testimonial-author">F. — Google</span>
+          </article>
+          <article class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Profissional que me ajudou a passar por momentos desafiadores. Me trouxe clareza e foco para fazer uma travessia importante. Que mais pessoas possam se beneficiar de seu trabalho."</p>
+            <span class="testimonial-author">A. — Google</span>
+          </article>
+        </div>
+
+        <a class="google-btn"
+           href="https://www.google.com/maps/place/Psic%C3%B3loga+Luiza+Lima+Zehnle/@-12.9870459,-38.4487232,17z/data=!3m1!4b1!4m6!3m5!1s0x7161b5af6108bab:0x1e2094f26f4a1753!8m2!3d-12.9870459!4d-38.4487232!16s%2Fg%2F11n3yyyr1q?entry=ttu&g_ep=EgoyMDI2MDQwNi4wIKXMDSoASAFQAw%3D%3D"
            target="_blank"
-           class="btn-primary">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+           rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
           </svg>
-          Agendar conversa inicial
+          Ver depoimentos no Google
         </a>
-      </div>
-    </div>
-  </div>
-</div>
+      </section>
 
-     <!-- SOBRE MIM -->
-<div class="section section-alt">
-  <h2>Sobre Mim</h2>
+      <!-- =============================================
+           FAQ
+      ============================================= -->
+      <section class="section" id="faq">
+        <div class="section-head">
+          <span class="eyebrow">Dúvidas frequentes</span>
+          <h2 class="section-title">Perguntas comuns</h2>
+        </div>
 
-  <div class="sobre-row">
-    <div class="sobre-photo-frame">
-      <img src="luiza.webp" alt="Luiza Lima Zehnle">
-    </div>
-
-    <div class="sobre-content">
-      <h3>Olá, sou Luiza</h3>
-
-      <span class="sobre-crp">
-        Psicóloga Baiana · <span class="no-link">CRP 03/20324</span> · 8 anos de experiência
-      </span>
-
-      <p>
-        Sempre me chamou atenção o que acontece com a gente quando sai do próprio país.
-        Não só as mudanças externas, mas o que isso mexe por dentro: <strong>identidade,
-        pertencimento, escolhas e vínculos.</strong>
-      </p>
-
-      <p class="sobre-destaque">
-        Existe algo nesse processo que vai além da mudança de lugar:
-        a sensação de não pertencer completamente, a dificuldade de se expressar como gostaria,
-        e a distância entre a vida que foi imaginada e a que está sendo vivida.
-      </p>
-
-      <p>
-        Sou brasileira, baiana, e atendo brasileiros que vivem em qualquer lugar do mundo.
-       <strong>Especialista em Psicoterapia Junguiana</strong>, trabalho com as especificidades de quem constrói vida fora do Brasil:
-        <strong>a identidade dividida, a saudade, o estranhamento e a reinvenção que vem com isso.</strong>
-      </p>
-
-      <a href="https://www.luizazehnle.com/" target="_blank" rel="noopener noreferrer" class="btn-traj">
-        Conheça minha trajetória
-      </a>
-    </div>
-  </div>
-</div>
-
-    
-
-    <!-- RECONHECIMENTO -->
-    <div class="section">
-      <h2>Você se reconhece aqui?</h2>
-
-  <p class="rec-intro">
-  Se você está vivendo fora do Brasil e sente que algo não está encaixando como imaginava, a terapia pode ser um espaço para olhar isso com mais clareza.
-</p>
-      
-      <ul class="rec-list">
-        <li><span class="rec-icon"><svg width="22" height="22" viewBox="0 0 50 52" fill="none" stroke="#6b4f2c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,32 5,52 45,52 45,32"/><polyline points="0,34 25,10 50,34"/><rect x="18" y="36" width="14" height="16" rx="2"/><rect x="8" y="30" width="10" height="10" rx="1"/></svg></span>Saudade da família, da rotina e da sensação de casa</li>
-        <li><span class="rec-icon"><svg width="22" height="22" viewBox="0 0 50 44" fill="none" stroke="#6b4f2c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="0" y="0" width="36" height="26" rx="6"/><polyline points="6,26 6,34 14,26"/><rect x="14" y="10" width="36" height="26" rx="6"/><polyline points="44,36 44,42 36,36"/><line x1="6" y1="10" x2="24" y2="10"/><line x1="6" y1="16" x2="20" y2="16"/><line x1="20" y1="20" x2="42" y2="20"/><line x1="20" y1="26" x2="36" y2="26"/></svg></span>Dificuldade de fazer terapia em outro idioma... As palavras não saem como deveriam</li>
-        <li><span class="rec-icon"><svg width="22" height="22" viewBox="0 0 50 44" fill="none" stroke="#6b4f2c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="22" r="16"/><circle cx="34" cy="22" r="16"/><circle cx="25" cy="22" r="4"/></svg></span>Sensação de não pertencer completamente a nenhum dos dois lugares</li>
-        <li><span class="rec-icon"><svg width="22" height="22" viewBox="0 0 40 36" fill="none" stroke="#6b4f2c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="20,2 24,14 36,14 27,22 30,34 20,26 10,34 13,22 4,14 16,14"/><circle cx="20" cy="18" r="16" stroke-dasharray="4,3"/></svg></span>A vida que você idealizou fora do Brasil é diferente da que encontrou</li>
-        <li><span class="rec-icon"><svg width="22" height="22" viewBox="0 0 50 36" fill="none" stroke="#6b4f2c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="7"/><path d="M2,34 Q2,22 12,22 Q22,22 22,34"/><circle cx="38" cy="10" r="7"/><path d="M28,34 Q28,22 38,22 Q48,22 48,34"/><line x1="22" y1="16" x2="28" y2="16" stroke-dasharray="3,3"/></svg></span>Relacionamentos abalados pela distância ou pelo choque cultural</li>
-        <li><span class="rec-icon"><svg width="22" height="22" viewBox="0 0 50 36" fill="none" stroke="#6b4f2c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="25" cy="10" r="7"/><path d="M12,34 Q12,20 25,20 Q38,20 38,34"/><circle cx="7" cy="16" r="4" opacity="0.5"/><circle cx="43" cy="16" r="4" opacity="0.5"/><line x1="11" y1="16" x2="20" y2="20" stroke-dasharray="2,3" opacity="0.5"/><line x1="39" y1="16" x2="30" y2="20" stroke-dasharray="2,3" opacity="0.5"/></svg></span>Ninguém ao redor entende completamente o que é ser brasileiro vivendo fora</li>
-      </ul>
-    </div>
-
-    <!-- PAÍSES -->
-    <div class="section">
-      <h2>Atendo brasileiros em</h2>
-      <div class="paises">
-        <span class="pais-tag">🇵🇹 Portugal</span>
-        <span class="pais-tag">🇺🇸 Estados Unidos</span>
-        <span class="pais-tag">🇩🇪 Alemanha</span>
-        <span class="pais-tag">🇬🇧 Reino Unido</span>
-        <span class="pais-tag">🇫🇷 França</span>
-        <span class="pais-tag">🇨🇦 Canadá</span>
-        <span class="pais-tag">🇦🇺 Austrália</span>
-        <span class="pais-tag">🌍 E mais...</span>
-      </div>
-      <p class="paises-sub">Horários adaptados ao seu fuso horário</p>
-    </div>
-
-    <!-- COMO FUNCIONA -->
-    <div class="section section-alt">
-      <h2>Como funciona</h2>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div>
-            <span class="step-strong">Você manda uma mensagem em português</span>
-            <span class="step-span">Me conta onde está e o que te traz.</span>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-trigger" onclick="toggleFaq(this)">A terapia online funciona para quem está no exterior?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-inner">Sim. A modalidade online é reconhecida pelo Conselho Federal de Psicologia e garante o mesmo sigilo e qualidade da terapia presencial. Com boa conexão de internet e um ambiente tranquilo, conseguimos criar um espaço profundo de trabalho.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" onclick="toggleFaq(this)">O que esperar do primeiro encontro?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-inner">O primeiro encontro é um momento para nos conhecermos e conversarmos sobre a sua busca por psicoterapia neste momento da vida. Também acertamos os detalhes práticos: horário, condições de pagamento e esclarecimento de dúvidas. A partir disso, você avalia se deseja seguir no processo terapêutico.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" onclick="toggleFaq(this)">Você consegue atender no meu fuso horário?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-inner">Sim. Tenho horários disponíveis para diferentes fusos. Me conta onde você está e encontramos juntas um horário que funcione bem para os dois lados.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" onclick="toggleFaq(this)">Como funciona o pagamento fora do Brasil?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-inner">Me mande uma mensagem e conversamos sobre as condições. Há formas de pagamento específicas para quem está no exterior — combinamos tudo na primeira conversa.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" onclick="toggleFaq(this)">Preciso morar fora há muito tempo para buscar apoio?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-inner">Não. Atendo tanto quem acabou de chegar quanto quem está há anos fora do Brasil. Cada momento da vida no exterior traz seus próprios desafios — e todos merecem atenção.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" onclick="toggleFaq(this)">Qual o valor da sessão?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-inner">De acordo com as normas éticas do CFP, não realizo divulgação pública de valores. Pelo WhatsApp podemos conversar sobre as condições de pagamento, emissão de nota fiscal e possibilidades de reembolso.</div></div>
           </div>
         </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div>
-            <span class="step-strong">Agendamos uma conversa inicial</span>
-            <span class="step-span">Um encontro para nos conhecermos, no horário que funciona no seu fuso.</span>
+      </section>
+
+      <!-- =============================================
+           CTA FINAL
+      ============================================= -->
+      <section class="cta-final" id="contato">
+        <div class="cta-final-inner">
+
+          <div class="cta-text">
+            <h2>As mudanças não somem. Mas ficam mais leves quando você se escuta.</h2>
+
+            <p class="cta-sub">
+              Um espaço baseado em ética, escuta atenta e aprofundamento — em português, no seu fuso, com quem entende o que é ser brasileiro vivendo fora.
+            </p>
+
+            <a class="cta-btn"
+               href="https://wa.me/557199983483?utm_source=google&utm_medium=cpc&utm_campaign=exterior&utm_content=cta_final&text=Olá,%20Luiza!%20Moro%20fora%20do%20Brasil%20e%20gostaria%20de%20agendar%20uma%20primeira%20conversa."
+               onclick="return gtag_report_conversion(this.href)"
+               target="_blank"
+               rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+              Fale comigo por aqui!
+            </a>
+
+            <span class="cta-safe">🔒 Sigilo profissional garantido · CRP 03/20324 ativo</span>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div>
-            <span class="step-strong">Sessões semanais online</span>
-            <span class="step-span">50 minutos, por vídeo, de onde estiver no mundo.</span>
+
+          <div class="cta-image">
+            <img src="luiza-atendendo.webp" alt="Atendimento psicológico online" />
           </div>
+
         </div>
-      </div>
-    </div>
+      </section>
 
-    <!-- DIFERENCIAIS -->
-    <div class="section">
-      <div class="dif-grid">
-        <div class="dif-item"><span class="dif-check">✓</span> Atendimento em português</div>
-        <div class="dif-item"><span class="dif-check">✓</span> Horário no seu fuso</div>
-        <div class="dif-item"><span class="dif-check">✓</span> Qualquer país do mundo</div>
-        <div class="dif-item"><span class="dif-check">✓</span> 100% sigiloso</div>
-        <div class="dif-item"><span class="dif-check">✓</span> Psicóloga brasileira</div>
-        <div class="dif-item"><span class="dif-check">✓</span><span class="no-link">CRP 03/20324</span> ativo
-</div>
-      </div>
-    </div>
+    </main>
 
-    <!-- FAQ -->
-    <div class="section section-alt">
-      <h2>Dúvidas frequentes</h2>
-
-      <details>
-        <summary>A terapia online funciona para quem está no exterior?</summary>
-        <div class="faq-body">Sim. A modalidade online é reconhecida pelo Conselho Federal de Psicologia e garante o mesmo sigilo e qualidade da terapia presencial. Com boa conexão de internet e um ambiente tranquilo, conseguimos criar um espaço profundo de trabalho.</div>
-      </details>
-
-      <details>
-        <summary>Como funciona o pagamento fora do Brasil?</summary>
-        <div class="faq-body">Me mande uma mensagem e conversamos sobre as condições. Há formas de pagamento específicas para quem está no exterior, combinamos tudo na primeira conversa.</div>
-      </details>
-
-      <details>
-        <summary>Você consegue atender no meu fuso horário?</summary>
-        <div class="faq-body">Sim. Tenho horários disponíveis para diferentes fusos. Me conta onde você está e encontramos juntas um horário que funcione.</div>
-      </details>
-
-      <details>
-        <summary>Preciso morar fora há muito tempo para buscar apoio?</summary>
-        <div class="faq-body">Não. Atendo tanto quem acabou de chegar quanto quem está há anos fora do Brasil. Cada momento da vida no exterior traz seus próprios desafios.</div>
-      </details>
-
-      <details>
-        <summary>Qual o valor da sessão?</summary>
-        <div class="faq-body">De acordo com as normas do CFP, não divulgo valores publicamente. Me mande uma mensagem e conversamos sobre as condições de pagamento.</div>
-      </details>
-    </div>
-
- <div class="section section-alt">
-  <h2>O que dizem os pacientes</h2>
-
- <!-- DEPOIMENTOS -->
-<div class="testimonials">
-  <div class="testimonial-track">
-    <div class="testimonial-slides" id="testimonial-slides">
-
-      <div class="testimonial-card">
-        <span class="testimonial-stars">★★★★★</span>
-        <p class="testimonial-text">
-          "No tempo em que fui atendido por ela, me ajudou a entender muito do que se passava ao meu redor de forma muito simples e clara. Até hoje ainda uso de tudo que trabalhamos na terapia no meu dia a dia."
-        </p>
-        <span class="testimonial-author">H. — Google</span>
-      </div>
-
-      <div class="testimonial-card">
-        <span class="testimonial-stars">★★★★★</span>
-        <p class="testimonial-text">
-          "Luiza é uma psicóloga jovem que combina de forma rara uma sensibilidade e escuta atenta com uma grande maturidade profissional. Consegue conduzir os atendimentos com ética, cuidado e muita profundidade. A recomendo de olhos fechados para quem busca um acompanhamento sério e responsável."
-        </p>
-        <span class="testimonial-author">F. — Google</span>
-      </div>
-
-      <div class="testimonial-card">
-        <span class="testimonial-stars">★★★★★</span>
-        <p class="testimonial-text">
-          "Profissional que me ajudou a passar por momentos desafiadores. Me trouxe clareza e foco para fazer uma travessia importante. Que mais pessoas possam se beneficiar de seu trabalho."
-        </p>
-        <span class="testimonial-author">A. — Google</span>
-      </div>
-
-    </div>
+    <footer class="footer">
+      © 2025 Luiza Lima Zehnle · CRP 03/20324 · Psicologia Analítica · Atendimento online para brasileiros em qualquer país do mundo
+    </footer>
   </div>
 
-  <div class="carousel-nav">
-    <button class="carousel-arrow" id="prev-btn" aria-label="Anterior">&#8592;</button>
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a class="float-wpp"
+     href="https://wa.me/557199983483?utm_source=google&utm_medium=cpc&utm_campaign=exterior&utm_content=float&text=Olá,%20Luiza!%20Moro%20fora%20do%20Brasil%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20psicoterapia%20online."
+     onclick="return gtag_report_conversion(this.href)"
+     target="_blank"
+     rel="noopener"
+     aria-label="Abrir WhatsApp para agendar primeira conversa">
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+  </a>
 
-    <div class="carousel-dots" id="carousel-dots">
-      <button class="carousel-dot active" aria-label="Depoimento 1"></button>
-      <button class="carousel-dot" aria-label="Depoimento 2"></button>
-      <button class="carousel-dot" aria-label="Depoimento 3"></button>
-    </div>
+  <!-- BOTÃO VOLTAR AO TOPO -->
+  <button class="scroll-top-btn" id="scrollTopBtn" onclick="scrollToTop()" aria-label="Voltar ao topo">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
 
-    <button class="carousel-arrow" id="next-btn" aria-label="Próximo">&#8594;</button>
+  <!-- SEO SEMÂNTICO -->
+  <div style="display:none;">
+    <p>Psicóloga brasileira online exterior. Psicoterapia online em português para brasileiros que vivem fora do Brasil, com horários adaptados ao seu fuso. Atende brasileiros em Portugal, Alemanha, Estados Unidos, Reino Unido, França, Canadá, Austrália e qualquer outro país. CRP 03/20324.</p>
   </div>
 
-  <div class="reviews-google-cta">
-    <a 
-      href="https://www.google.com/maps/place/Psic%C3%B3loga+Luiza+Lima+Zehnle/@-12.9870459,-38.4487232,17z/data=!3m1!4b1!4m6!3m5!1s0x7161b5af6108bab:0x1e2094f26f4a1753!8m2!3d-12.9870459!4d-38.4487232!16s%2Fg%2F11n3yyyr1q?entry=ttu&g_ep=EgoyMDI2MDQwNi4wIKXMDSoASAFQAw%3D%3D" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      class="google-reviews-btn"
-      aria-label="Ver depoimentos no Google"
-    >
-      <img 
-        src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" 
-        alt="Google"
-        class="google-icon"
-      />
-      Ver depoimentos no Google
-    </a>
-  </div>
-</div>
-</div>
+  <script>
+    const navLinks  = document.getElementById('navLinks');
+    const menuBtn   = document.getElementById('menuBtn');
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
 
-<section class="cta-final">
-  <h2>As mudanças não somem. Mas ficam mais leves<br>quando você se escuta.</h2>
-
-   <p class="hero-desc">
-        <strong>Se isso faz sentido para você, podemos agendar uma primeira conversa.</strong>
-      </p>
-
-  <a href="https://wa.me/557199983483?utm_source=google&utm_medium=cpc&utm_campaign=exterior&utm_content=final&text=Olá,%20Luiza!%20Moro%20fora%20do%20Brasil%20e%20gostaria%20de%20agendar%20uma%20primeira%20conversa."
-   onclick="return gtag_report_conversion(this.href)"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="btn-wpp"
-   aria-label="Iniciar conversa no WhatsApp com Luiza">
-
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-  </svg>
-
-  <span>Fale comigo por aqui!</span>
-</a>
-
-  <p class="cta-safe">🔒 Sigilo profissional garantido · Psicóloga registrada no CRP</p>
-
-    <div class="footer">
-    © 2025 Luiza Lima Zehnle · 
-    <span class="no-link">CRP 03/20324</span> · 
-    Psicologia Analítica<br>
-    Atendimento online para brasileiros em qualquer país do mundo
-</div>
-    
-</section>
-
-<!-- SEO SEMÂNTICO -->
-<div style="display:none;">
-  <p>
-    Atendimento psicológico online para brasileiros no exterior — se você busca uma psicóloga brasileira online no exterior, ofereço psicoterapia online em português para brasileiros que vivem fora do Brasil, com horários adaptados ao seu fuso. Atendo brasileiros no exterior online em Portugal, Alemanha, Estados Unidos, Reino Unido, França, Canadá, Austrália e qualquer outro país.
-  </p>
-</div>
-</div>
-
-<!-- BOTÃO FLUTUANTE WHATSAPP -->
-<a href="https://wa.me/557199983483?utm_source=google&utm_medium=cpc&utm_campaign=exterior&utm_content=float&text=Ol%C3%A1%2C%20Luiza!%20Moro%20fora%20do%20Brasil%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20psicoterapia%20online."
-   onclick="return gtag_report_conversion(this.href)"
-   target="_blank"
-   class="float-wpp"
-   aria-label="WhatsApp">
-  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-  </svg>
-</a>
-
-<script>
-(function() {
-  var slides = document.getElementById('testimonial-slides');
-  var dots   = document.querySelectorAll('.carousel-dot');
-  var current = 0;
-  var total   = dots.length;
-  var timer;
-
-  function goTo(i) {
-    current = i;
-    slides.style.transform = 'translateX(-' + (current * 100) + '%)';
-    dots.forEach(function(d, idx) {
-      d.classList.toggle('active', idx === current);
+    window.addEventListener('scroll', function(){
+      scrollTopBtn.classList.toggle('is-visible', window.scrollY > 400);
     });
-  }
 
-  function next() { goTo((current + 1) % total); }
+    function scrollToTop(){
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-  function start() { timer = setInterval(next, 30000); }
-  function stop()  { clearInterval(timer); }
+    function closeMobileMenu(){
+      if(navLinks) navLinks.classList.remove('is-open');
+      if(menuBtn)  menuBtn.classList.remove('is-open');
+      if(menuBtn)  menuBtn.setAttribute('aria-expanded', 'false');
+    }
 
-  dots.forEach(function(dot, i) {
-    dot.addEventListener('click', function() { stop(); goTo(i); start(); });
-  });
+    function toggleMobileMenu(){
+      const isOpen = navLinks.classList.toggle('is-open');
+      menuBtn.classList.toggle('is-open', isOpen);
+      menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
 
-  document.getElementById('prev-btn').addEventListener('click', function() {
-  stop(); goTo((current - 1 + total) % total); start();
-});
-document.getElementById('next-btn').addEventListener('click', function() {
-  stop(); goTo((current + 1) % total); start();
-});
+    function scrollToSection(targetId){
+      closeMobileMenu();
+      requestAnimationFrame(() => {
+        const el = document.getElementById(targetId);
+        if(el) el.scrollIntoView({ behavior:'smooth', block:'start' });
+      });
+    }
 
-  /* swipe no celular */
-  var sx = 0;
-  slides.addEventListener('touchstart', function(e) {
-    sx = e.touches[0].clientX; stop();
-  }, { passive: true });
-  slides.addEventListener('touchend', function(e) {
-    var diff = sx - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 40)
-      goTo(diff > 0 ? (current+1)%total : (current-1+total)%total);
-    start();
-  }, { passive: true });
+    document.addEventListener('click', function(e){
+      if(navLinks && menuBtn){
+        if(!navLinks.contains(e.target) && !menuBtn.contains(e.target)){
+          closeMobileMenu();
+        }
+      }
+    });
 
-  start();
-})();
-</script>
-  
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') closeMobileMenu();
+    });
+
+    function toggleFaq(btn){
+      const item   = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      if(!isOpen) item.classList.add('open');
+    }
+  </script>
 </body>
 </html>
