@@ -1173,6 +1173,7 @@
     .scroll-top-btn:hover{
       background:rgba(255,255,255,0.96);
     }
+    .mobile-cta-text{display:none;}
 
     /* =============================================
        RESPONSIVO
@@ -1235,17 +1236,23 @@
   height:68px;
 }
 
+.desktop-cta-text{display:none;}
+.mobile-cta-text{display:inline;}
+      
 .topbar{
-  top:140px;
-  left:14px;
-  right:14px;
+  top:126px;
+  left:16px;
+  right:auto;
   padding:0;
 }
 
 .top-cta-whatsapp{
-  width:100%;
-  min-height:46px;
-  font-size:14px;
+  width:auto;
+  min-height:40px;
+  padding:9px 16px;
+  font-size:13px;
+  font-weight:700;
+  border-radius:999px;
 }
 .hero{
   padding:54px 20px 30px;
@@ -1369,7 +1376,8 @@
      onclick="return gtag_report_conversion(this.href)"
      target="_blank"
      rel="noopener">
-    Converse pelo whatsapp
+<span class="desktop-cta-text">Fale comigo pelo WhatsApp</span>
+<span class="mobile-cta-text">Fale comigo</span>
   </a>
 </div>
 
