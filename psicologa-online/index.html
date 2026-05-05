@@ -1184,6 +1184,27 @@
       .about-photo-wrap{max-width:340px}
     }
 
+    .top-cta-whatsapp{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  padding:12px 20px;
+  border-radius:999px;
+  background:#25D366;
+  color:#fff;
+  font-size:14px;
+  font-weight:800;
+  box-shadow:0 10px 24px rgba(37,211,102,0.30);
+  border:1px solid rgba(255,255,255,0.35);
+  white-space:nowrap;
+}
+
+.top-cta-whatsapp:hover{
+  background:#20bd5a;
+  transform:translateY(-1px);
+}
+
     @media (max-width: 760px){
       :root{--nav-offset:96px}
 
@@ -1211,9 +1232,16 @@
 }
 
 .topbar{
-  top:130px;
-  right:16px;
+  top:126px;
+  left:14px;
+  right:14px;
   padding:0;
+}
+
+.top-cta-whatsapp{
+  width:100%;
+  min-height:48px;
+  font-size:14px;
 }
 
 .hero{
@@ -1331,32 +1359,16 @@
           </div>
 
           <!-- TOPBAR com botão de menu — abaixo do banner -->
-          <div class="topbar">
-            <nav class="nav">
-              <button
-                class="mobile-menu-btn"
-                id="menuBtn"
-                onclick="toggleMobileMenu()"
-                aria-expanded="false"
-                aria-label="Abrir menu de navegação">
-                <div class="menu-icon" aria-hidden="true">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-                Menu
-              </button>
-
-              <div class="nav-links" id="navLinks" role="menu">
-                <button class="is-active" onclick="showHomeAndScroll('hero')" role="menuitem">Início</button>
-                <a href="#sobre-resumo" onclick="showHomeAndScroll('sobre-resumo'); return false;" role="menuitem">Sobre Mim</a>
-                <a href="#abordagem" onclick="showHomeAndScroll('abordagem'); return false;" role="menuitem">Abordagem</a>
-                <a href="#depoimentos" onclick="showHomeAndScroll('depoimentos'); return false;" role="menuitem">Depoimentos</a>
-                <a href="#faq" onclick="showHomeAndScroll('faq'); return false;" role="menuitem">FAQ</a>
-                <a href="#contato" onclick="showHomeAndScroll('contato'); return false;" role="menuitem">Contato</a>
-              </div>
-            </nav>
-          </div>
+         <!-- TOPBAR com CTA direto -->
+<div class="topbar">
+  <a class="top-cta-whatsapp"
+     href="https://wa.me/557199983483?utm_source=google&utm_medium=cpc&utm_campaign=psicoterapia_brasil&utm_content=topo&text=Ol%C3%A1%2C%20Luiza%21%20Vi%20seu%20trabalho%20e%20gostaria%20de%20saber%20mais%20sobre%20como%20funciona%20o%20atendimento."
+     onclick="return gtag_report_conversion(this.href)"
+     target="_blank"
+     rel="noopener">
+    Agendar pelo WhatsApp
+  </a>
+</div>
 
           <!-- HERO -->
           <div class="hero">
