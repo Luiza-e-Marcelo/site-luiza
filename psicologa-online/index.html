@@ -18,33 +18,38 @@
     /* =============================================
        VARIÁVEIS GLOBAIS
     ============================================= */
-    :root{
-      --bg:#d7a858;
-      --ink:#49372f;
-      --ink-soft:#3f312b;
-      --title:#6b5148;
-      --line:rgba(107,79,44,0.12);
-      --card:rgba(255,250,246,0.58);
-      --card-strong:rgba(255,250,246,0.68);
-      --card-dark:rgba(84,62,47,0.82);
-      --card-dark-soft:rgba(84,62,47,0.72);
-      --stroke:rgba(255,255,255,0.34);
-      --brown:#7a6152;
-      --button:#c7ab95;
-      --button-hover:#bb9d86;
-      --accent:#7b8f6a;
-      --accent-dark:#667958;
-      --accent-soft:rgba(123,143,106,0.10);
-      --secondary:#b07a7a;
-      --shadow-soft:0 16px 40px rgba(65,34,16,0.10);
-      --shadow-mid:0 24px 70px rgba(65,34,16,0.13);
-      --shadow-strong:0 30px 110px rgba(65,34,16,0.15);
-      --max:1180px;
-      --nav-offset:112px;
-      --radius-xl:34px;
-      --radius-lg:26px;
-      --radius-md:18px;
-    }
+   :root{
+  --bg:#d7a858;
+  --ink:#49372f;
+  --ink-soft:#3f312b;
+  --title:#6b5148;
+  --line:rgba(107,79,44,0.12);
+  --card:rgba(255,250,246,0.58);
+  --card-strong:rgba(255,250,246,0.68);
+  --card-dark:rgba(84,62,47,0.82);
+  --card-dark-soft:rgba(84,62,47,0.72);
+  --stroke:rgba(255,255,255,0.34);
+  --brown:#7a6152;
+
+  /* BOTÕES CTA (novo padrão) */
+  --cta:#24b359;
+  --cta-hover:#1f9e4d;
+
+  --button:#c7ab95;
+  --button-hover:#bb9d86;
+  --accent:#7b8f6a;
+  --accent-dark:#667958;
+  --accent-soft:rgba(123,143,106,0.10);
+  --secondary:#b07a7a;
+  --shadow-soft:0 16px 40px rgba(65,34,16,0.10);
+  --shadow-mid:0 24px 70px rgba(65,34,16,0.13);
+  --shadow-strong:0 30px 110px rgba(65,34,16,0.15);
+  --max:1180px;
+  --nav-offset:112px;
+  --radius-xl:34px;
+  --radius-lg:26px;
+  --radius-md:18px;
+}
 
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
@@ -415,7 +420,7 @@
       font-size:15px;
       font-weight:700;
       color:#fff;
-      background:linear-gradient(135deg, var(--accent), var(--accent-dark));
+      background:var(--cta);
       border:none;
       cursor:pointer;
       box-shadow:0 12px 28px rgba(102,121,88,0.30);
@@ -430,7 +435,7 @@
     }
 
     .btn-hero-primary:hover{
-      background:linear-gradient(135deg, #869a75, #6c8060);
+      background:var(--cta-hover);
       transform:translateY(-2px);
       box-shadow:0 16px 36px rgba(102,121,88,0.32);
       animation:none;
@@ -729,7 +734,7 @@
     .btn-primary{
       min-height:52px;
       padding:14px 24px;
-      background:var(--button);
+     background:var(--cta);
       color:#fff;
       border-radius:16px;
       font-size:15px;
@@ -738,9 +743,9 @@
     }
 
     .btn-primary:hover{
-      background:var(--button-hover);
+      background:var(--cta-hover);
       transform:translateY(-2px);
-      box-shadow:0 18px 38px rgba(133,101,79,0.20);
+      box-shadow:0 18px 38px rgba(36,179,89,0.25);
     }
 
     .btn-ghost{
@@ -957,7 +962,7 @@
   justify-content:center;
   padding:14px 22px;
   border-radius:14px;
-  background:#6f8f6a;
+  background:var(--cta);
   color:#fff;
   font-weight:700;
   text-decoration:none;
@@ -967,7 +972,7 @@
 
 .cta-btn:hover{
   transform:translateY(-2px);
-  background:#5f7c5c;
+  background:var(--cta-hover);
 }
 
 .cta-meta{
@@ -1111,7 +1116,7 @@
       width:58px;
       height:58px;
       border-radius:50%;
-      background:linear-gradient(135deg, var(--accent), var(--accent-dark));
+      background:var(--cta);
       color:#fff;
       display:flex;
       align-items:center;
