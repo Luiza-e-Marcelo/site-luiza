@@ -1340,28 +1340,34 @@
 .hero-actions{ animation: fadeUp .7s ease both; animation-delay: .70s; }
     </style>
   <script>
-    <!-- Google tag (gtag.js) - Google Ads -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18023297873"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    
+     <!-- Google tag (gtag.js) - Configuração Consolidada -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18023297873"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag( ){dataLayer.push(arguments);}
+    gtag(\'js\', new Date());
 
-  gtag('config', 'AW-18023297873');
-</script>
+    // Configuração do Google Ads
+    gtag(\'config\', \'AW-18023297873\');
+    // Configuração do Google Analytics 4
+    gtag(\'config\', \'G-J84C9ZE889\');
+
+    // Função de relatório de conversão (manter esta função aqui)
     function gtag_report_conversion(url) {
       var callback = function () {
-        if (typeof(url) !== 'undefined') {
+        if (typeof(url) != \'undefined\') {
           window.location = url;
         }
       };
-      gtag('event', 'conversion', {
-        'send_to': 'AW-18023297873/MU3CCJ_x_p0cENHmlpJD',
-        'event_callback': callback
+      gtag(\'event\', \'conversion\', {
+          \'send_to\': \'AW-18023297873/MU3CCJ_x_p0cENHmlpJD\',
+          \'event_callback\': callback
       });
       return false;
     }
   </script>
+
 </head>
 <body>
   <div class="site-shell">
@@ -1785,16 +1791,6 @@ Se você está procurando um atendimento psicológico online, seja por ansiedade
       if(!isOpen) item.classList.add('open');
     }
   </script>
-
-  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-J84C9ZE889"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-J84C9ZE889');
-  gtag('config', 'AW-18023297873');
-  
-</script>
 </body>
 </html>
 
