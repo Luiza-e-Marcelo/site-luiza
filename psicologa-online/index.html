@@ -1344,9 +1344,9 @@
 
 .video-play-btn{
   position:absolute;
-  inset:0;
-  margin:auto;
-  width:76px;height:76px;
+  left:20px;
+  bottom:20px;
+  width:64px;height:64px;
   border-radius:50%;
   border:none;
   background:rgba(255,255,255,0.92);
@@ -1355,8 +1355,21 @@
   cursor:pointer;
   box-shadow:0 14px 34px rgba(0,0,0,0.25);
   transition:transform .24s ease, background .24s ease;
+  z-index:2;
 }
 .video-play-btn:hover{ transform:scale(1.06); background:#fff; }
+
+.video-caption{
+  position:absolute;
+  top:16px;
+  left:20px;
+  color:#f4e9e2;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  z-index:2;
+}
     </style>
 
   <!-- Google tag (gtag.js) - Configuração Consolidada -->
@@ -1499,12 +1512,13 @@ Se você está procurando um atendimento psicológico online, seja por ansiedade
          <div class="about-photo-wrap">
  <div class="about-photo" id="videoWrap" data-youtube-id="Y8XALYVTqfw"
      style="background-image:url('https://img.youtube.com/vi/Y8XALYVTqfw/maxresdefault.jpg');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#3f312b;cursor:pointer;">
-    <button class="video-play-btn" onclick="loadYouTube(this)" aria-label="Reproduzir vídeo de apresentação">
-      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor" style="margin-left:4px;">
-        <path d="M8 5v14l11-7z"/>
-      </svg>
-    </button>
-  </div>
+  <span class="video-caption">Dê play no vídeo</span>
+  <button class="video-play-btn" onclick="loadYouTube(this)" aria-label="Reproduzir vídeo de apresentação">
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor" style="margin-left:4px;">
+      <path d="M8 5v14l11-7z"/>
+    </svg>
+  </button>
+</div>
   <div class="about-badge">
     <strong>8</strong>
     <span>anos de clínica</span>
