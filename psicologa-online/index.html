@@ -1278,10 +1278,10 @@
 
       .site-shell{padding:12px 12px 86px}
       .hero-shell{padding:0}
-     .hero-card{
+   .hero-card{
   border-radius:24px;
   background:
-    linear-gradient(180deg, rgba(183,131,45,0.18) 0 138px, rgba(245,236,224,0.95) 138px 100%);
+    linear-gradient(180deg, rgba(183,131,45,0.18) 0 138px, transparent 138px 100%);
 }
 
 .hero-card::before{
@@ -1307,6 +1307,9 @@
   left:16px;
   right:auto;
   padding:0;
+}
+      .top-cta-whatsapp{
+  display:none;
 }
 
 .top-cta-whatsapp{
@@ -1430,6 +1433,25 @@
   text-transform:uppercase;
   z-index:2;
 }
+    /* Botão duplicado: hero no mobile, reconhece no desktop */
+.recon-cta-btn{
+  display:inline-flex;
+  margin-top:20px;
+  width:100%;
+  max-width:420px;
+}
+@media (max-width: 760px){
+  .hero-cta-btn{ display:inline-flex; } /* mantém no mobile */
+  .recon-cta-btn{ display:none; }        /* some no mobile */
+}
+@media (min-width: 761px){
+  .hero-cta-btn{ display:none; }         /* some no desktop */
+  .recon-cta-btn{ display:inline-flex; } /* aparece no desktop */
+}
+    #reconhece{
+  background:#f5ece1;
+  border-radius:var(--radius-lg);
+}
     </style>
 
   <!-- Google tag (gtag.js) - Configuração Consolidada -->
@@ -1526,8 +1548,8 @@
             </div>
 
             <div class="hero-actions">
-              <a class="btn-hero-primary"
-                 href="https://wa.me/557199983483?utm_source=google&utm_medium=cpc&utm_campaign=psicoterapia_brasil&utm_content=hero&text=Ol%C3%A1%2C%20Luiza%21%20Vi%20seu%20trabalho%20e%20gostaria%20de%20falar%20com%20voc%C3%AA."
+            <a class="btn-hero-primary hero-cta-btn"
+   href="https://wa.me/557199983483?utm_source=google&utm_medium=cpc&utm_campaign=psicoterapia_brasil&utm_content=hero&text=Ol%C3%A1%2C%20Luiza%21%20Vi%20seu%20trabalho%20e%20gostaria%20de%20falar%20com%20voc%C3%AA."
                  onclick="return gtag_report_conversion(this.href)"
                  target="_blank"
                  rel="noopener">
