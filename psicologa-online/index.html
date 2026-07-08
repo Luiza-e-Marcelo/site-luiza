@@ -705,23 +705,27 @@
     }
 
     .sobre-layout{
-      display:grid;
-      grid-template-columns:340px 1fr;
-      gap:44px;
-      align-items:start;
-    }
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+}
 
-    .about-photo-wrap{position:relative}
+   .about-photo-wrap{
+  position:relative;
+  width:100%;
+  max-width:900px;
+  margin:0 auto;
+}
 
  .about-photo{
-      width:100%;
-      border-radius:28px;
-      overflow:hidden;
-      box-shadow:var(--shadow-mid);
-      border:1px solid rgba(255,255,255,0.30);
-      position:relative;
-      aspect-ratio:4/5; /* adicionado */
-    }
+  width:100%;
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:var(--shadow-mid);
+  border:1px solid rgba(255,255,255,0.30);
+  position:relative;
+  aspect-ratio:16/9;
+}
 
     .about-photo iframe{
       position:absolute;
@@ -733,8 +737,8 @@
 
     .about-badge{
       position:absolute;
-      top:-16px;
-      right:-16px;
+      top:20px;
+      right:20px;
       width:98px;
       height:98px;
       border-radius:50%;
@@ -1257,7 +1261,7 @@
       .cards-grid,
       .testimonials-grid{grid-template-columns:1fr}
       .bio-side{position:static}
-      .about-photo-wrap{max-width:340px}
+     .about-photo-wrap{max-width:100%}
 
       .hero{text-align:center}
       .hero-grid{grid-template-columns:1fr; gap:30px}
