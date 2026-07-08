@@ -84,20 +84,6 @@
       z-index:-1;
       pointer-events:none;
     }
-    body::after{
-      content:'';
-      position:fixed;
-      inset:0;
-      background:linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.02) 18%, rgba(255,255,255,0.05));
-      z-index:-1;
-      pointer-events:none;
-    }
-
-    @media (min-width: 761px){
-      body::after{
-        background:linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0.10) 18%, rgba(255,255,255,0.14));
-      }
-    }
 
     img{display:block;max-width:100%}
     a{text-decoration:none;color:inherit}
@@ -1365,33 +1351,6 @@
 .recon-cta-btn{
   width:auto;
   max-width:320px;
-}
-@media (max-width: 760px){
-  .recon-cta-wrap{ display:none; } /* mobile mantém só o botão da hero */
-}
-    @media (min-width: 761px){
-  .recon-card{
-    background:rgba(255,255,255,0.62);
-    backdrop-filter:blur(14px);
-    -webkit-backdrop-filter:blur(14px);
-  }
-
-  .bio-side-card{
-    background:rgba(255,255,255,0.60);
-    backdrop-filter:blur(14px);
-    -webkit-backdrop-filter:blur(14px);
-  }
-
-  .hero-proof span{
-    background:rgba(255,250,246,0.85);
-    color:#5c2b2b;
-  }
-
-  .about-photo-wrap ~ .about-copy,
-  .sobre-title-wrap{
-    /* opcional: se o texto "Olá, sou Luiza" e os parágrafos também
-       incomodarem, dá pra adicionar um leve scrim atrás deles também */
-  }
 }
     </style>
 
