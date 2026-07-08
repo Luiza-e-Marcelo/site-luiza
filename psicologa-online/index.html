@@ -1278,20 +1278,26 @@
 
 .video-play-btn{
   position:absolute;
-  left:20px;
-  bottom:20px;
-  width:64px;height:64px;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  width:78px;height:78px;
   border-radius:50%;
   border:none;
-  background:rgba(255,255,255,0.92);
-  color:var(--brown);
+  background:rgba(93,70,57,0.55);
+  color:#fff;
   display:flex;align-items:center;justify-content:center;
   cursor:pointer;
   box-shadow:0 14px 34px rgba(0,0,0,0.25);
+  backdrop-filter:blur(2px);
+  -webkit-backdrop-filter:blur(2px);
   transition:transform .24s ease, background .24s ease;
   z-index:2;
 }
-.video-play-btn:hover{ transform:scale(1.06); background:#fff; }
+.video-play-btn:hover{
+  transform:translate(-50%, -50%) scale(1.06);
+  background:rgba(93,70,57,0.72);
+}
 
 .video-caption{
   position:absolute;
